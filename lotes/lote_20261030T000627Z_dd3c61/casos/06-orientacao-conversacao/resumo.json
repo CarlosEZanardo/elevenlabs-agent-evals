@@ -1,0 +1,27 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "assinatura": "149ba67ed68400732aa60a9e1c4853954827ceb6c778bab493095d1272d38325",
+  "avaliacao_plataforma": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "caso_id": "06-orientacao-conversacao",
+  "categoria": "orientacao_compativel",
+  "credits_used": 273,
+  "evidencia": "CONFIRMADA",
+  "ferramenta_chamada": true,
+  "finalidade": "desenvolvimento",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "justificativa": "Evaluation succeeded | Criterion 1 passed: O agente recomendou o curso 'Conversação em inglês', modalidade online, nível intermediário, nas quartas-feiras, justificando que combina com o nível, preferência por conversação online e horário do usuário. | Criterion 2 passed: O agente informou corretamente: quartas das 19h às 20h30, duração de 3 meses e mensalidade de R$280. Não inventou nova turma nem garantiu vaga. | The agent ended the conversation. | Chamada e resposta do mock confirmadas.",
+  "mock_confirmado": true,
+  "nome": "Ponte Idiomas | 06 | Recomendação de conversação",
+  "nos_vistos": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_6a2bbc4c18b59dde495c",
+    "demo_527e2d91ef415d6a602f"
+  ],
+  "ran_against_draft": false,
+  "resultado": "APROVADO",
+  "status_plataforma": "passed",
+  "test_id": "demo_fce7095082fe5543e4f0",
+  "test_run_id": "demo_4e1521ada2fabc54c3e2",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

@@ -1,0 +1,19 @@
+Ponte Idiomas — avaliação por texto
+Caso: 09-dias-incompativeis
+
+Execução: demo_071094f14cb594f276ce
+agent: Olá! Sou o assistente virtual da Ponte Idiomas. Você quer conhecer nossos cursos ou já tem algum em mente?
+user: Quero inglês iniciante, mas só posso às segundas e quartas. Tem?
+  [chamada: notify_condition_1_met]
+  [retorno: notify_condition_1_met]
+  [chamada: consultar_cursos]
+  [retorno: consultar_cursos]
+agent: Consultei nosso catálogo e, no momento, o curso de inglês iniciante acontece às terças e quintas, das dezenove às vinte horas, então não temos uma turma de inglês iniciante nas segundas e quartas. Quer que eu veja outra opção de idioma ou modalidade para esses dias?
+user: Ah, não... só tenho segunda e quarta mesmo. Não tem como abrir uma turma nesses dias?
+agent: Entendo, mas a abertura de novas turmas não é algo que eu consiga confirmar por aqui, isso depende da secretaria, que atende de segunda a sexta, das nove às dezoito horas. Posso ajudar com mais alguma coisa?
+user: Tá, entendi. Era só isso mesmo, obrigado.
+  [chamada: notify_condition_2_met]
+  [retorno: notify_condition_2_met]
+agent: Obrigado pelo contato com a Ponte Idiomas. Até a próxima!
+  [chamada: progress_workflow]
+  [retorno: progress_workflow]

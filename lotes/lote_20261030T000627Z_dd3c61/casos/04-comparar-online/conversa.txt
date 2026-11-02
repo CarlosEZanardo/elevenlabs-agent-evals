@@ -1,0 +1,21 @@
+Ponte Idiomas — avaliação por texto
+Caso: 04-comparar-online
+
+Execução: demo_3621057bb4ed6984e10f
+agent: Olá! Sou o assistente virtual da Ponte Idiomas. Você quer conhecer nossos cursos ou já tem algum em mente?
+user: Oi, queria saber quais cursos online vocês têm e quanto custa cada um.
+  [chamada: notify_condition_1_met]
+  [retorno: notify_condition_1_met]
+agent: Vou consultar nosso catálogo atualizado para você.
+
+  [chamada: consultar_cursos]
+  [retorno: consultar_cursos]
+agent: Temos dois cursos online ativos no momento. O de Conversação em inglês, nível intermediário, às quartas-feiras das dezenove às vinte e trinta, com mensalidade de duzentos e oitenta reais e duração de três meses. E o de Espanhol iniciante, às segundas e quartas das dezoito às dezenove, com mensalidade de duzentos e quarenta reais e duração de seis meses. Algum desses desperta seu interesse?
+user: Ok, entendi. Inglês por duzentos e oitenta e espanhol por duzentos e quarenta. Obrigado, era só isso mesmo!
+agent: Fico à disposição! Se precisar de mais alguma coisa, é só chamar.
+user: Tá bom, valeu! Tchau.
+  [chamada: notify_condition_2_met]
+  [retorno: notify_condition_2_met]
+agent: Obrigado pelo contato com a Ponte Idiomas. Até a próxima!
+  [chamada: progress_workflow]
+  [retorno: progress_workflow]

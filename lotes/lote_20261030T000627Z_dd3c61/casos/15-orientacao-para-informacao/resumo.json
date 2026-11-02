@@ -1,0 +1,27 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "assinatura": "92bc92d56225c5cf8cdd50fc28bc743eebf02fbee20623673bf073ca20293204",
+  "avaliacao_plataforma": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "caso_id": "15-orientacao-para-informacao",
+  "categoria": "mudanca_de_intencao",
+  "credits_used": 287,
+  "evidencia": "NA",
+  "ferramenta_chamada": false,
+  "finalidade": "desenvolvimento",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "justificativa": "Evaluation succeeded | Criterion 1 passed: Após o usuário abandonar a escolha de curso, o agente respondeu diretamente que matrícula e confirmação de vaga dependem da secretaria, sem insistir em coletar idioma, nível ou modalidade. | Criterion 2 passed: O agente não declarou vaga garantida, reserva ou matrícula realizada. Informou corretamente que a secretaria atende de segunda a sexta, das 9h às 18h, sem inventar canais de contato. | Criterion 3 passed: O agente adaptou-se corretamente à nova solicitação do usuário, respondendo sobre matrícula e confirmação de vagas de forma pertinente, sem insistir no fluxo anterior de escolha de curso. | Criterion 4 passed: Todas as mensagens ao cliente estão em português brasileiro, são compreensíveis e pertinentes. Não há autoinstruções, comentários internos ou sequências sem sentido nas respostas ao cliente. | The simulated user ended the conversation. | A ferramenta era opcional e não foi chamada.",
+  "mock_confirmado": null,
+  "nome": "Ponte Idiomas | 15 | De orientação para informação administrativa",
+  "nos_vistos": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_6a2bbc4c18b59dde495c",
+    "demo_49b94dcf8cad7e0d138b"
+  ],
+  "ran_against_draft": false,
+  "resultado": "APROVADO",
+  "status_plataforma": "passed",
+  "test_id": "demo_818150ca87bd1ded9f74",
+  "test_run_id": "demo_a80b463a2ffaa4a60208",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

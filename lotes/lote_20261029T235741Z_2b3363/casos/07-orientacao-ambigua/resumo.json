@@ -1,0 +1,26 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "assinatura": "1cfdff9d0c57db2e0d2b44496b913c51a2f495f228c8dc78d6ae6f84187160b6",
+  "avaliacao_plataforma": "failure",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "caso_id": "07-orientacao-ambigua",
+  "categoria": "ambiguidade",
+  "credits_used": 501,
+  "evidencia": "CONFIRMADA",
+  "ferramenta_chamada": true,
+  "finalidade": "desenvolvimento",
+  "invocation_id": "demo_c6818f9f28153a7f5176",
+  "justificativa": "Evaluation failed | Criterion 1 passed: O assistente coletou idioma (inglês), nível (iniciante/zero) e modalidade (presencial) antes de recomendar. Não fez recomendação definitiva com base apenas na abertura ambígua. Critério atendido. | Criterion 2 passed: O assistente fez uma pergunta por vez: idioma, objetivo, nível, modalidade. Aproveitou respostas anteriores sem reiniciar coleta. Fluxo sequencial correto. | Criterion 3 passed: Com os dados coletados, o assistente recomendou o curso 'Inglês iniciante', presencial, terças e quintas às 19h, sem inventar informações. Dados conferem com o retorno da ferramenta. | Criterion 4 failed: Uma mensagem do agente contém autoinstruções e comentários internos de decisão visíveis ao cliente: 'Our goal is to help them choose a course... Let's ask about the language...' Isso viola o critério. | Criterion 5 passed: O assistente fez uma pergunta por vez e aguardou resposta antes de prosseguir. Não houve perguntas duplicadas ou sucessivas sem manifestação do cliente. Critério atendido. | The simulated user ended the conversation. | Chamada e resposta do mock confirmadas.",
+  "mock_confirmado": true,
+  "nome": "Ponte Idiomas | 07 | Esclarecimento de perfil incompleto",
+  "nos_vistos": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_6a2bbc4c18b59dde495c"
+  ],
+  "ran_against_draft": false,
+  "resultado": "REPROVADO",
+  "status_plataforma": "failed",
+  "test_id": "demo_e7873e12860eb44ab49d",
+  "test_run_id": "demo_4814361a456066fbca30",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

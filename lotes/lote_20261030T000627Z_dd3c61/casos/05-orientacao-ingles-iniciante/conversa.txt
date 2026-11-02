@@ -1,0 +1,15 @@
+Ponte Idiomas — avaliação por texto
+Caso: 05-orientacao-ingles-iniciante
+
+Execução: demo_11f2d9421d1de5b1311c
+agent: Olá! Sou o assistente virtual da Ponte Idiomas. Você quer conhecer nossos cursos ou já tem algum em mente?
+user: Sou iniciante em inglês, quero aprender para viajar e posso ir presencialmente às terças e quintas à noite. O que recomenda?
+  [chamada: notify_condition_2_met]
+  [retorno: notify_condition_2_met]
+agent: Vou verificar as opções disponíveis para você.
+
+  [chamada: consultar_cursos]
+  [retorno: consultar_cursos]
+agent: Encontrei uma opção bem adequada: o curso de Inglês iniciante, presencial, nas terças e quintas, das dezenove às vinte horas, com mensalidade de duzentos e vinte reais e duração de seis meses. Ele combina com seu nível, seu objetivo de viajar e sua disponibilidade de horário. Quer saber mais algum detalhe sobre esse curso?
+user: Perfeito, terças e quintas das 19h às 20h, iniciante, presencial — é exatamente o que eu precisava. Obrigado!
+agent: Que bom que deu certo! Só lembrando que a matrícula e a confirmação de vaga são feitas pela secretaria, que atende de segunda a sexta, das nove às dezoito horas. Precisa de mais alguma ajuda?

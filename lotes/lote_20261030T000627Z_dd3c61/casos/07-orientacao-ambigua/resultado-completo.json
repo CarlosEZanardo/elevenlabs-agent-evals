@@ -1,0 +1,286 @@
+{
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "sanitizado": true,
+  "test_id": "demo_e7873e12860eb44ab49d",
+  "test_runs": [
+    {
+      "agent_id": "demo_33ff793ae010233765c2",
+      "agent_responses": [
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Olá! Sou o assistente virtual da Ponte Idiomas. Você quer conhecer nossos cursos ou já tem algum em mente?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 9,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Quero fazer um curso, mas não sei qual.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 9,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Entendi! Posso te ajudar a escolher. Você já tem algum idioma em mente ou quer uma recomendação a partir do seu objetivo e do seu nível atual?\n",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 9,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 9,
+          "tool_calls": [
+            {
+              "request_id": "demo_40b9e83e396ce875160e",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 9,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_40b9e83e396ce875160e",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.026622579025570303,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 9,
+          "tool_calls": [
+            {
+              "request_id": "demo_c6c210fd9f95d50f6e99",
+              "tool_has_been_called": true,
+              "tool_id": "demo_5d8aeb45360fcc28ee74",
+              "tool_name": "consultar_cursos",
+              "type": "webhook"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 9,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_c6c210fd9f95d50f6e99",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.0,
+              "tool_name": "consultar_cursos",
+              "type": "webhook"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Temos opções de inglês e espanhol, em níveis iniciante e intermediário, nas modalidades presencial e online. Para eu te indicar a melhor opção, me conta: qual idioma você tem mais interesse em aprender?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 9,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Inglês. Quero aprender inglês.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 9,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Ótimo! E qual é o seu nível atual de inglês: você está começando do zero ou já tem alguma base?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 9,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Zero. Nunca estudei inglês.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 9,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Perfeito. Você prefere aulas presenciais ou online?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 9,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Presencial.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 9,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Temos o curso de Inglês iniciante, presencial, nas terças e quintas, das dezenove às vinte horas, com duração de seis meses e mensalidade de duzentos e vinte reais. Ele é ideal para quem está começando do zero, como você. Quer saber mais alguma coisa sobre esse curso?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 9,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Perfeito, é exatamente o que eu precisava. Obrigado!",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 9,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Que bom que ajudei! A matrícula e a confirmação de vagas são feitas pela secretaria, que atende de segunda a sexta, das nove às dezoito horas. Precisa de mais alguma ajuda?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 9,
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "branch_id": "demo_e2597d5031bd05955e70",
+      "charging": {
+        "call_charge": 112,
+        "llm_charge": 274,
+        "platform_charge": 112,
+        "subagent_charge": 0,
+        "voice_surcharge_charge": null
+      },
+      "condition_result": {
+        "rationale": {
+          "messages": [
+            "Criterion 1 passed: O assistente perguntou o idioma, o nível e a modalidade antes de recomendar. Confirmou inglês, nível zero e presencial antes de indicar o curso iniciante. Não recomendou de forma definitiva com base apenas na abertura ambígua.",
+            "Criterion 2 passed: O assistente fez uma pergunta por vez: primeiro o idioma, depois o nível, depois a modalidade. Aproveitou as respostas anteriores sem reiniciar a coleta de perfil.",
+            "Criterion 3 passed: Com os dados coletados (inglês, iniciante, presencial), o assistente recomendou o curso de Inglês iniciante presencial às terças e quintas. Não inventou curso, horário ou confirmação de vaga; direcionou para a secretaria.",
+            "Criterion 4 passed: Todas as mensagens ao cliente estão em português brasileiro, são compreensíveis e pertinentes ao atendimento. Não há autoinstruções, comentários internos ou sequências sem sentido nas falas destinadas ao cliente.",
+            "Criterion 5 passed: O assistente aguardou a resposta do cliente após cada pergunta antes de prosseguir. Não houve perguntas duplicadas ou sucessivas sem manifestação do cliente.",
+            "The simulated user ended the conversation."
+          ],
+          "summary": "Evaluation succeeded"
+        },
+        "result": "success"
+      },
+      "credits_used": 386,
+      "ran_against_draft": false,
+      "status": "passed",
+      "test_id": "demo_e7873e12860eb44ab49d",
+      "test_invocation_id": "demo_192f953b2f324b3ad926",
+      "test_name": "Ponte Idiomas | 07 | Esclarecimento de perfil incompleto",
+      "test_run_id": "demo_42d2a8efb28466ca6a88",
+      "version_id": "demo_511658740c7b4a1c79f7"
+    }
+  ]
+}

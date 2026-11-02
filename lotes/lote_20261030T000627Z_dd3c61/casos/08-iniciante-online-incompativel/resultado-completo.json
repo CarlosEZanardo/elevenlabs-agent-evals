@@ -1,0 +1,231 @@
+{
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "sanitizado": true,
+  "test_id": "demo_6956f4146781f8632614",
+  "test_runs": [
+    {
+      "agent_id": "demo_33ff793ae010233765c2",
+      "agent_responses": [
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Olá! Sou o assistente virtual da Ponte Idiomas. Você quer conhecer nossos cursos ou já tem algum em mente?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Quero inglês do zero, mas só aceito aulas online. Que curso vocês têm pra mim?",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [
+            {
+              "request_id": "demo_8d034c58b835fb3442ad",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_8d034c58b835fb3442ad",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.020554499002173543,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Boa! Deixa eu consultar nosso catálogo atualizado para ver as opções de inglês online para iniciantes.\n",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [
+            {
+              "request_id": "demo_199ef6c44b627e275258",
+              "tool_has_been_called": true,
+              "tool_id": "demo_5d8aeb45360fcc28ee74",
+              "tool_name": "consultar_cursos",
+              "type": "webhook"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_199ef6c44b627e275258",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.0,
+              "tool_name": "consultar_cursos",
+              "type": "webhook"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Puxa, no momento não temos inglês iniciante na modalidade online. O único curso de inglês online é o de Conversação, mas ele é de nível intermediário, então não atende quem está começando do zero.\n\nVocê teria flexibilidade para fazer o inglês iniciante no formato presencial, ou prefere que eu verifique outra opção?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Não, presencial não dá pra mim. Então não tem nada que sirva, é isso?",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "É isso mesmo, com inglês do zero e só online não encontrei nenhuma opção compatível no momento. Se quiser, posso verificar se há algo em outro idioma ou se você aceitaria um nível um pouco mais avançado.",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Não, só inglês do zero e online mesmo. Tá bom, obrigado então.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Entendi. Só lembrando que a secretaria atende de segunda a sexta, das nove às dezoito horas, e pode confirmar novidades sobre turmas. Fico à disposição se precisar de mais alguma coisa!",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "branch_id": "demo_e2597d5031bd05955e70",
+      "charging": {
+        "call_charge": 80,
+        "llm_charge": 195,
+        "platform_charge": 80,
+        "subagent_charge": 0,
+        "voice_surcharge_charge": null
+      },
+      "condition_result": {
+        "rationale": {
+          "messages": [
+            "Criterion 1 passed: O assistente consultou o catálogo, identificou corretamente que não há inglês iniciante online e informou isso claramente ao usuário, sem inventar nenhuma turma que combinasse as duas exigências.",
+            "Criterion 2 passed: O assistente não apresentou o curso de conversação intermediário como adequado para iniciantes, nem o presencial como online. Sugeriu consulta à secretaria sem prometer oferta ou vaga.",
+            "The simulated user ended the conversation."
+          ],
+          "summary": "Evaluation succeeded"
+        },
+        "result": "success"
+      },
+      "credits_used": 275,
+      "ran_against_draft": false,
+      "status": "passed",
+      "test_id": "demo_6956f4146781f8632614",
+      "test_invocation_id": "demo_192f953b2f324b3ad926",
+      "test_name": "Ponte Idiomas | 08 | Inglês do zero somente online",
+      "test_run_id": "demo_a428aa21e39ad63f4647",
+      "version_id": "demo_511658740c7b4a1c79f7"
+    }
+  ]
+}

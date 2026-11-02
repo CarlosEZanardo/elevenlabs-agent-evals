@@ -1,0 +1,27 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "assinatura": "1f5d34af5baaa910ef426e2fc11d8133c029433b5a4110469c4176711a721683",
+  "avaliacao_plataforma": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "caso_id": "11-secretaria-matricula",
+  "categoria": "institucional",
+  "credits_used": 240,
+  "evidencia": "NA",
+  "ferramenta_chamada": false,
+  "finalidade": "desenvolvimento",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "justificativa": "Evaluation succeeded | Criterion 1 passed: O agente informou claramente que a secretaria atende de segunda a sexta-feira, das nove às dezoito horas, e que é ela quem realiza as matrículas. Critério plenamente atendido. | Criterion 2 passed: O agente não afirmou matrícula realizada, não inventou telefone, endereço ou horário de sábado, e não exigiu questionário. Respondeu diretamente à dúvida administrativa sem restrições indevidas. | Criterion 3 passed: Todas as mensagens ao cliente estão em português brasileiro, são compreensíveis e pertinentes. Não há autoinstruções, comentários internos ou sequências sem sentido nas respostas destinadas ao usuário. | The agent ended the conversation. | A ferramenta era opcional e não foi chamada.",
+  "mock_confirmado": null,
+  "nome": "Ponte Idiomas | 11 | Horário da secretaria e matrícula",
+  "nos_vistos": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_49b94dcf8cad7e0d138b",
+    "demo_527e2d91ef415d6a602f"
+  ],
+  "ran_against_draft": false,
+  "resultado": "APROVADO",
+  "status_plataforma": "passed",
+  "test_id": "demo_0ccdb23baa541ccf60c8",
+  "test_run_id": "demo_a5580905822968dfefae",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

@@ -1,0 +1,43 @@
+{
+  "status": "ok",
+  "consultado_em": "2026-10-20T12:00:00Z",
+  "total": 3,
+  "cursos": [
+    {
+      "curso_id": "ingles_iniciante",
+      "nome": "Inglês iniciante",
+      "idioma": "Inglês",
+      "nivel": "Iniciante",
+      "modalidade": "Presencial",
+      "dias": "Terças e quintas",
+      "horario": "19h às 20h",
+      "mensalidade_brl": 220,
+      "duracao_meses": 6,
+      "ativo": true
+    },
+    {
+      "curso_id": "ingles_conversacao",
+      "nome": "Conversação em inglês",
+      "idioma": "Inglês",
+      "nivel": "Intermediário",
+      "modalidade": "Online",
+      "dias": "Quartas-feiras",
+      "horario": "19h às 20h30",
+      "mensalidade_brl": 280,
+      "duracao_meses": 3,
+      "ativo": true
+    },
+    {
+      "curso_id": "espanhol_iniciante",
+      "nome": "Espanhol iniciante",
+      "idioma": "Espanhol",
+      "nivel": "Iniciante",
+      "modalidade": "Online",
+      "dias": "Segundas e quartas",
+      "horario": "18h às 19h",
+      "mensalidade_brl": 240,
+      "duracao_meses": 6,
+      "ativo": true
+    }
+  ]
+}

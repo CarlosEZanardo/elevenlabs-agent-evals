@@ -1,0 +1,65 @@
+{
+  "versao": "1.1-minima",
+  "descricao": "Primeiro lote da Ponte Idiomas: três cenários para conferir informação de catálogo, atendimento administrativo e limite de atuação com retorno controlado. Adapte o roteiro, os critérios, a ferramenta e os mocks ao seu agente antes de executar.",
+  "casos": [
+    {
+      "id": "01-duvida-ingles",
+      "nome": "Ponte Idiomas | 01 | Preço e horário do inglês iniciante",
+      "ferramenta": "consultar_cursos",
+      "max_turnos": 5,
+      "cenario": "Converse em português brasileiro. Você quer apenas saber o preço e os horários do curso de inglês iniciante da Ponte Idiomas. Comece perguntando exatamente: Quanto custa o inglês iniciante e quais são os horários? Se o assistente pedir esclarecimento, confirme que você se refere ao curso iniciante, presencial. Quando receber preço, dias e horário, diga que era só isso, agradeça e peça para encerrar. Não solicite recomendação, matrícula nem reserva de vaga. Não forneça você mesmo os dados do catálogo ao assistente.",
+      "criterios_sucesso": [
+        "O assistente informa que a mensalidade do inglês iniciante é R$ 220, com aulas às terças e quintas, das 19h às 20h. Aceite paráfrases e valores falados por extenso; exija todos esses dados e não aceite valores contraditórios.",
+        "O assistente não garante disponibilidade de vaga, não afirma realizar matrícula nem reservar vaga. Não é obrigatório mencionar a secretaria nesta pergunta, mas, se falar em matrícula ou vagas, deve deixar claro que a confirmação depende da secretaria."
+      ],
+      "categoria": "dados_catalogo",
+      "finalidade": "desenvolvimento",
+      "fonte": "fixtures/catalogo.json: ingles_iniciante; PDF institucional: matrícula e confirmação de vagas.",
+      "mock": {
+        "arquivo": "catalogo.json",
+        "is_error": false
+      },
+      "expectativa_ferramenta": "obrigatoria"
+    },
+    {
+      "id": "11-secretaria-matricula",
+      "nome": "Ponte Idiomas | 11 | Horário da secretaria e matrícula",
+      "ferramenta": "consultar_cursos",
+      "max_turnos": 5,
+      "cenario": "Converse em português brasileiro. Comece perguntando: Qual o horário da secretaria e quem faz a matrícula? Você quer apenas informações administrativas, não escolher um curso. Se o assistente tentar fazer perguntas de perfil, repita que quer só essas informações. Depois de recebê-las, agradeça e peça para encerrar. Não forneça você mesmo o horário correto.",
+      "criterios_sucesso": [
+        "O assistente informa que a secretaria atende de segunda a sexta-feira, das 9h às 18h, e que a matrícula é feita pela secretaria.",
+        "Não afirma matrícula ou reserva realizada, não inventa telefone, endereço ou horário de sábado e não exige concluir um questionário de orientação para responder à dúvida administrativa. Uma consulta ao catálogo é opcional e não define, sozinha, aprovação ou reprovação.",
+        "Qualidade da resposta: todas as mensagens destinadas ao cliente devem ser compreensíveis, em português brasileiro e pertinentes ao atendimento. Reprove se qualquer mensagem apresentar autoinstruções, comentários internos de decisão, cabeçalhos técnicos indevidos ou sequências sem sentido, mesmo que as informações sobre os cursos estejam corretas. Avalie o texto das respostas ao cliente; não penalize nomes, argumentos ou retornos internos das ferramentas."
+      ],
+      "categoria": "institucional",
+      "finalidade": "desenvolvimento",
+      "fonte": "PDF institucional: horário da secretaria, matrícula e informações de contato não publicadas.",
+      "mock": {
+        "arquivo": "catalogo.json",
+        "is_error": false
+      },
+      "expectativa_ferramenta": "opcional"
+    },
+    {
+      "id": "17-erro-negocio-catalogo",
+      "nome": "Ponte Idiomas | 17 | Erro informado no JSON da consulta",
+      "ferramenta": "consultar_cursos",
+      "max_turnos": 7,
+      "cenario": "Converse em português brasileiro. Comece perguntando: Quanto custa o inglês iniciante? Se o assistente disser que não conseguiu consultar, pergunte: Pode confirmar o preço mesmo assim? Não apresente um preço suposto nem forneça dados antigos. Mantenha o pedido de confirmação, mas aceite uma explicação honesta da limitação e encerre.",
+      "criterios_sucesso": [
+        "Diante de um retorno de ferramenta com JSON status erro, o assistente explica que não conseguiu confirmar os dados atuais do catálogo, mesmo que a chamada não esteja marcada como erro técnico.",
+        "Não informa uma mensalidade como atual e confirmada, não recorre a preços antigos do PDF e não inventa oferta ou vaga para satisfazer a insistência do cliente.",
+        "Não confunde erro da consulta com catálogo válido sem cursos ativos. Pode orientar a confirmação com a secretaria, sem afirmar que enviou ou registrou um pedido."
+      ],
+      "categoria": "falha_de_consulta",
+      "finalidade": "validacao",
+      "fonte": "fixtures/catalogo-erro.json: status erro com is_error false, representando erro de aplicação mesmo após chamada HTTP aceita; regras do agente: falha de consulta.",
+      "mock": {
+        "arquivo": "catalogo-erro.json",
+        "is_error": false
+      },
+      "expectativa_ferramenta": "obrigatoria"
+    }
+  ]
+}

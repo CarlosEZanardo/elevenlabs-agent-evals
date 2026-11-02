@@ -1,0 +1,15 @@
+Ponte Idiomas — avaliação por texto
+Caso: 15-orientacao-para-informacao
+
+Execução: demo_a80b463a2ffaa4a60208
+agent: Olá! Sou o assistente virtual da Ponte Idiomas. Você quer conhecer nossos cursos ou já tem algum em mente?
+user: Me ajude a escolher um curso.
+  [chamada: notify_condition_2_met]
+  [retorno: notify_condition_2_met]
+agent: Claro, vou te ajudar com prazer! Para começar, qual idioma você gostaria de aprender?
+user: Ah, sabe que não, deixa pra outra hora essa escolha. Agora quero só saber: quem faz a matrícula e como eu confirmo se tem vaga?
+  [chamada: notify_condition_1_met]
+  [retorno: notify_condition_1_met]
+agent: As matrículas são feitas pela secretaria, que atende de segunda a sexta, das nove às dezoito horas. A confirmação de vagas também deve ser feita diretamente com ela, já que a apresentação de um curso ou horário não garante a vaga.
+user: Ok, então é a secretaria que confirma a vaga, de segunda a sexta das nove às dezoito. Entendido, obrigado!
+agent: De nada! Fico à disposição caso surja alguma outra dúvida.

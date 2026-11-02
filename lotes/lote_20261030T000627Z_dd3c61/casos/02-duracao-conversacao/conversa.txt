@@ -1,0 +1,19 @@
+Ponte Idiomas — avaliação por texto
+Caso: 02-duracao-conversacao
+
+Execução: demo_50b4419f0820f5e67289
+agent: Olá! Sou o assistente virtual da Ponte Idiomas. Você quer conhecer nossos cursos ou já tem algum em mente?
+user: Oi, queria saber quanto tempo dura o curso de conversação em inglês e quando são as aulas.
+  [chamada: notify_condition_1_met]
+  [retorno: notify_condition_1_met]
+agent: Vou verificar essas informações no nosso catálogo atualizado.
+
+  [chamada: consultar_cursos]
+  [retorno: consultar_cursos]
+agent: O curso de Conversação em inglês tem duração de três meses, com aulas online às quartas-feiras, das dezenove às vinte e trinta. A mensalidade é de duzentos e oitenta reais e o nível é intermediário. Quer saber mais alguma coisa sobre esse curso?
+user: Ok, então três meses, aulas às quartas das 19h às 20h30. Era só isso que eu precisava saber, pode encerrar, obrigado.
+  [chamada: notify_condition_2_met]
+  [retorno: notify_condition_2_met]
+agent: Obrigado pelo contato com a Ponte Idiomas. Até a próxima!
+  [chamada: progress_workflow]
+  [retorno: progress_workflow]

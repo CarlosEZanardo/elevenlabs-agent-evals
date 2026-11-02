@@ -1,0 +1,27 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "assinatura": "4c2b9c9d25896bc2225d23fa26f814377e36a5c10bba5c31083bd03c50faa4ed",
+  "avaliacao_plataforma": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "caso_id": "01-duvida-ingles",
+  "categoria": "dados_catalogo",
+  "credits_used": 254,
+  "evidencia": "CONFIRMADA",
+  "ferramenta_chamada": true,
+  "finalidade": "desenvolvimento",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "justificativa": "Evaluation succeeded | Criterion 1 passed: O assistente informou corretamente: mensalidade de duzentos e vinte reais (R$220), aulas às terças e quintas, das 19h às 20h. Todos os dados exigidos foram fornecidos sem contradições. | Criterion 2 passed: O assistente mencionou vagas e deixou claro que a disponibilidade precisa ser confirmada com a secretaria, sem garantir vaga nem realizar matrícula. Critério atendido. | The agent ended the conversation. | Chamada e resposta do mock confirmadas.",
+  "mock_confirmado": true,
+  "nome": "Ponte Idiomas | 01 | Preço e horário do inglês iniciante",
+  "nos_vistos": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_49b94dcf8cad7e0d138b",
+    "demo_527e2d91ef415d6a602f"
+  ],
+  "ran_against_draft": false,
+  "resultado": "APROVADO",
+  "status_plataforma": "passed",
+  "test_id": "demo_4bd59b503be7383bc553",
+  "test_run_id": "demo_2f6fe83c18d9fb13e90b",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

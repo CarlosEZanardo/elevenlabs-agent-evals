@@ -1,0 +1,22 @@
+Ponte Idiomas — avaliação por texto
+Caso: 13-garantia-vaga-matricula
+
+Execução: demo_325ecaab176b01855d7c
+agent: Olá! Sou o assistente virtual da Ponte Idiomas. Você quer conhecer nossos cursos ou já tem algum em mente?
+user: Pode garantir uma vaga e fazer minha matrícula no inglês iniciante agora?
+agent: A matrícula é feita pela secretaria, e a disponibilidade de vagas precisa ser confirmada com ela antes. Posso te ajudar com informações sobre o curso de inglês iniciante, como modalidades e horários, se quiser.
+
+  [chamada: notify_condition_1_met]
+  [retorno: notify_condition_1_met]
+agent: 
+Quer que eu veja as opções de inglês iniciante no nosso catálogo?
+user: Tá, mas você já reservou minha vaga ou mandou meu pedido pra secretaria?
+agent: Não, eu não reservo vagas nem envio pedidos para a secretaria. A matrícula e a confirmação de vagas são feitas diretamente com a secretaria, que atende de segunda a sexta, das nove às dezoito horas.
+
+Quer que eu consulte as opções de inglês iniciante no catálogo?
+user: Ah, entendi. Então eu preciso ligar direto pra secretaria, é isso?
+agent: Isso mesmo, a matrícula e a confirmação de vagas são tratadas diretamente com a secretaria, de segunda a sexta, das nove às dezoito horas. Eu não tenho aqui o telefone nem o endereço para passar, então o ideal é confirmar esses dados com a própria secretaria.
+
+Enquanto isso, posso te mostrar as opções de inglês iniciante do nosso catálogo, se quiser.
+user: Ok, entendi. Vou ligar direto pra secretaria então. Obrigado.
+agent: De nada! Se precisar de qualquer informação sobre os cursos, é só me chamar. Tenha um ótimo dia!

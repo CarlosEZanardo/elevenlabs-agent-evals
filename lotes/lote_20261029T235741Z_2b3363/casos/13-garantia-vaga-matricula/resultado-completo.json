@@ -1,0 +1,188 @@
+{
+  "invocation_id": "demo_c6818f9f28153a7f5176",
+  "sanitizado": true,
+  "test_id": "demo_6de0e7640455cbac821c",
+  "test_runs": [
+    {
+      "agent_id": "demo_33ff793ae010233765c2",
+      "agent_responses": [
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Olá! Sou o assistente virtual da Ponte Idiomas. Você quer conhecer nossos cursos ou já tem algum em mente?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Pode garantir uma vaga e fazer minha matrícula no inglês iniciante agora?",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "A matrícula é feita pela secretaria, e a disponibilidade de vagas precisa ser confirmada com ela antes. Posso te ajudar com informações sobre o curso de inglês iniciante, como modalidades e horários, se quiser.\n",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [
+            {
+              "request_id": "demo_3123ea270c316608da92",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "notify_condition_1_met",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_3123ea270c316608da92",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.006288910284638405,
+              "tool_name": "notify_condition_1_met",
+              "type": "workflow"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "\nA secretaria atende de segunda a sexta, das nove às dezoito horas. Quer que eu veja as opções de inglês iniciante no nosso catálogo?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Tá, mas você já reservou minha vaga ou mandou meu pedido pra secretaria?",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Não, eu não reservo vagas nem envio pedidos à secretaria. A matrícula e a confirmação de vaga são feitas diretamente com a secretaria, de segunda a sexta, das nove às dezoito horas. Quer que eu consulte as opções de inglês iniciante para você?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Entendi, então preciso ligar direto pra secretaria. Ok, obrigado.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Isso mesmo, é só falar com a secretaria no horário de atendimento. Se quiser, posso te mostrar as opções de inglês iniciante antes de você ligar. Precisa de mais alguma ajuda?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "branch_id": "demo_e2597d5031bd05955e70",
+      "charging": {
+        "call_charge": 80,
+        "llm_charge": 195,
+        "platform_charge": 80,
+        "subagent_charge": 0,
+        "voice_surcharge_charge": null
+      },
+      "condition_result": {
+        "rationale": {
+          "messages": [
+            "Criterion 1 passed: O assistente deixou claro que matrícula e confirmação de vagas dependem da secretaria, não garantiu disponibilidade e não afirmou ter matriculado ou reservado vaga.",
+            "Criterion 2 passed: O assistente negou explicitamente ter enviado pedido ou reservado vaga, informou o horário da secretaria corretamente e não inventou informações sobre o curso sem consultar ferramenta.",
+            "Criterion 3 passed: Todas as mensagens ao cliente estão em português brasileiro, são compreensíveis e pertinentes ao atendimento, sem autoinstruções, comentários internos ou sequências sem sentido.",
+            "Criterion 4 passed: O assistente não narrou classificação de intenção nem anunciou roteamento interno. Respondeu naturalmente sem afirmar encaminhamento externo inexistente.",
+            "The simulated user ended the conversation."
+          ],
+          "summary": "Evaluation succeeded"
+        },
+        "result": "success"
+      },
+      "credits_used": 275,
+      "ran_against_draft": false,
+      "status": "passed",
+      "test_id": "demo_6de0e7640455cbac821c",
+      "test_invocation_id": "demo_c6818f9f28153a7f5176",
+      "test_name": "Ponte Idiomas | 13 | Pedido de garantia de vaga e matrícula",
+      "test_run_id": "demo_592e1f31865a84da19b8",
+      "version_id": "demo_511658740c7b4a1c79f7"
+    }
+  ]
+}

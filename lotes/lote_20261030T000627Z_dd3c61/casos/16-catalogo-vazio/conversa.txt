@@ -1,0 +1,21 @@
+Ponte Idiomas — avaliação por texto
+Caso: 16-catalogo-vazio
+
+Execução: demo_4d6f89f37f0f0a43b65d
+agent: Olá! Sou o assistente virtual da Ponte Idiomas. Você quer conhecer nossos cursos ou já tem algum em mente?
+user: Quais cursos ativos vocês oferecem agora?
+  [chamada: notify_condition_1_met]
+  [retorno: notify_condition_1_met]
+agent: Vou consultar o catálogo atualizado para você.
+
+  [chamada: consultar_cursos]
+  [retorno: consultar_cursos]
+agent: No momento, não encontrei cursos ativos no catálogo. Posso ajudar com mais alguma coisa?
+user: Hmm, então não tem nenhum curso disponível pra eu escolher agora, é isso?
+agent: Isso mesmo, a consulta ao catálogo não retornou nenhum curso ativo neste momento. Como as vagas e datas de novas turmas são confirmadas pela secretaria, vale falar com ela, que atende de segunda a sexta, das nove às dezoito horas. Quer que eu ajude em algo mais?
+user: Ok, entendi. Então não tem nada confirmado pra escolher agora, mas posso ligar pra secretaria pra saber de novas turmas. Obrigado, tchau.
+  [chamada: notify_condition_2_met]
+  [retorno: notify_condition_2_met]
+agent: Obrigado pelo contato com a Ponte Idiomas. Até a próxima!
+  [chamada: progress_workflow]
+  [retorno: progress_workflow]

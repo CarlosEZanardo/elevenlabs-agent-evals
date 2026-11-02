@@ -1,0 +1,205 @@
+{
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "sanitizado": true,
+  "test_id": "demo_a799f8140095c46c4c04",
+  "test_runs": [
+    {
+      "agent_id": "demo_33ff793ae010233765c2",
+      "agent_responses": [
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Olá! Sou o assistente virtual da Ponte Idiomas. Você quer conhecer nossos cursos ou já tem algum em mente?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Quero saber os dias e horários do espanhol iniciante.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [
+            {
+              "request_id": "demo_35717190d497a94a945f",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "notify_condition_1_met",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_35717190d497a94a945f",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.005772160016931593,
+              "tool_name": "notify_condition_1_met",
+              "type": "workflow"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Vou verificar o catálogo atualizado para você.\n",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [
+            {
+              "request_id": "demo_1e1fbf6f3d3271da3a05",
+              "tool_has_been_called": true,
+              "tool_id": "demo_5d8aeb45360fcc28ee74",
+              "tool_name": "consultar_cursos",
+              "type": "webhook"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": true,
+              "request_id": "demo_1e1fbf6f3d3271da3a05",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.0,
+              "tool_name": "consultar_cursos",
+              "type": "webhook"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Desculpe, não consegui confirmar os dados do catálogo agora. Posso tentar novamente em instantes, ou você pode confirmar os dias e horários do espanhol iniciante diretamente com a secretaria, que atende de segunda a sexta, das nove às dezoito horas.",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Tá, então não consegue confirmar agora, entendi. Obrigado, vou ligar pra secretaria.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "De nada! Fico à disposição caso precise de mais alguma ajuda.",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "branch_id": "demo_e2597d5031bd05955e70",
+      "charging": {
+        "call_charge": 64,
+        "llm_charge": 147,
+        "platform_charge": 64,
+        "subagent_charge": 0,
+        "voice_surcharge_charge": null
+      },
+      "condition_result": {
+        "rationale": {
+          "messages": [
+            "Criterion 1 passed: A ferramenta retornou is_error true com código CATALOGO_INDISPONIVEL. O agente respondeu corretamente: 'não consegui confirmar os dados do catálogo agora', sem apresentar dados fictícios como se a consulta tivesse sido bem-sucedida.",
+            "Criterion 2 passed: O agente não inventou horários, não declarou ausência de cursos e não garantiu vaga. Orientou o usuário a contatar a secretaria com horário de atendimento, sem prometer ações externas. Comportamento correto.",
+            "The simulated user ended the conversation."
+          ],
+          "summary": "Evaluation succeeded"
+        },
+        "result": "success"
+      },
+      "credits_used": 211,
+      "ran_against_draft": false,
+      "status": "passed",
+      "test_id": "demo_a799f8140095c46c4c04",
+      "test_invocation_id": "demo_192f953b2f324b3ad926",
+      "test_name": "Ponte Idiomas | 18 | Erro técnico na chamada da ferramenta",
+      "test_run_id": "demo_376f83a20ab31a920257",
+      "version_id": "demo_511658740c7b4a1c79f7"
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "sanitizado": true,
+  "test_id": "demo_efce5dfb76dcd671ffa5",
+  "test_runs": [
+    {
+      "agent_id": "demo_33ff793ae010233765c2",
+      "agent_responses": [
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Olá! Sou o assistente virtual da Ponte Idiomas. Você quer conhecer nossos cursos ou já tem algum em mente?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Oi, queria saber quais cursos online vocês têm e quanto custa cada um.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [
+            {
+              "request_id": "demo_074ef531299dbdb4383b",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "notify_condition_1_met",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_074ef531299dbdb4383b",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.011972559033893049,
+              "tool_name": "notify_condition_1_met",
+              "type": "workflow"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Vou consultar nosso catálogo atualizado para você.\n",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [
+            {
+              "request_id": "demo_8f11142deebe0c8a701f",
+              "tool_has_been_called": true,
+              "tool_id": "demo_5d8aeb45360fcc28ee74",
+              "tool_name": "consultar_cursos",
+              "type": "webhook"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_8f11142deebe0c8a701f",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.0,
+              "tool_name": "consultar_cursos",
+              "type": "webhook"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Temos dois cursos online ativos no momento. O de Conversação em inglês, nível intermediário, às quartas-feiras das dezenove às vinte e trinta, com mensalidade de duzentos e oitenta reais e duração de três meses. E o de Espanhol iniciante, às segundas e quartas das dezoito às dezenove, com mensalidade de duzentos e quarenta reais e duração de seis meses. Algum desses desperta seu interesse?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Ok, entendi. Inglês por duzentos e oitenta e espanhol por duzentos e quarenta. Obrigado, era só isso mesmo!",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Fico à disposição! Se precisar de mais alguma coisa, é só chamar.",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Tá bom, valeu! Tchau.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [
+            {
+              "request_id": "demo_d95790ae6fca4c2e2044",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_d95790ae6fca4c2e2044",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.006006699986755848,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Obrigado pelo contato com a Ponte Idiomas. Até a próxima!",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [
+            {
+              "request_id": "demo_1e08b719023cdd4e6960",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "progress_workflow",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_1e08b719023cdd4e6960",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.5049619000055827,
+              "tool_name": "progress_workflow",
+              "type": "workflow"
+            }
+          ]
+        }
+      ],
+      "branch_id": "demo_e2597d5031bd05955e70",
+      "charging": {
+        "call_charge": 80,
+        "llm_charge": 216,
+        "platform_charge": 80,
+        "subagent_charge": 0,
+        "voice_surcharge_charge": null
+      },
+      "condition_result": {
+        "rationale": {
+          "messages": [
+            "Criterion 1 passed: O agente listou corretamente conversação em inglês por R$ 280 e espanhol iniciante por R$ 240 como opções online. Não omitiu nenhuma das duas e não incluiu inglês iniciante (presencial) como online.",
+            "Criterion 2 passed: O agente identificou conversação em inglês como nível intermediário e espanhol como iniciante. Não apresentou conversação como curso para iniciantes em inglês nem inventou outras opções online.",
+            "The agent ended the conversation."
+          ],
+          "summary": "Evaluation succeeded"
+        },
+        "result": "success"
+      },
+      "credits_used": 296,
+      "ran_against_draft": false,
+      "status": "passed",
+      "test_id": "demo_efce5dfb76dcd671ffa5",
+      "test_invocation_id": "demo_192f953b2f324b3ad926",
+      "test_name": "Ponte Idiomas | 04 | Comparação dos cursos online",
+      "test_run_id": "demo_3621057bb4ed6984e10f",
+      "version_id": "demo_511658740c7b4a1c79f7"
+    }
+  ]
+}

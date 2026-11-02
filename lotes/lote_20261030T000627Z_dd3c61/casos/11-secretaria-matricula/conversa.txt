@@ -1,0 +1,17 @@
+Ponte Idiomas — avaliação por texto
+Caso: 11-secretaria-matricula
+
+Execução: demo_a5580905822968dfefae
+agent: Olá! Sou o assistente virtual da Ponte Idiomas. Você quer conhecer nossos cursos ou já tem algum em mente?
+user: Oi, queria saber o horário de funcionamento da secretaria e quem faz a matrícula.
+  [chamada: notify_condition_1_met]
+  [retorno: notify_condition_1_met]
+agent: Olá! A secretaria atende de segunda a sexta-feira, das nove às dezoito horas, e é ela quem realiza as matrículas. Posso ajudar com mais alguma coisa?
+user: Entendi, segunda a sexta das nove às dezoito, e a própria secretaria faz a matrícula. Tá ótimo, obrigado!
+agent: Fico feliz em ajudar! Se precisar de algo mais, é só chamar. Tenha um ótimo dia!
+
+  [chamada: notify_condition_2_met]
+  [retorno: notify_condition_2_met]
+agent: Obrigado pelo contato com a Ponte Idiomas. Até a próxima!
+  [chamada: progress_workflow]
+  [retorno: progress_workflow]

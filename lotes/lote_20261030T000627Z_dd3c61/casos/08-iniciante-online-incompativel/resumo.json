@@ -1,0 +1,26 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "assinatura": "4b3610b91f96c561e4e68759233c1d53d375cc42167bacb6a06f496889c10327",
+  "avaliacao_plataforma": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "caso_id": "08-iniciante-online-incompativel",
+  "categoria": "sem_opcao_compativel",
+  "credits_used": 275,
+  "evidencia": "CONFIRMADA",
+  "ferramenta_chamada": true,
+  "finalidade": "desenvolvimento",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "justificativa": "Evaluation succeeded | Criterion 1 passed: O assistente consultou o catálogo, identificou corretamente que não há inglês iniciante online e informou isso claramente ao usuário, sem inventar nenhuma turma que combinasse as duas exigências. | Criterion 2 passed: O assistente não apresentou o curso de conversação intermediário como adequado para iniciantes, nem o presencial como online. Sugeriu consulta à secretaria sem prometer oferta ou vaga. | The simulated user ended the conversation. | Chamada e resposta do mock confirmadas.",
+  "mock_confirmado": true,
+  "nome": "Ponte Idiomas | 08 | Inglês do zero somente online",
+  "nos_vistos": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_6a2bbc4c18b59dde495c"
+  ],
+  "ran_against_draft": false,
+  "resultado": "APROVADO",
+  "status_plataforma": "passed",
+  "test_id": "demo_6956f4146781f8632614",
+  "test_run_id": "demo_a428aa21e39ad63f4647",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

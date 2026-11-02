@@ -1,0 +1,15 @@
+[server]
+headless = true
+showEmailPrompt = false
+fileWatcherType = "none"
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#0F766E"
+backgroundColor = "#F6F8FA"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#182535"
+font = "sans-serif"

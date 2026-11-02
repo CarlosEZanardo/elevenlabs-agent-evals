@@ -1,0 +1,26 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "assinatura": "a59a5f018258fbf4b1056590d3550b2b3edd04d9130c2cd9d2327fcea30b7c45",
+  "avaliacao_plataforma": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "caso_id": "05-orientacao-ingles-iniciante",
+  "categoria": "orientacao_compativel",
+  "credits_used": 247,
+  "evidencia": "CONFIRMADA",
+  "ferramenta_chamada": true,
+  "finalidade": "desenvolvimento",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "justificativa": "Evaluation succeeded | Criterion 1 passed: O assistente recomendou exclusivamente o curso de Inglês Iniciante presencial, compatível com o nível, modalidade e disponibilidade do usuário. Não mencionou conversação intermediária nem espanhol como opções para o pedido. | Criterion 2 passed: O assistente aproveitou as preferências já informadas (iniciante, presencial, terças e quintas à noite) sem pedir repetição. Os dados mencionados (R$220, terças e quintas, 19h-20h, 6 meses) correspondem ao catálogo consultado. | Criterion 3 passed: O assistente deixou claro que a matrícula e confirmação de vaga são feitas pela secretaria, não apresentando a recomendação como matrícula realizada nem como garantia de vaga. | The simulated user ended the conversation. | Chamada e resposta do mock confirmadas.",
+  "mock_confirmado": true,
+  "nome": "Ponte Idiomas | 05 | Recomendação de inglês iniciante",
+  "nos_vistos": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_6a2bbc4c18b59dde495c"
+  ],
+  "ran_against_draft": false,
+  "resultado": "APROVADO",
+  "status_plataforma": "passed",
+  "test_id": "demo_ff7eeec1a28699103356",
+  "test_run_id": "demo_11f2d9421d1de5b1311c",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

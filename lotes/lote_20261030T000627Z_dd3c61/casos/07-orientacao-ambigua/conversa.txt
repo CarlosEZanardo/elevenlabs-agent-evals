@@ -1,0 +1,21 @@
+Ponte Idiomas — avaliação por texto
+Caso: 07-orientacao-ambigua
+
+Execução: demo_42d2a8efb28466ca6a88
+agent: Olá! Sou o assistente virtual da Ponte Idiomas. Você quer conhecer nossos cursos ou já tem algum em mente?
+user: Quero fazer um curso, mas não sei qual.
+agent: Entendi! Posso te ajudar a escolher. Você já tem algum idioma em mente ou quer uma recomendação a partir do seu objetivo e do seu nível atual?
+
+  [chamada: notify_condition_2_met]
+  [retorno: notify_condition_2_met]
+  [chamada: consultar_cursos]
+  [retorno: consultar_cursos]
+agent: Temos opções de inglês e espanhol, em níveis iniciante e intermediário, nas modalidades presencial e online. Para eu te indicar a melhor opção, me conta: qual idioma você tem mais interesse em aprender?
+user: Inglês. Quero aprender inglês.
+agent: Ótimo! E qual é o seu nível atual de inglês: você está começando do zero ou já tem alguma base?
+user: Zero. Nunca estudei inglês.
+agent: Perfeito. Você prefere aulas presenciais ou online?
+user: Presencial.
+agent: Temos o curso de Inglês iniciante, presencial, nas terças e quintas, das dezenove às vinte horas, com duração de seis meses e mensalidade de duzentos e vinte reais. Ele é ideal para quem está começando do zero, como você. Quer saber mais alguma coisa sobre esse curso?
+user: Perfeito, é exatamente o que eu precisava. Obrigado!
+agent: Que bom que ajudei! A matrícula e a confirmação de vagas são feitas pela secretaria, que atende de segunda a sexta, das nove às dezoito horas. Precisa de mais alguma ajuda?

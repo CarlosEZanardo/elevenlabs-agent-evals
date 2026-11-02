@@ -1,0 +1,27 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "assinatura": "e0f23aeb8f8c22937e742f7ff98a1197c93e1d76bc17e6e485f141ce2701a7f3",
+  "avaliacao_plataforma": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "caso_id": "10-idioma-ausente",
+  "categoria": "oferta_ausente",
+  "credits_used": 290,
+  "evidencia": "CONFIRMADA",
+  "ferramenta_chamada": true,
+  "finalidade": "desenvolvimento",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "justificativa": "Evaluation succeeded | Criterion 1 passed: O agente consultou a ferramenta 'consultar_cursos', verificou os 3 cursos retornados (inglês iniciante, conversação em inglês, espanhol iniciante) e informou corretamente que francês não consta no catálogo, sem inventar turma, preço, nível ou horário. | Criterion 2 passed: O agente disse apenas 'não há francês no catálogo ativo' e orientou o usuário a confirmar com a secretaria, sem afirmar que nunca existiu ou nunca existirá. Não prometeu abertura de turma. | The agent ended the conversation. | Chamada e resposta do mock confirmadas.",
+  "mock_confirmado": true,
+  "nome": "Ponte Idiomas | 10 | Pedido de francês fora do catálogo",
+  "nos_vistos": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_49b94dcf8cad7e0d138b",
+    "demo_527e2d91ef415d6a602f"
+  ],
+  "ran_against_draft": false,
+  "resultado": "APROVADO",
+  "status_plataforma": "passed",
+  "test_id": "demo_29ecb464b27c9924e0de",
+  "test_run_id": "demo_c0272842ba1f6adfd86f",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

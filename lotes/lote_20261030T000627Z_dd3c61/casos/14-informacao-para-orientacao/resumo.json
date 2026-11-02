@@ -1,0 +1,28 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "assinatura": "acd5db907b955fe05064ce2c5c54fd9d6f47f7d0886898c9c9fa0110a76ff637",
+  "avaliacao_plataforma": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "caso_id": "14-informacao-para-orientacao",
+  "categoria": "mudanca_de_intencao",
+  "credits_used": 3384,
+  "evidencia": "CONFIRMADA",
+  "ferramenta_chamada": true,
+  "finalidade": "desenvolvimento",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "justificativa": "Evaluation succeeded | Criterion 1 passed: O agente respondeu R$ 220 mensais à pergunta inicial sobre o custo do inglês iniciante. Após a mudança de intenção do usuário (querer aprender inglês do zero, presencial, terças e quintas), o agente passou a orientar a escolha de um curso compatível. Ambos os requisitos foram atendidos. | Criterion 2 passed: O agente recomendou o Inglês iniciante presencial, coerente com o nível (nunca estudou) e os dias informados (terças e quintas). Não repetiu perguntas já respondidas. Os dados (presencial, terças e quintas, 19h às 20h) correspondem ao catálogo consultado. | Criterion 3 passed: O agente não prometeu vaga, matrícula ou reserva. Ao ser perguntado sobre turmas disponíveis, informou que não consegue confirmar disponibilidade e orientou o usuário a contatar a secretaria. A resposta foi adequada e sem promessas indevidas. | The agent ended the conversation. | Chamada e resposta do mock confirmadas.",
+  "mock_confirmado": true,
+  "nome": "Ponte Idiomas | 14 | De pergunta objetiva para recomendação",
+  "nos_vistos": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_49b94dcf8cad7e0d138b",
+    "demo_6a2bbc4c18b59dde495c",
+    "demo_527e2d91ef415d6a602f"
+  ],
+  "ran_against_draft": false,
+  "resultado": "APROVADO",
+  "status_plataforma": "passed",
+  "test_id": "demo_9eb73a44cbb0c8208763",
+  "test_run_id": "demo_208f858a4454a55b8054",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

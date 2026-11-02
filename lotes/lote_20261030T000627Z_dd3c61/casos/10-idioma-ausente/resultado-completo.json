@@ -1,0 +1,317 @@
+{
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "sanitizado": true,
+  "test_id": "demo_29ecb464b27c9924e0de",
+  "test_runs": [
+    {
+      "agent_id": "demo_33ff793ae010233765c2",
+      "agent_responses": [
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Olá! Sou o assistente virtual da Ponte Idiomas. Você quer conhecer nossos cursos ou já tem algum em mente?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 7,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Vocês têm francês online para iniciantes?",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 7,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 7,
+          "tool_calls": [
+            {
+              "request_id": "demo_b66d5d14b96a22f9cd27",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "notify_condition_1_met",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 7,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_b66d5d14b96a22f9cd27",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.0066249489900656044,
+              "tool_name": "notify_condition_1_met",
+              "type": "workflow"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Vou verificar no nosso catálogo atualizado.\n",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 7,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 7,
+          "tool_calls": [
+            {
+              "request_id": "demo_014af868f15a2808f780",
+              "tool_has_been_called": true,
+              "tool_id": "demo_5d8aeb45360fcc28ee74",
+              "tool_name": "consultar_cursos",
+              "type": "webhook"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 7,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_014af868f15a2808f780",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.0,
+              "tool_name": "consultar_cursos",
+              "type": "webhook"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "No momento não temos francês no catálogo ativo. Temos inglês iniciante presencial, conversação em inglês online e espanhol iniciante online. Quer que eu detalhe alguma dessas opções?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 7,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Ah, então não tem francês... nem online nem presencial?",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 7,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Isso mesmo, não há francês no catálogo ativo, nem online nem presencial. Se quiser, posso verificar outras opções de idiomas ou você pode confirmar com a secretaria, que atende de segunda a sexta, das nove às dezoito horas.",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 7,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Entendi, então por enquanto não tem francês mesmo. Obrigado, tchau.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 7,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 7,
+          "tool_calls": [
+            {
+              "request_id": "demo_9906ce613907b36efd11",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 7,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_9906ce613907b36efd11",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.0057010200107470155,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Obrigado pelo contato com a Ponte Idiomas. Até a próxima!",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 7,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 7,
+          "tool_calls": [
+            {
+              "request_id": "demo_f8c43ce47bad820a878a",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "progress_workflow",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 7,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_f8c43ce47bad820a878a",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.5061591399717145,
+              "tool_name": "progress_workflow",
+              "type": "workflow"
+            }
+          ]
+        }
+      ],
+      "branch_id": "demo_e2597d5031bd05955e70",
+      "charging": {
+        "call_charge": 80,
+        "llm_charge": 210,
+        "platform_charge": 80,
+        "subagent_charge": 0,
+        "voice_surcharge_charge": null
+      },
+      "condition_result": {
+        "rationale": {
+          "messages": [
+            "Criterion 1 passed: O agente consultou a ferramenta 'consultar_cursos', verificou os 3 cursos retornados (inglês iniciante, conversação em inglês, espanhol iniciante) e informou corretamente que francês não consta no catálogo, sem inventar turma, preço, nível ou horário.",
+            "Criterion 2 passed: O agente disse apenas 'não há francês no catálogo ativo' e orientou o usuário a confirmar com a secretaria, sem afirmar que nunca existiu ou nunca existirá. Não prometeu abertura de turma.",
+            "The agent ended the conversation."
+          ],
+          "summary": "Evaluation succeeded"
+        },
+        "result": "success"
+      },
+      "credits_used": 290,
+      "ran_against_draft": false,
+      "status": "passed",
+      "test_id": "demo_29ecb464b27c9924e0de",
+      "test_invocation_id": "demo_192f953b2f324b3ad926",
+      "test_name": "Ponte Idiomas | 10 | Pedido de francês fora do catálogo",
+      "test_run_id": "demo_c0272842ba1f6adfd86f",
+      "version_id": "demo_511658740c7b4a1c79f7"
+    }
+  ]
+}
