@@ -1,0 +1,21 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 06-conversation-advice
+
+Run: demo_4e1521ada2fabc54c3e2
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: I already have intermediate English and want to practice conversation online. I'm free on Wednesdays after 19:00. What do you recommend?
+  [call: notify_condition_2_met]
+  [response: notify_condition_2_met]
+agent: I will check the available options for you.
+
+  [call: list_courses]
+  [response: list_courses]
+agent: I found a very suitable option: English Conversation, intermediate level, online, on Wednesdays from 19:00 to 20:30. It matches your level, your preference for online conversation practice, and your free time. The monthly fee is two hundred and eighty reais, and it lasts three months. Would you like to know anything else about this course?
+user: Okay, I understand. I'll think about it a little, thank you. I don't need anything else for now.
+  [call: notify_condition_2_met]
+  [response: notify_condition_2_met]
+agent: Thank you for contacting Ponte Idiomas. See you next time!
+  [call: progress_workflow]
+  [response: progress_workflow]

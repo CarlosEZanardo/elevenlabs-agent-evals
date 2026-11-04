@@ -1,0 +1,26 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "signature": "b21bb676aae3b740b1b53cb6b745846416f3f4f8cbaeb36553e3a4a076cacab1",
+  "platform_evaluation": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "case_id": "17-catalog-business-error",
+  "category": "lookup_failure",
+  "credits_used": 270,
+  "evidence": "CONFIRMED",
+  "tool_called": true,
+  "purpose": "validation",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "rationale_text": "Evaluation succeeded | Criterion 1 passed: The agent received a response with status 'error' and code 'CATALOG_UNAVAILABLE' and clearly explained that it could not confirm the catalog data, directing the user to contact the school office. | Criterion 2 passed: The agent did not quote any monthly fee, rely on old prices or invent an offering. Even under user pressure, it maintained that it could not provide prices without catalog confirmation. | Criterion 3 passed: The agent did not confuse the error with a valid catalog containing no courses. It correctly pointed to the school office for confirmation, without claiming to have sent or registered any request. | The simulated user ended the conversation. | Tool call and mock response confirmed.",
+  "mock_confirmed": true,
+  "name": "Ponte Idiomas | 17 | Business error in the catalog JSON",
+  "nodes_seen": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_49b94dcf8cad7e0d138b"
+  ],
+  "ran_against_draft": false,
+  "outcome": "PASSED",
+  "platform_status": "passed",
+  "test_id": "demo_1f9872718f211ced5716",
+  "test_run_id": "demo_a46f756aa6995547cfcd",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

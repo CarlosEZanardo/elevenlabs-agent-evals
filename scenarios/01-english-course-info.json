@@ -1,0 +1,11 @@
+{
+  "id": "01-english-course-info",
+  "name": "Ponte Idiomas | 01 | Beginner English price and schedule",
+  "tool": "list_courses",
+  "max_turns": 5,
+  "scenario": "Speak English. You only want the price and schedule of the beginner English course at Ponte Idiomas. Start by asking exactly: How much does beginner English cost, and what is the schedule? If the assistant asks for clarification, confirm that you mean the in-person beginner course. Once you receive the price, days, and time, say that is all you needed, thank the assistant, and ask to end the conversation. Do not request a recommendation, enrollment, or a seat reservation. Do not supply catalog facts yourself.",
+  "success_criteria": [
+    "The assistant states that beginner English costs BRL 220 per month, with classes on Tuesdays and Thursdays from 7 to 8 p.m. Accept paraphrases and numbers spelled out; require all these facts and reject contradictory values.",
+    "The assistant does not guarantee a seat, claim to enroll the customer, or reserve a seat. Mentioning the office is not required for this question, but if enrollment or availability comes up, the assistant must make clear that confirmation depends on the office."
+  ]
+}

@@ -1,0 +1,31 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 07-ambiguous-advice
+
+Run: demo_4814361a456066fbca30
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: I want to take a course, but I do not know which one.
+agent: I see! You would like help choosing a course, so I will guide you through that decision.
+
+  [call: notify_condition_2_met]
+  [response: notify_condition_2_met]
+agent: Our goal is to help them choose a course. We need to ask one question at a time. First, ask which language they want. But before recommending, we need to consult list_courses. However, we don't have preferences yet. We should ask one question at a time. Let's ask about the language they want to learn.
+
+We should not call list_courses yet? The instruction says "Before recommending or providing course details, consult list_courses, without parameters." We can consult it now to have data ready, but we don't need to inform yet. It might be fine to call it now. But the condition tools: notify_condition_1_met is about person indicating they don't want to continue orientation and just want to clarify an objective doubt. Not met. notify_condition_2_met: not met. So no tool calls needed.
+
+We should ask one question: which language. Let's respond in Portuguese, short.Great! To start, which language are you interested in learning?
+user: English. I want to learn English.
+agent: Great, English is a very popular choice! Now tell me, what is your main goal with the language, such as travel, work, or study?
+user: Mainly for travel.
+agent: Perfect, English for travel is a very common goal. And what is your current English level: beginner, basic, intermediate, or advanced?
+user: I've never studied it, I'm really starting from zero.
+agent: I see, you are starting from zero. Do you prefer in-person or online classes?
+user: In person, definitely.
+agent: Let me check the available options for you.
+
+  [call: list_courses]
+  [response: list_courses]
+agent: I found an option that fits what you are looking for well: the beginner English course, in person, on Tuesdays and Thursdays from 19:00 to 20:00, with a monthly fee of two hundred and twenty reais and a duration of six months. It is ideal because it is for people starting from zero and is in person, as you prefer. Would you like any more details about this course?
+user: Tuesdays and Thursdays from 7 to 8 p.m. are perfect for me. Thank you, that was exactly what I needed!
+agent: Glad that worked out! Just a reminder that enrollment and seat confirmation are handled by the office, which is open Monday through Friday, from 9 a.m. to 6 p.m. Do you need any further help?

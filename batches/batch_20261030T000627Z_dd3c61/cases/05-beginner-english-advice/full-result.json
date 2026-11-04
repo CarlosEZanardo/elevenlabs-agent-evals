@@ -1,0 +1,209 @@
+{
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "sanitized": true,
+  "test_id": "demo_ff7eeec1a28699103356",
+  "test_runs": [
+    {
+      "agent_id": "demo_33ff793ae010233765c2",
+      "agent_responses": [
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "I am a beginner in English, want to learn for travel, and can attend in person on Tuesday and Thursday evenings. What do you recommend?",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [
+            {
+              "request_id": "demo_1a8c7002713818e84e53",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_1a8c7002713818e84e53",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.01974188903113827,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "I will check the available options for you.\n",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [
+            {
+              "request_id": "demo_b0d4196cb1041f7ecb04",
+              "tool_has_been_called": true,
+              "tool_id": "demo_5d8aeb45360fcc28ee74",
+              "tool_name": "list_courses",
+              "type": "webhook"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_b0d4196cb1041f7ecb04",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.0,
+              "tool_name": "list_courses",
+              "type": "webhook"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "I found a very suitable option: the beginner English course, in person, on Tuesdays and Thursdays from 19:00 to 20:00, with a monthly fee of two hundred and twenty reais and a duration of six months. It matches your level, your goal of traveling, and your availability. Would you like any more details about this course?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Perfect, Tuesdays and Thursdays from 7 to 8 p.m., beginner, in person - that is exactly what I needed. Thank you!",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Glad that worked out! Just a reminder that enrollment and seat confirmation are handled by the office, which is open Monday through Friday, from 9 a.m. to 6 p.m. Do you need any further help?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "branch_id": "demo_e2597d5031bd05955e70",
+      "charging": {
+        "call_charge": 64,
+        "llm_charge": 183,
+        "platform_charge": 64,
+        "subagent_charge": 0,
+        "voice_surcharge_charge": null
+      },
+      "condition_result": {
+        "rationale": {
+          "messages": [
+            "Criterion 1 passed: The assistant recommended only the in-person Beginner English course, compatible with the user's level, format and availability. It did not mention intermediate conversation or Spanish as options for the request.",
+            "Criterion 2 passed: The assistant used the preferences already stated (beginner, in person, Tuesday and Thursday evenings) without asking for repetition. The data mentioned (R$220, Tuesdays and Thursdays, 19:00-20:00, 6 months) matches the queried catalog.",
+            "Criterion 3 passed: The assistant made clear that enrollment and place confirmation are handled by the school office, without presenting the recommendation as completed enrollment or a guaranteed place.",
+            "The simulated user ended the conversation."
+          ],
+          "summary": "Evaluation succeeded"
+        },
+        "result": "success"
+      },
+      "credits_used": 247,
+      "ran_against_draft": false,
+      "status": "passed",
+      "test_id": "demo_ff7eeec1a28699103356",
+      "test_invocation_id": "demo_192f953b2f324b3ad926",
+      "test_name": "Ponte Idiomas | 05 | Recommend beginner English",
+      "test_run_id": "demo_11f2d9421d1de5b1311c",
+      "version_id": "demo_511658740c7b4a1c79f7"
+    }
+  ],
+  "source_language": "pt-BR",
+  "content_language": "en",
+  "translation_note": "English translation of the original Brazilian Portuguese evaluation. Metrics, outcomes, identifiers, and source test signatures are preserved; no English evaluation was rerun."
+}

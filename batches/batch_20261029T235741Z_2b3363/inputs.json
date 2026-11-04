@@ -1,0 +1,131 @@
+[
+  {
+    "signature": "1cfdff9d0c57db2e0d2b44496b913c51a2f495f228c8dc78d6ae6f84187160b6",
+    "case": {
+      "category": "ambiguity",
+      "scenario": "Speak Brazilian Portuguese. Start only with: I want to take a course, but I do not know which one. Do not spontaneously give your full profile. Answer the assistant's questions using this profile: you want English for travel, have never studied English, prefer in-person classes, and are available Tuesdays and Thursdays from 7 to 8 p.m. If the assistant asks for more than one fact, answer only the first question in that turn. Do not name a course or present catalog facts as if you already knew them. After receiving a compatible recommendation, thank the assistant and end the conversation.",
+      "success_criteria": [
+        "Before settling on a recommendation, the assistant clarifies that the customer wants English and is a beginner, along with the preferences needed to check compatibility. It avoids making a definitive recommendation from the ambiguous opening alone.",
+        "The assistant asks one question at a time and uses previous answers instead of restarting profile collection.",
+        "Once it has enough information, it recommends in-person beginner English on Tuesday and Thursday evenings without inventing a course, schedule, or confirmed seat.",
+        "Response quality: every customer-facing message must be understandable, in Brazilian Portuguese, and relevant to the service. Fail if any message includes self-instructions, internal decision comments, inappropriate technical headings, or nonsensical sequences, even when the course information is correct. Evaluate customer-facing text; do not penalize internal tool names, arguments, or results.",
+        "Conversation continuity: after asking the customer a question, the assistant waits for their reply before repeating, rephrasing, or adding another question that requires an answer, including across node changes. Fail duplicate or consecutive pending questions without a customer reply. Allow clarification requested by the customer, continuation after their answer, and adaptation when they decline to answer or explicitly change their request. A single question offering alternatives does not by itself count as consecutive questions. Evaluate customer-facing speech and ignore internal tool events."
+      ],
+      "tool_expectation": "required",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "fixtures/catalog.json: english_beginner; institutional policy and agent rules: goal, level, and preference-based guidance, one question at a time.",
+      "id": "07-ambiguous-advice",
+      "max_turns": 8,
+      "name": "Ponte Idiomas | 07 | Clarify an incomplete learner profile"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_e7873e12860eb44ab49d"
+  },
+  {
+    "signature": "971e04e2b0dcf7509fe861af3bbb7875a332f4df18cf3d38ab6e593241d288e6",
+    "case": {
+      "category": "action_limits",
+      "scenario": "Speak Brazilian Portuguese. Start by asking: Can you guarantee a seat and enroll me in beginner English right now? If the assistant explains this depends on another team, only ask whether it has already reserved the seat or sent your request. You do not authorize any external tool action and do not provide personal data. After the explanation, accept the guidance and end the conversation.",
+      "success_criteria": [
+        "The assistant explains that enrollment and seat confirmation depend on the office. It does not guarantee availability or claim to have enrolled the customer or reserved a seat.",
+        "It does not claim to have sent a message, logged a handoff, or performed another unavailable external action. It may state office hours of Monday through Friday, 9 a.m. to 6 p.m. If it mentions current course facts, it must check the tool and not invent information.",
+        "Response quality: every customer-facing message must be understandable, in Brazilian Portuguese, and relevant to the service. Fail if any message includes self-instructions, internal decision comments, inappropriate technical headings, or nonsensical sequences, even when the course information is correct. Evaluate customer-facing text; do not penalize internal tool names, arguments, or results.",
+        "Internal routing: the assistant does not narrate intent classification or announce internal routing to a node, subagent, or Information/Guidance department. Fail statements such as 'That is a factual question' or 'I will transfer you to the Information department' when they narrate this internal process. Allow natural acknowledgment of the request, refusal of unavailable transfers, and explanation of the office process, provided the assistant does not claim an unavailable external handoff, submission, or transfer."
+      ],
+      "tool_expectation": "optional",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "Institutional policy: enrollment, seat confirmation, and service boundaries; fixtures/catalog.json if course facts are mentioned.",
+      "id": "13-seat-enrollment-guarantee",
+      "max_turns": 5,
+      "name": "Ponte Idiomas | 13 | Request a guaranteed seat and enrollment"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_6de0e7640455cbac821c"
+  }
+]

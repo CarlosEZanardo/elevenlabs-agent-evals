@@ -1,0 +1,19 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 11-office-enrollment
+
+Run: demo_a5580905822968dfefae
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: Hi, I'd like to know the school office's opening hours and who handles enrollment.
+  [call: notify_condition_1_met]
+  [response: notify_condition_1_met]
+agent: Hello! The school office is open Monday through Friday, from 09:00 to 18:00, and handles enrollments. Can I help you with anything else?
+user: I see, Monday through Friday from 09:00 to 18:00, and the school office itself handles enrollment. That's great, thank you!
+agent: I'm happy to help! If you need anything else, just ask. Have a great day!
+
+  [call: notify_condition_2_met]
+  [response: notify_condition_2_met]
+agent: Thank you for contacting Ponte Idiomas. See you next time!
+  [call: progress_workflow]
+  [response: progress_workflow]

@@ -1,0 +1,308 @@
+{
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "sanitized": true,
+  "test_id": "demo_d6b143c0e3e9baa35ebb",
+  "test_runs": [
+    {
+      "agent_id": "demo_33ff793ae010233765c2",
+      "agent_responses": [
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "I want beginner English, but I can only attend Mondays and Wednesdays. Is that available?",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [
+            {
+              "request_id": "demo_2b1c1a7cc6617da9afb1",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "notify_condition_1_met",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_2b1c1a7cc6617da9afb1",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.007110648963134736,
+              "tool_name": "notify_condition_1_met",
+              "type": "workflow"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [
+            {
+              "request_id": "demo_d7454d2c7e71fbf6d471",
+              "tool_has_been_called": true,
+              "tool_id": "demo_5d8aeb45360fcc28ee74",
+              "tool_name": "list_courses",
+              "type": "webhook"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_d7454d2c7e71fbf6d471",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.0,
+              "tool_name": "list_courses",
+              "type": "webhook"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "I checked our catalog, and the beginner English course currently meets on Tuesdays and Thursdays, from 19:00 to 20:00, so we do not have a beginner English class on Mondays and Wednesdays. Would you like me to check another language or format for those days?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Oh, no... I'm really only free on Mondays and Wednesdays. Is there no way to open a class on those days?",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "I understand, but opening new classes is not something I can confirm here. That depends on the school office, which is open Monday through Friday, from 09:00 to 18:00. Can I help you with anything else?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Okay, I understand. That was all, thank you.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [
+            {
+              "request_id": "demo_321b7c20e3df2c4050c8",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_321b7c20e3df2c4050c8",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.006078349018935114,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Thank you for contacting Ponte Idiomas. See you next time!",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [
+            {
+              "request_id": "demo_ce9c5c49a8bc17632884",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "progress_workflow",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 8,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_ce9c5c49a8bc17632884",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.5055485700140707,
+              "tool_name": "progress_workflow",
+              "type": "workflow"
+            }
+          ]
+        }
+      ],
+      "branch_id": "demo_e2597d5031bd05955e70",
+      "charging": {
+        "call_charge": 80,
+        "llm_charge": 206,
+        "platform_charge": 80,
+        "subagent_charge": 0,
+        "voice_surcharge_charge": null
+      },
+      "condition_result": {
+        "rationale": {
+          "messages": [
+            "Criterion 1 passed: The agent correctly stated that there is no beginner English class on Mondays and Wednesdays, and mentioned that the available class is on Tuesdays and Thursdays from 19:00 to 20:00. Both requirements were met.",
+            "Criterion 2 passed: The agent did not confuse Spanish with English. When the user asked about opening a new class, the agent did not invent alternative days or guarantee it would open, and only suggested contacting the school office.",
+            "The agent ended the conversation."
+          ],
+          "summary": "Evaluation succeeded"
+        },
+        "result": "success"
+      },
+      "credits_used": 286,
+      "ran_against_draft": false,
+      "status": "passed",
+      "test_id": "demo_d6b143c0e3e9baa35ebb",
+      "test_invocation_id": "demo_192f953b2f324b3ad926",
+      "test_name": "Ponte Idiomas | 09 | English on unavailable class days",
+      "test_run_id": "demo_071094f14cb594f276ce",
+      "version_id": "demo_511658740c7b4a1c79f7"
+    }
+  ],
+  "source_language": "pt-BR",
+  "content_language": "en",
+  "translation_note": "English translation of the original Brazilian Portuguese evaluation. Metrics, outcomes, identifiers, and source test signatures are preserved; no English evaluation was rerun."
+}

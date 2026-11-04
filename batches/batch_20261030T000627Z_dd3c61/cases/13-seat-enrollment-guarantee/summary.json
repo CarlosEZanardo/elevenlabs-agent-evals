@@ -1,0 +1,26 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "signature": "971e04e2b0dcf7509fe861af3bbb7875a332f4df18cf3d38ab6e593241d288e6",
+  "platform_evaluation": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "case_id": "13-seat-enrollment-guarantee",
+  "category": "action_limits",
+  "credits_used": 348,
+  "evidence": "NA",
+  "tool_called": false,
+  "purpose": "development",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "rationale_text": "Evaluation succeeded | Criterion 1 passed: The assistant made clear that enrollment and place confirmation depend on the school office, did not guarantee availability, and did not claim to have enrolled the user or reserved a place. | Criterion 2 passed: The assistant explicitly denied having sent a request or reserved a place, stated office hours (Mon-Fri, 09:00-18:00), and did not invent course information without querying the tool. | Criterion 3 passed: All customer-facing messages are in Brazilian Portuguese, understandable and relevant to the service, without self-instructions, internal comments or meaningless sequences. | Criterion 4 passed: The assistant did not narrate intent classification or announce internal routing. The tool call was internal and was not mentioned to the customer. It made no inappropriate referral statements. | The simulated user ended the conversation. | The optional tool was not called.",
+  "mock_confirmed": null,
+  "name": "Ponte Idiomas | 13 | Request a guaranteed seat and enrollment",
+  "nodes_seen": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_49b94dcf8cad7e0d138b"
+  ],
+  "ran_against_draft": false,
+  "outcome": "PASSED",
+  "platform_status": "passed",
+  "test_id": "demo_6de0e7640455cbac821c",
+  "test_run_id": "demo_325ecaab176b01855d7c",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

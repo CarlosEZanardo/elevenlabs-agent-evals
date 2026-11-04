@@ -1,0 +1,27 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "signature": "1f5d34af5baaa910ef426e2fc11d8133c029433b5a4110469c4176711a721683",
+  "platform_evaluation": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "case_id": "11-office-enrollment",
+  "category": "institutional_info",
+  "credits_used": 240,
+  "evidence": "NA",
+  "tool_called": false,
+  "purpose": "development",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "rationale_text": "Evaluation succeeded | Criterion 1 passed: The agent clearly stated that the school office is open Monday to Friday from nine in the morning to six in the evening and that it handles enrollment. The criterion was fully met. | Criterion 2 passed: The agent did not claim enrollment had been completed, did not invent a telephone number, address or Saturday hours, and did not require a questionnaire. It answered the administrative question directly without undue restrictions. | Criterion 3 passed: All customer-facing messages are in Brazilian Portuguese, understandable and relevant. There are no self-instructions, internal comments or meaningless sequences in responses intended for the user. | The agent ended the conversation. | The optional tool was not called.",
+  "mock_confirmed": null,
+  "name": "Ponte Idiomas | 11 | Office hours and enrollment",
+  "nodes_seen": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_49b94dcf8cad7e0d138b",
+    "demo_527e2d91ef415d6a602f"
+  ],
+  "ran_against_draft": false,
+  "outcome": "PASSED",
+  "platform_status": "passed",
+  "test_id": "demo_0ccdb23baa541ccf60c8",
+  "test_run_id": "demo_a5580905822968dfefae",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

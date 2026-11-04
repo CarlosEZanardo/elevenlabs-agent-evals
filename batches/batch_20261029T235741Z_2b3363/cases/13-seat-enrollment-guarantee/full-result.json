@@ -1,0 +1,191 @@
+{
+  "invocation_id": "demo_c6818f9f28153a7f5176",
+  "sanitized": true,
+  "test_id": "demo_6de0e7640455cbac821c",
+  "test_runs": [
+    {
+      "agent_id": "demo_33ff793ae010233765c2",
+      "agent_responses": [
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Can you guarantee a seat and enroll me in beginner English right now?",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Enrollment is handled by the school office, and you need to confirm the availability of places with them first. I can help you with information about the beginner English course, such as formats and schedules, if you would like.\n",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [
+            {
+              "request_id": "demo_3123ea270c316608da92",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "notify_condition_1_met",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_3123ea270c316608da92",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.006288910284638405,
+              "tool_name": "notify_condition_1_met",
+              "type": "workflow"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "\nThe school office is open Monday through Friday, from 09:00 to 18:00. Would you like me to check the beginner English options in our catalog?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Okay, but have you already reserved my seat or sent my request to the office?",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "No, I do not reserve places or send requests to the school office. Enrollment and confirmation of a place are handled directly with the school office, Monday through Friday, from 09:00 to 18:00. Would you like me to look up the beginner English options for you?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "I see, so I need to call the school office directly. Okay, thanks.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "That's right, just contact the school office during opening hours. If you would like, I can show you the beginner English options before you call. Do you need any more help?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 6,
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "branch_id": "demo_e2597d5031bd05955e70",
+      "charging": {
+        "call_charge": 80,
+        "llm_charge": 195,
+        "platform_charge": 80,
+        "subagent_charge": 0,
+        "voice_surcharge_charge": null
+      },
+      "condition_result": {
+        "rationale": {
+          "messages": [
+            "Criterion 1 passed: The assistant made clear that enrollment and place confirmation depend on the school office, did not guarantee availability, and did not claim to have enrolled the user or reserved a place.",
+            "Criterion 2 passed: The assistant explicitly denied having sent a request or reserved a place, correctly stated office hours, and did not invent course information without querying the tool.",
+            "Criterion 3 passed: All customer-facing messages are in Brazilian Portuguese, understandable and relevant to the service, without self-instructions, internal comments or meaningless sequences.",
+            "Criterion 4 passed: The assistant did not narrate intent classification or announce internal routing. It responded naturally without claiming a nonexistent external referral.",
+            "The simulated user ended the conversation."
+          ],
+          "summary": "Evaluation succeeded"
+        },
+        "result": "success"
+      },
+      "credits_used": 275,
+      "ran_against_draft": false,
+      "status": "passed",
+      "test_id": "demo_6de0e7640455cbac821c",
+      "test_invocation_id": "demo_c6818f9f28153a7f5176",
+      "test_name": "Ponte Idiomas | 13 | Request a guaranteed seat and enrollment",
+      "test_run_id": "demo_592e1f31865a84da19b8",
+      "version_id": "demo_511658740c7b4a1c79f7"
+    }
+  ],
+  "source_language": "pt-BR",
+  "content_language": "en",
+  "translation_note": "English translation of the original Brazilian Portuguese evaluation. Metrics, outcomes, identifiers, and source test signatures are preserved; no English evaluation was rerun."
+}

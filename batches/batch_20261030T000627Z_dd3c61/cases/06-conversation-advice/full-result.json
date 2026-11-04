@@ -1,0 +1,294 @@
+{
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "sanitized": true,
+  "test_id": "demo_fce7095082fe5543e4f0",
+  "test_runs": [
+    {
+      "agent_id": "demo_33ff793ae010233765c2",
+      "agent_responses": [
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "I already have intermediate English and want to practice conversation online. I'm free on Wednesdays after 19:00. What do you recommend?",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [
+            {
+              "request_id": "demo_52ee1841682447660fff",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_52ee1841682447660fff",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.014907668984960765,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "I will check the available options for you.\n",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [
+            {
+              "request_id": "demo_7ea73c96ee3acaa2c744",
+              "tool_has_been_called": true,
+              "tool_id": "demo_5d8aeb45360fcc28ee74",
+              "tool_name": "list_courses",
+              "type": "webhook"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_7ea73c96ee3acaa2c744",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.0,
+              "tool_name": "list_courses",
+              "type": "webhook"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "I found a very suitable option: English Conversation, intermediate level, online, on Wednesdays from 19:00 to 20:30. It matches your level, your preference for online conversation practice, and your free time. The monthly fee is two hundred and eighty reais, and it lasts three months. Would you like to know anything else about this course?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Okay, I understand. I'll think about it a little, thank you. I don't need anything else for now.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [
+            {
+              "request_id": "demo_0005110a6a1c7309f19f",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_0005110a6a1c7309f19f",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.0050386399962008,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Thank you for contacting Ponte Idiomas. See you next time!",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [
+            {
+              "request_id": "demo_65d9f64844b494b8ff1d",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "progress_workflow",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 5,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_65d9f64844b494b8ff1d",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.50751142896479,
+              "tool_name": "progress_workflow",
+              "type": "workflow"
+            }
+          ]
+        }
+      ],
+      "branch_id": "demo_e2597d5031bd05955e70",
+      "charging": {
+        "call_charge": 64,
+        "llm_charge": 209,
+        "platform_charge": 64,
+        "subagent_charge": 0,
+        "voice_surcharge_charge": null
+      },
+      "condition_result": {
+        "rationale": {
+          "messages": [
+            "Criterion 1 passed: The agent recommended the 'English conversation' course, online format, intermediate level, on Wednesdays, explaining that it matches the user's level, preference for online conversation and schedule.",
+            "Criterion 2 passed: The agent correctly stated: Wednesdays from 19:00 to 20:30, duration of 3 months and monthly fee of R$280. It did not invent a new class or guarantee a place.",
+            "The agent ended the conversation."
+          ],
+          "summary": "Evaluation succeeded"
+        },
+        "result": "success"
+      },
+      "credits_used": 273,
+      "ran_against_draft": false,
+      "status": "passed",
+      "test_id": "demo_fce7095082fe5543e4f0",
+      "test_invocation_id": "demo_192f953b2f324b3ad926",
+      "test_name": "Ponte Idiomas | 06 | Recommend English conversation",
+      "test_run_id": "demo_4e1521ada2fabc54c3e2",
+      "version_id": "demo_511658740c7b4a1c79f7"
+    }
+  ],
+  "source_language": "pt-BR",
+  "content_language": "en",
+  "translation_note": "English translation of the original Brazilian Portuguese evaluation. Metrics, outcomes, identifiers, and source test signatures are preserved; no English evaluation was rerun."
+}

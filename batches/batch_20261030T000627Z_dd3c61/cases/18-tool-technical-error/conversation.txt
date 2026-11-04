@@ -1,0 +1,17 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 18-tool-technical-error
+
+Run: demo_376f83a20ab31a920257
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: I would like the class days and times for beginner Spanish.
+  [call: notify_condition_1_met]
+  [response: notify_condition_1_met]
+agent: I will check the current catalog for you.
+
+  [call: list_courses]
+  [response: list_courses]
+agent: Sorry, I could not confirm the catalog data right now. I can try again shortly, or you can confirm the beginner Spanish days and times directly with the school office, which is open Monday through Friday, from 09:00 to 18:00.
+user: Okay, so you cannot confirm it now, understood. Thank you, I will call the office.
+agent: You're welcome! I'm here if you need any more help.

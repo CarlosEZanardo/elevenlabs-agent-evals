@@ -7,14 +7,14 @@ venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
-.estado*.json
-resultados/
-plano-lote.json
-.exportacao-demo-*/
+.state*.json
+results/
+batch-plan.json
+.demo-export-*/
 *.log
 .DS_Store
 Thumbs.db
-# Novas avaliações geram relatórios brutos; só estas amostras são publicadas.
-/lotes/*
-!/lotes/lote_20261030T000627Z_dd3c61/
-!/lotes/lote_20261029T235741Z_2b3363/
+# New evaluations produce raw reports; only these reviewed samples are published.
+/batches/*
+!/batches/batch_20261030T000627Z_dd3c61/
+!/batches/batch_20261029T235741Z_2b3363/

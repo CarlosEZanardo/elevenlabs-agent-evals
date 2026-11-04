@@ -1,0 +1,27 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "signature": "e0f23aeb8f8c22937e742f7ff98a1197c93e1d76bc17e6e485f141ce2701a7f3",
+  "platform_evaluation": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "case_id": "10-unavailable-language",
+  "category": "unavailable_offering",
+  "credits_used": 290,
+  "evidence": "CONFIRMED",
+  "tool_called": true,
+  "purpose": "development",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "rationale_text": "Evaluation succeeded | Criterion 1 passed: The agent called 'list_courses', checked the 3 returned courses (beginner English, English conversation and beginner Spanish), and correctly stated that French is not in the catalog, without inventing a class, price, level or schedule. | Criterion 2 passed: The agent only said 'there is no French in the active catalog' and directed the user to check with the school office, without claiming that it never existed or never will. It did not promise a new class. | The agent ended the conversation. | Tool call and mock response confirmed.",
+  "mock_confirmed": true,
+  "name": "Ponte Idiomas | 10 | Request French outside the catalog",
+  "nodes_seen": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_49b94dcf8cad7e0d138b",
+    "demo_527e2d91ef415d6a602f"
+  ],
+  "ran_against_draft": false,
+  "outcome": "PASSED",
+  "platform_status": "passed",
+  "test_id": "demo_29ecb464b27c9924e0de",
+  "test_run_id": "demo_c0272842ba1f6adfd86f",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

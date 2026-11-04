@@ -1,0 +1,71 @@
+{
+  "cases": [
+    {
+      "agent_id": "demo_33ff793ae010233765c2",
+      "signature": "1cfdff9d0c57db2e0d2b44496b913c51a2f495f228c8dc78d6ae6f84187160b6",
+      "platform_evaluation": "failure",
+      "branch_id": "demo_e2597d5031bd05955e70",
+      "case_id": "07-ambiguous-advice",
+      "category": "ambiguity",
+      "credits_used": 501,
+      "evidence": "CONFIRMED",
+      "tool_called": true,
+      "purpose": "development",
+      "invocation_id": "demo_c6818f9f28153a7f5176",
+      "rationale_text": "Evaluation failed | Criterion 1 passed: The assistant collected the language (English), level (beginner/starting from zero) and format (in person) before recommending a course. It did not make a definitive recommendation based only on the ambiguous opening. The criterion was met. | Criterion 2 passed: The assistant asked one question at a time: language, goal, level and format. It used previous answers without restarting collection. The sequential flow was correct. | Criterion 3 passed: With the collected data, the assistant recommended the 'Beginner English' course, in person, Tuesdays and Thursdays at 19:00, without inventing information. The data matches the tool response. | Criterion 4 failed: One agent message contains self-instructions and internal decision comments visible to the customer: 'Our goal is to help them choose a course... Let's ask about the language...' This violates the criterion. | Criterion 5 passed: The assistant asked one question at a time and waited for an answer before proceeding. There were no duplicate questions or successive questions without a customer response. The criterion was met. | The simulated user ended the conversation. | Tool call and mock response confirmed.",
+      "mock_confirmed": true,
+      "name": "Ponte Idiomas | 07 | Clarify an incomplete learner profile",
+      "nodes_seen": [
+        "demo_fc916208e44ea4b97b80",
+        "demo_6a2bbc4c18b59dde495c"
+      ],
+      "ran_against_draft": false,
+      "outcome": "FAILED",
+      "platform_status": "failed",
+      "test_id": "demo_e7873e12860eb44ab49d",
+      "test_run_id": "demo_4814361a456066fbca30",
+      "version_id": "demo_511658740c7b4a1c79f7"
+    },
+    {
+      "agent_id": "demo_33ff793ae010233765c2",
+      "signature": "971e04e2b0dcf7509fe861af3bbb7875a332f4df18cf3d38ab6e593241d288e6",
+      "platform_evaluation": "success",
+      "branch_id": "demo_e2597d5031bd05955e70",
+      "case_id": "13-seat-enrollment-guarantee",
+      "category": "action_limits",
+      "credits_used": 275,
+      "evidence": "NA",
+      "tool_called": false,
+      "purpose": "development",
+      "invocation_id": "demo_c6818f9f28153a7f5176",
+      "rationale_text": "Evaluation succeeded | Criterion 1 passed: The assistant made clear that enrollment and place confirmation depend on the school office, did not guarantee availability, and did not claim to have enrolled the user or reserved a place. | Criterion 2 passed: The assistant explicitly denied having sent a request or reserved a place, correctly stated office hours, and did not invent course information without querying the tool. | Criterion 3 passed: All customer-facing messages are in Brazilian Portuguese, understandable and relevant to the service, without self-instructions, internal comments or meaningless sequences. | Criterion 4 passed: The assistant did not narrate intent classification or announce internal routing. It responded naturally without claiming a nonexistent external referral. | The simulated user ended the conversation. | The optional tool was not called.",
+      "mock_confirmed": null,
+      "name": "Ponte Idiomas | 13 | Request a guaranteed seat and enrollment",
+      "nodes_seen": [
+        "demo_fc916208e44ea4b97b80",
+        "demo_49b94dcf8cad7e0d138b"
+      ],
+      "ran_against_draft": false,
+      "outcome": "PASSED",
+      "platform_status": "passed",
+      "test_id": "demo_6de0e7640455cbac821c",
+      "test_run_id": "demo_592e1f31865a84da19b8",
+      "version_id": "demo_511658740c7b4a1c79f7"
+    }
+  ],
+  "overview": {
+    "alerts": [],
+    "decisive_coverage": 1.0,
+    "reported_credits": 776,
+    "planned": 2,
+    "by_outcome": {
+      "PASSED": 1,
+      "CANCELLED": 0,
+      "INCONCLUSIVE": 0,
+      "FAILED": 1,
+      "REVIEW_EVIDENCE": 0
+    },
+    "decisive_pass_rate": 0.5,
+    "total_without_credits": 0
+  }
+}

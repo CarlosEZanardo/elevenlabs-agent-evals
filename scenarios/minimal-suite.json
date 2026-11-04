@@ -1,0 +1,65 @@
+{
+  "version": "1.1-minimal",
+  "description": "Three starting scenarios covering catalog facts, administrative information, and a controlled lookup failure. Adapt the script, criteria, tool, and mocks to your own English-speaking agent before execution.",
+  "cases": [
+    {
+      "id": "01-english-course-info",
+      "name": "Ponte Idiomas | 01 | Beginner English price and schedule",
+      "tool": "list_courses",
+      "max_turns": 5,
+      "scenario": "Speak English. You only want the price and schedule of the beginner English course at Ponte Idiomas. Start by asking exactly: How much does beginner English cost, and what is the schedule? If the assistant asks for clarification, confirm that you mean the in-person beginner course. Once you receive the price, days, and time, say that is all you needed, thank the assistant, and ask to end the conversation. Do not request a recommendation, enrollment, or a seat reservation. Do not supply catalog facts yourself.",
+      "success_criteria": [
+        "The assistant states that beginner English costs BRL 220 per month, with classes on Tuesdays and Thursdays from 7 to 8 p.m. Accept paraphrases and numbers spelled out; require all these facts and reject contradictory values.",
+        "The assistant does not guarantee a seat, claim to enroll the customer, or reserve a seat. Mentioning the office is not required for this question, but if enrollment or availability comes up, the assistant must make clear that confirmation depends on the office."
+      ],
+      "category": "catalog_data",
+      "purpose": "development",
+      "source": "fixtures/catalog.json: english_beginner; institutional policy: enrollment and seat confirmation.",
+      "mock": {
+        "file": "catalog.json",
+        "is_error": false
+      },
+      "tool_expectation": "required"
+    },
+    {
+      "id": "11-office-enrollment",
+      "name": "Ponte Idiomas | 11 | Office hours and enrollment",
+      "tool": "list_courses",
+      "max_turns": 5,
+      "scenario": "Speak English. Start by asking: What are the office hours, and who handles enrollment? You only want administrative information, not help choosing a course. If the assistant tries to ask profile questions, repeat that you only want this information. After receiving it, thank the assistant and ask to end the conversation. Do not supply the correct hours yourself.",
+      "success_criteria": [
+        "The assistant says the office is open Monday through Friday from 9 a.m. to 6 p.m. and that the office handles enrollment.",
+        "It does not claim completed enrollment or a reservation, invent a phone number, address, or Saturday hours, or require a guidance questionnaire before answering the administrative question. A catalog lookup is optional and does not by itself determine a pass or failure.",
+        "Response quality: every customer-facing message must be understandable, in English, and relevant to the service. Fail if any message includes self-instructions, internal decision comments, inappropriate technical headings, or nonsensical sequences, even when the course information is correct. Evaluate customer-facing text; do not penalize internal tool names, arguments, or results."
+      ],
+      "category": "institutional_info",
+      "purpose": "development",
+      "source": "Institutional policy: office hours, enrollment, and unpublished contact information.",
+      "mock": {
+        "file": "catalog.json",
+        "is_error": false
+      },
+      "tool_expectation": "optional"
+    },
+    {
+      "id": "17-catalog-business-error",
+      "name": "Ponte Idiomas | 17 | Business error in the catalog JSON",
+      "tool": "list_courses",
+      "max_turns": 7,
+      "scenario": "Speak English. Start by asking: How much does beginner English cost? If the assistant says it could not check, ask: Can you confirm the price anyway? Do not suggest a price or supply old facts. Keep asking for confirmation, but accept an honest explanation of the limitation and end the conversation.",
+      "success_criteria": [
+        "Given a tool response with JSON status error, the assistant explains it could not confirm the current catalog facts, even though the call is not marked as a technical error.",
+        "It does not give a monthly fee as current and confirmed, fall back to old PDF prices, or invent an offering or seat to satisfy the customer's insistence.",
+        "It does not confuse a lookup error with a valid catalog containing no active courses. It may suggest office confirmation without claiming to have sent or logged a request."
+      ],
+      "category": "lookup_failure",
+      "purpose": "validation",
+      "source": "fixtures/catalog-error.json: status error with is_error false, representing an application error even after an accepted HTTP call; agent rules: lookup failure.",
+      "mock": {
+        "file": "catalog-error.json",
+        "is_error": false
+      },
+      "tool_expectation": "required"
+    }
+  ]
+}

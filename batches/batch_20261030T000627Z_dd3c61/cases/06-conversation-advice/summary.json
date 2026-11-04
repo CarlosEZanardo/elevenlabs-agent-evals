@@ -1,0 +1,27 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "signature": "149ba67ed68400732aa60a9e1c4853954827ceb6c778bab493095d1272d38325",
+  "platform_evaluation": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "case_id": "06-conversation-advice",
+  "category": "compatible_advice",
+  "credits_used": 273,
+  "evidence": "CONFIRMED",
+  "tool_called": true,
+  "purpose": "development",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "rationale_text": "Evaluation succeeded | Criterion 1 passed: The agent recommended the 'English conversation' course, online format, intermediate level, on Wednesdays, explaining that it matches the user's level, preference for online conversation and schedule. | Criterion 2 passed: The agent correctly stated: Wednesdays from 19:00 to 20:30, duration of 3 months and monthly fee of R$280. It did not invent a new class or guarantee a place. | The agent ended the conversation. | Tool call and mock response confirmed.",
+  "mock_confirmed": true,
+  "name": "Ponte Idiomas | 06 | Recommend English conversation",
+  "nodes_seen": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_6a2bbc4c18b59dde495c",
+    "demo_527e2d91ef415d6a602f"
+  ],
+  "ran_against_draft": false,
+  "outcome": "PASSED",
+  "platform_status": "passed",
+  "test_id": "demo_fce7095082fe5543e4f0",
+  "test_run_id": "demo_4e1521ada2fabc54c3e2",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

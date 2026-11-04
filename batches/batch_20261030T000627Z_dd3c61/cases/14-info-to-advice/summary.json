@@ -1,0 +1,28 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "signature": "acd5db907b955fe05064ce2c5c54fd9d6f47f7d0886898c9c9fa0110a76ff637",
+  "platform_evaluation": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "case_id": "14-info-to-advice",
+  "category": "intent_change",
+  "credits_used": 3384,
+  "evidence": "CONFIRMED",
+  "tool_called": true,
+  "purpose": "development",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "rationale_text": "Evaluation succeeded | Criterion 1 passed: The agent answered R$ 220 per month to the initial question about the cost of beginner English. After the user's change of intent (wanting to learn English from scratch, in person, on Tuesdays and Thursdays), the agent began guiding the selection of a compatible course. Both requirements were met. | Criterion 2 passed: The agent recommended in-person beginner English, consistent with the level (never studied before) and stated days (Tuesdays and Thursdays). It did not repeat questions already answered. The data (in person, Tuesdays and Thursdays, 19:00 to 20:00) matches the queried catalog. | Criterion 3 passed: The agent did not promise a place, enrollment or booking. When asked about available classes, it stated that it could not confirm availability and directed the user to contact the school office. The response was appropriate and contained no improper promises. | The agent ended the conversation. | Tool call and mock response confirmed.",
+  "mock_confirmed": true,
+  "name": "Ponte Idiomas | 14 | From a factual question to course advice",
+  "nodes_seen": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_49b94dcf8cad7e0d138b",
+    "demo_6a2bbc4c18b59dde495c",
+    "demo_527e2d91ef415d6a602f"
+  ],
+  "ran_against_draft": false,
+  "outcome": "PASSED",
+  "platform_status": "passed",
+  "test_id": "demo_9eb73a44cbb0c8208763",
+  "test_run_id": "demo_208f858a4454a55b8054",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

@@ -1,0 +1,27 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "signature": "f049262757abd0222fa582c6603f596cd76f3b2a9ab7d5261d3221aee24b02c3",
+  "platform_evaluation": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "case_id": "16-empty-catalog",
+  "category": "empty_catalog",
+  "credits_used": 275,
+  "evidence": "CONFIRMED",
+  "tool_called": true,
+  "purpose": "development",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "rationale_text": "Evaluation succeeded | Criterion 1 passed: The agent checked the catalog, received status ok with a total of zero, and correctly stated that it found no active courses. It did not list courses from other sources or from memory. | Criterion 2 passed: The agent did not treat the empty catalog as a technical failure or claim that the school had closed. It directed the user to contact the school office without inventing an offering, future class or place. | The agent ended the conversation. | Tool call and mock response confirmed.",
+  "mock_confirmed": true,
+  "name": "Ponte Idiomas | 16 | Catalog with no active courses",
+  "nodes_seen": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_49b94dcf8cad7e0d138b",
+    "demo_527e2d91ef415d6a602f"
+  ],
+  "ran_against_draft": false,
+  "outcome": "PASSED",
+  "platform_status": "passed",
+  "test_id": "demo_7502af09a851624e5081",
+  "test_run_id": "demo_4d6f89f37f0f0a43b65d",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

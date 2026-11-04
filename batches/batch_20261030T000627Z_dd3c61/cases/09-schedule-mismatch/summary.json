@@ -1,0 +1,27 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "signature": "3ca97907a3a717efd9a4edae3d61b621632ebc24892fe22dd5f318ffd7c7a1bb",
+  "platform_evaluation": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "case_id": "09-schedule-mismatch",
+  "category": "no_compatible_option",
+  "credits_used": 286,
+  "evidence": "CONFIRMED",
+  "tool_called": true,
+  "purpose": "development",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "rationale_text": "Evaluation succeeded | Criterion 1 passed: The agent correctly stated that there is no beginner English class on Mondays and Wednesdays, and mentioned that the available class is on Tuesdays and Thursdays from 19:00 to 20:00. Both requirements were met. | Criterion 2 passed: The agent did not confuse Spanish with English. When the user asked about opening a new class, the agent did not invent alternative days or guarantee it would open, and only suggested contacting the school office. | The agent ended the conversation. | Tool call and mock response confirmed.",
+  "mock_confirmed": true,
+  "name": "Ponte Idiomas | 09 | English on unavailable class days",
+  "nodes_seen": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_49b94dcf8cad7e0d138b",
+    "demo_527e2d91ef415d6a602f"
+  ],
+  "ran_against_draft": false,
+  "outcome": "PASSED",
+  "platform_status": "passed",
+  "test_id": "demo_d6b143c0e3e9baa35ebb",
+  "test_run_id": "demo_071094f14cb594f276ce",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

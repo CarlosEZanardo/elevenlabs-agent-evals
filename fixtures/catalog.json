@@ -1,0 +1,43 @@
+{
+  "status": "ok",
+  "queried_at": "2026-10-20T12:00:00Z",
+  "total": 3,
+  "courses": [
+    {
+      "course_id": "english_beginner",
+      "name": "Beginner English",
+      "language": "English",
+      "level": "Beginner",
+      "format": "In person",
+      "days": "Tuesdays and Thursdays",
+      "schedule": "7-8 p.m.",
+      "monthly_fee_brl": 220,
+      "duration_months": 6,
+      "active": true
+    },
+    {
+      "course_id": "english_conversation",
+      "name": "English conversation",
+      "language": "English",
+      "level": "Intermediate",
+      "format": "Online",
+      "days": "Wednesdays",
+      "schedule": "7-8:30 p.m.",
+      "monthly_fee_brl": 280,
+      "duration_months": 3,
+      "active": true
+    },
+    {
+      "course_id": "spanish_beginner",
+      "name": "Beginner Spanish",
+      "language": "Spanish",
+      "level": "Beginner",
+      "format": "Online",
+      "days": "Mondays and Wednesdays",
+      "schedule": "6-7 p.m.",
+      "monthly_fee_brl": 240,
+      "duration_months": 6,
+      "active": true
+    }
+  ]
+}

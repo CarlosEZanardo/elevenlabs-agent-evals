@@ -1,48 +1,50 @@
 # ElevenLabs Agent Evals
 
-Um workflow de avaliação por texto para agentes da ElevenLabs: cenários, respostas controladas de ferramentas, verificações em Python e um dashboard em Streamlit.
+A text-based evaluation workflow for ElevenLabs agents: scenarios, controlled tool responses, Python evidence checks, and a Streamlit dashboard.
 
-O exemplo é a **Ponte Idiomas**, um agente que responde dúvidas sobre cursos e orienta a escolha do aluno. O projeto permite estudar o processo de avaliação e adaptá-lo ao próprio agente.
+The example is **Ponte Idiomas**, a language-school assistant that answers course questions and helps prospective students choose a course. Use the project to explore evaluation results and adapt the workflow to your own agent.
 
-| Quero… | Por onde começar |
+| I want to… | Start here |
 |---|---|
-| Ver o resultado sem instalar nada | [Abrir a demonstração online](https://ponte-idiomas-evals.streamlit.app/) |
-| Explorar a amostra deste repositório | [Abrir o dashboard localmente](#abrir-o-dashboard-localmente) |
-| Avaliar meu próprio agente | [Guia de adaptação](docs/COMO-ADAPTAR.md) |
-| Entender o método e suas limitações | [Metodologia](docs/METODOLOGIA.md) |
-| Aprender a navegar pelo projeto | [Guia do GitHub](docs/COMO-USAR-GITHUB.md) |
+| Explore without installing anything | [Open the online demo](https://ponte-idiomas-evals.streamlit.app/) |
+| Explore the sample in this repository | [Run the dashboard locally](#run-the-dashboard-locally) |
+| Evaluate my own agent | [Adaptation guide](docs/ADAPTATION.md) |
+| Understand the method and its limits | [Methodology](docs/METHODOLOGY.md) |
+| Find my way around GitHub | [Repository walkthrough](docs/GITHUB-GUIDE.md) |
 
-## O que está incluído
+## What is included
 
-- Uma suíte com **20 cenários** e uma seleção inicial de três: perguntas objetivas, recomendações, limites, mudanças de intenção e tratamento de falhas.
-- Catálogos de teste e retornos de erro para a ferramenta `consultar_cursos`.
-- Execução pelo SDK da ElevenLabs, com prévia local por padrão e envio explícito com `--executar`.
-- Relatórios JSON e CSV, transcrições e evidências da ferramenta.
-- Dashboard para comparar rodadas e investigar os resultados.
-- Testes do próprio programa, executados com HTTP simulado.
-- **Dois lotes históricos sanitizados**, com 22 execuções de cenários e 9.451 créditos informados.
+- **20 scenarios** covering course facts, recommendations, boundaries, changes of intent, and tool failures, plus a three-case starter suite.
+- Catalog fixtures and error responses for the `list_courses` tool.
+- Execution through the ElevenLabs SDK, with a local preview by default and an explicit `--execute` option.
+- JSON and CSV reports, conversations, and tool evidence.
+- A dashboard for comparing batches and investigating individual cases.
+- Program tests using simulated HTTP responses.
+- **Two sanitized historical batches: 22 case runs and 9,451 reported credits.**
 
-O dashboard online apresenta a demonstração completa do estudo, com seis lotes e 51 execuções. Este repositório contém um recorte de dois lotes para facilitar a exploração e a reutilização. Abrir qualquer um dos painéis **não inicia avaliações nem consome créditos da ElevenLabs**.
+The online demo shows the full study: six batches and 51 case runs. This repository contains a two-batch sample. Opening either dashboard **does not start evaluations or consume ElevenLabs credits**.
 
-## Como as partes se conectam
+**Language and provenance:** the historical conversations were originally run in Brazilian Portuguese. This repository presents English translations for readability, preserving the recorded metrics and platform conclusions. These are not new English-language runs. The current English scenarios produce different payload hashes from the original Portuguese definitions; see the [methodology](docs/METHODOLOGY.md#language-and-historical-provenance).
+
+## How the parts fit together
 
 ```mermaid
 flowchart LR
-    A[Cenários e mocks] --> B[Runner Python local]
-    B --> C[Simulações na ElevenLabs]
-    C --> D[Relatórios locais]
-    D --> E[Dashboard Streamlit]
-    D --> F[Exportação sanitizada]
-    F --> G[Amostra compartilhável]
+    A[Scenarios and mocks] --> B[Local Python runner]
+    B --> C[ElevenLabs simulations]
+    C --> D[Local reports]
+    D --> E[Streamlit dashboard]
+    D --> F[Sanitized export]
+    F --> G[Shareable sample]
 ```
 
-O GitHub guarda os arquivos e seu histórico. A ElevenLabs executa as simulações e avalia os critérios de conteúdo; o Python confere evidências e organiza os relatórios. O Streamlit apresenta os resultados.
+GitHub stores the files and their history. ElevenLabs runs the simulations and grades the content criteria; Python checks tool evidence and assembles reports. Streamlit displays the results.
 
-## Abrir o dashboard localmente
+## Run the dashboard locally
 
-Use **Python 3.12**. Baixe ou clone o repositório e abra o terminal na pasta do projeto.
+Use **Python 3.12**. Download or clone the repository, then open a terminal in the project folder.
 
-No Windows:
+Windows:
 
 ```powershell
 py -3.12 -m venv .venv
@@ -50,7 +52,7 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m streamlit run dashboard.py
 ```
 
-No Linux ou macOS:
+Linux or macOS:
 
 ```bash
 python3.12 -m venv .venv
@@ -58,70 +60,71 @@ python3.12 -m venv .venv
 .venv/bin/python -m streamlit run dashboard.py
 ```
 
-Abra o endereço mostrado no terminal. A amostra já está incluída em `lotes/`; não é necessário ter conta, agente ou chave da ElevenLabs para explorá-la.
+Open the address shown in the terminal. The sample is already in `batches/`; exploring it requires no ElevenLabs account, agent, or API key.
 
-Experimente escolher um lote, abrir uma conversa e usar **Comparar lotes**. O botão **Atualizar relatórios** apenas relê os arquivos daquele ambiente.
+Select a batch, read a conversation, and compare batches. Refreshing the dashboard simply reloads the files available in that environment.
 
-## Usar com o próprio agente
+## Use your own agent
 
-O runner é um ponto de partida orientado ao caso de cursos. A configuração completa do agente, seus prompts, a base institucional e a integração original não foram exportadas. Para executar novas avaliações, você precisa de um agente próprio e deve adaptar o contrato da ferramenta e os cenários ao seu contexto.
+The runner is a starting point built around the course-catalog example. The original agent configuration, prompts, institutional knowledge base, and external integration are not included. To run evaluations, configure your own agent and adapt the scenarios and tool contract.
 
-O [guia de adaptação](docs/COMO-ADAPTAR.md) explica a instalação adicional, o `.env` local, os critérios e a execução. A primeira conferência é uma prévia sem chamadas à API:
+The [adaptation guide](docs/ADAPTATION.md) covers the additional dependencies, local `.env`, criteria, and execution. Start with a preview that makes no API requests:
 
 ```powershell
-.\.venv\Scripts\python.exe avaliar_lote.py --preview --suite cenarios/suite-minima.json
+.\.venv\Scripts\python.exe evaluate_batch.py --preview --suite scenarios/minimal-suite.json
 ```
 
-Instale antes `requirements-evals.txt`, conforme o guia. A suíte mínima contém os exemplos 01, 11 e 17; adapte-os ao seu agente. O modo `--executar` solicita novas simulações e pode consumir créditos. Confira conversas, notas e evidências antes de ampliar.
+Install `requirements-evals.txt` first, as described in the guide. The starter suite contains cases 01, 11, and 17. Its current instructions are in English, so use an English-speaking agent or adapt their language. `--execute` requests new simulations and may consume credits. Review conversations, grades, and evidence before increasing coverage.
 
-## O aprendizado central do case
+## What the study revealed
 
-Uma rodada recebeu **20 aprovações automáticas em 20 cenários**. A revisão das evidências mostrou dois problemas relevantes:
+One historical Portuguese-language batch received **20 automatic passes out of 20 cases**. Reviewing the evidence revealed two issues:
 
-- No caso 07, o agente repetiu uma pergunta antes da resposta do usuário, apesar de um critério que deveria impedir esse comportamento.
-- No caso 14, a resposta final foi adequada, mas houve 135 oscilações entre dois nós. O cenário registrou 137 chamadas de transição e 3.384 créditos, cerca de 39% do consumo daquela rodada.
+- In case 07, the agent repeated a question before the user answered, despite a criterion intended to prevent that behavior.
+- In case 14, the final answer was adequate, but the workflow oscillated between two nodes 135 times. The case recorded 137 transition calls and 3,384 credits, roughly 39% of that batch's consumption.
 
-O recorte conserva as avaliações automáticas originais. Essas observações humanas são explicadas na [metodologia](docs/METODOLOGIA.md), sem inventar novas notas nos relatórios. O objetivo é mostrar como investigar conteúdo, fluxo e custo em conjunto.
+The sample preserves the original automated conclusions. These human observations are documented in the [methodology](docs/METHODOLOGY.md); no additional manual grades were invented. The exercise shows why content, workflow, and cost need to be reviewed together.
 
-## Autoria e uso do Codex
+## Authorship and use of Codex
 
-Projeto de estudo conduzido por **[CarlosEZanardo](https://github.com/CarlosEZanardo)**, com assistência do Codex.
+A learning project led by **[CarlosEZanardo](https://github.com/CarlosEZanardo)**, with assistance from Codex.
 
-O autor definiu o objetivo do exercício, configurou o agente na ElevenLabs, executou os experimentos, revisou os atendimentos e decidiu os ajustes ao longo do aprendizado.
+The author defined the exercise, configured the ElevenLabs agent, ran the experiments, reviewed conversations, and decided which changes to make.
 
-O **Codex** apoiou a estruturação dos cenários, a implementação e explicação do código, os testes do programa, a consolidação dos relatórios, o dashboard, a investigação de falhas e a preparação dos materiais para publicação. O desenvolvimento foi acompanhado por perguntas, execução prática e revisão dos resultados.
+**Codex** supported scenario design, code implementation and explanation, program tests, reporting, the dashboard, troubleshooting, sanitization, and documentation. Development included hands-on experimentation, questions, and review of the results.
 
-Os conceitos de avaliação foram estudados no curso [Building with the Claude API, da Claude Academy](https://academy.claude.com/courses/building-with-the-claude-api/a-typical-eval-workflow). Neste projeto, as simulações e o julgamento de conteúdo são realizados pelos recursos de testes da **ElevenLabs**; o Codex foi usado como assistente de desenvolvimento.
+The evaluation concepts were studied through [Building with the Claude API at Claude Academy](https://academy.claude.com/courses/building-with-the-claude-api/a-typical-eval-workflow). This project uses **ElevenLabs** to run simulations and grade their content. Codex served as a development assistant.
 
-Este é um case educacional independente, sem vínculo ou endosso das empresas mencionadas.
+This is an independent educational project with no affiliation with or endorsement from the companies mentioned.
 
-## Organização dos arquivos
+## Files and responsibilities
 
-| Caminho | Responsabilidade |
+| Path | Purpose |
 |---|---|
-| `cenarios/` e `CENARIOS-20.md` | Definições dos testes e versão de leitura |
-| `fixtures/` | Respostas controladas da ferramenta |
-| `avaliar_lote.py` | Cadastro e execução dos cenários selecionados |
-| `relatorios_lote.py` | Consolidação e conferência de evidências |
-| `avaliar.py` | Exemplo inicial de avaliação individual |
-| `dashboard_dados.py` e `dashboard.py` | Leitura dos relatórios e interface |
-| `lotes/` | Dois lotes sanitizados da demonstração |
-| `scripts/exportar_demo.py` | Projeção dos resultados para compartilhamento |
-| `tests/` | Testes do código com dados e HTTP simulados |
-| `.env.example` | Modelo vazio para configurações locais |
+| `scenarios/` and `SCENARIOS-20.md` | Machine-readable definitions and a readable scenario guide |
+| `fixtures/` | Controlled tool responses |
+| `evaluate_batch.py` | Register and run selected scenarios |
+| `batch_reports.py` | Assemble reports and check evidence |
+| `evaluate.py` | Original single-case example |
+| `check_access.py` | Check authentication and access to the agent |
+| `dashboard_data.py` and `dashboard.py` | Load reports and display the dashboard |
+| `batches/` | Two sanitized, translated historical batches |
+| `scripts/export_demo.py` | Prepare a shareable projection of results |
+| `tests/` | Program tests with simulated data and HTTP |
+| `.env.example` | Empty template for local configuration |
 
-Para verificar o programa sem chamadas reais à API, instale os dois arquivos de dependências e execute:
+To check the program without real API requests, install both dependency files and run:
 
 ```powershell
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-## Dados e limites
+## Data and limitations
 
-Os dados publicados foram revisados: identificadores substituídos e metadados pessoais ou operacionais desnecessários removidos. As chaves, estados locais e relatórios brutos ficam fora do Git. Novos lotes locais precisam de exportação e revisão antes de serem compartilhados.
+Published data has been reviewed: identifiers were replaced and unnecessary personal or operational metadata removed. Keys, local state, and raw reports stay out of Git. Export and review new local batches before sharing them.
 
-Os 20 cenários são uma amostra didática conhecida. As avaliações por texto não medem áudio, interrupções, latência de voz ou capacidade de produção. Uma aprovação automática exige interpretação e não garante repetibilidade.
+The scenarios are a small, known educational dataset. Text simulations do not measure audio, interruptions, voice latency, or production capacity. A recorded automatic pass requires interpretation and does not establish repeatability or predict performance in another language.
 
-## Licença
+## License
 
-Código disponibilizado sob a [licença MIT](LICENSE). Ao reutilizar a estrutura, adapte os cenários e confira as condições dos serviços externos utilizados.
+The code is available under the [MIT license](LICENSE). Adapt the examples to your context and check the terms of any external services you use.

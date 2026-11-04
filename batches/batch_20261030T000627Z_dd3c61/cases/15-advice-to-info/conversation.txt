@@ -1,0 +1,17 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 15-advice-to-info
+
+Run: demo_a80b463a2ffaa4a60208
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: Help me choose a course.
+  [call: notify_condition_2_met]
+  [response: notify_condition_2_met]
+agent: Of course, I'd be happy to help! To start, which language would you like to learn?
+user: Actually, you know what, let's leave choosing for another time. Right now I just want to know: who handles enrollment, and how do I confirm whether there's a place?
+  [call: notify_condition_1_met]
+  [response: notify_condition_1_met]
+agent: Enrollment is handled by the school office, which is open Monday through Friday, from 09:00 to 18:00. You must also confirm places directly with them, because presenting a course or schedule does not guarantee a place.
+user: Okay, so the school office confirms the place, Monday through Friday from 09:00 to 18:00. Understood, thank you!
+agent: You're welcome! I'm here if any other questions come up.

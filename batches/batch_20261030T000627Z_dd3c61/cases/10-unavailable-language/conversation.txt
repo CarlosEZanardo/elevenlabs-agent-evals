@@ -1,0 +1,23 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 10-unavailable-language
+
+Run: demo_c0272842ba1f6adfd86f
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: Do you have online French for beginners?
+  [call: notify_condition_1_met]
+  [response: notify_condition_1_met]
+agent: I will check our current catalog.
+
+  [call: list_courses]
+  [response: list_courses]
+agent: We currently have no French in the active catalog. We have in-person beginner English, online English conversation, and online beginner Spanish. Would you like details about any of those options?
+user: Oh, so there's no French... neither online nor in person?
+agent: That's right, there is no French in the active catalog, either online or in person. If you would like, I can check other language options, or you can confirm with the school office, which is open Monday through Friday, from 09:00 to 18:00.
+user: I see, so there really is no French at the moment. Thanks, bye.
+  [call: notify_condition_2_met]
+  [response: notify_condition_2_met]
+agent: Thank you for contacting Ponte Idiomas. See you next time!
+  [call: progress_workflow]
+  [response: progress_workflow]

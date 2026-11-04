@@ -1,0 +1,27 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "signature": "3e7d5da022c3424c64cbe0b894e66e216e85ef99a008cde6fa77ad8f10d1bb58",
+  "platform_evaluation": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "case_id": "02-conversation-duration",
+  "category": "catalog_data",
+  "credits_used": 253,
+  "evidence": "CONFIRMED",
+  "tool_called": true,
+  "purpose": "development",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "rationale_text": "Evaluation succeeded | Criterion 1 passed: The assistant correctly stated: duration of 3 months, classes on Wednesdays from 19:00 to 20:30, online format and intermediate level. All information is correct and contains no contradictions. | Criterion 2 passed: The assistant only provided course information (duration, schedule, format, level and monthly fee). It did not guarantee a place, claim enrollment or booking, or invent another class, duration or schedule. | The agent ended the conversation. | Tool call and mock response confirmed.",
+  "mock_confirmed": true,
+  "name": "Ponte Idiomas | 02 | Conversation course duration and classes",
+  "nodes_seen": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_49b94dcf8cad7e0d138b",
+    "demo_527e2d91ef415d6a602f"
+  ],
+  "ran_against_draft": false,
+  "outcome": "PASSED",
+  "platform_status": "passed",
+  "test_id": "demo_7fa14de3d660271d4cca",
+  "test_run_id": "demo_50b4419f0820f5e67289",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

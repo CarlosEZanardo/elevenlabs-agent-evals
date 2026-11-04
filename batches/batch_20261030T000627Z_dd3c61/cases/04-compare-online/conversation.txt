@@ -1,0 +1,23 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 04-compare-online
+
+Run: demo_3621057bb4ed6984e10f
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: Hi, I'd like to know which online courses you offer and how much each one costs.
+  [call: notify_condition_1_met]
+  [response: notify_condition_1_met]
+agent: I will check our current catalog for you.
+
+  [call: list_courses]
+  [response: list_courses]
+agent: We currently have two active online courses. English Conversation, intermediate level, on Wednesdays from 7 to 8:30 p.m., with a monthly fee of two hundred and eighty reais and a duration of three months. And Beginner Spanish, on Mondays and Wednesdays from 6 to 7 p.m., with a monthly fee of two hundred and forty reais and a duration of six months. Does either interest you?
+user: Okay, I understand. English for two hundred and eighty and Spanish for two hundred and forty. Thank you, that was all!
+agent: I'm here to help! If you need anything else, just ask.
+user: Okay, thanks! Goodbye.
+  [call: notify_condition_2_met]
+  [response: notify_condition_2_met]
+agent: Thank you for contacting Ponte Idiomas. See you next time!
+  [call: progress_workflow]
+  [response: progress_workflow]

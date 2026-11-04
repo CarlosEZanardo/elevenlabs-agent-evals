@@ -1,0 +1,27 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "signature": "92bc92d56225c5cf8cdd50fc28bc743eebf02fbee20623673bf073ca20293204",
+  "platform_evaluation": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "case_id": "15-advice-to-info",
+  "category": "intent_change",
+  "credits_used": 287,
+  "evidence": "NA",
+  "tool_called": false,
+  "purpose": "development",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "rationale_text": "Evaluation succeeded | Criterion 1 passed: After the user abandoned course selection, the agent answered directly that enrollment and place confirmation depend on the school office, without insisting on collecting the language, level or format. | Criterion 2 passed: The agent did not claim a guaranteed place, booking or completed enrollment. It correctly stated that the school office is open Monday to Friday from 09:00 to 18:00, without inventing contact channels. | Criterion 3 passed: The agent correctly adapted to the user's new request, responding relevantly about enrollment and place confirmation without insisting on the previous course-selection flow. | Criterion 4 passed: All customer-facing messages are in Brazilian Portuguese, understandable and relevant. There are no self-instructions, internal comments or meaningless sequences in responses to the customer. | The simulated user ended the conversation. | The optional tool was not called.",
+  "mock_confirmed": null,
+  "name": "Ponte Idiomas | 15 | From course advice to administrative information",
+  "nodes_seen": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_6a2bbc4c18b59dde495c",
+    "demo_49b94dcf8cad7e0d138b"
+  ],
+  "ran_against_draft": false,
+  "outcome": "PASSED",
+  "platform_status": "passed",
+  "test_id": "demo_818150ca87bd1ded9f74",
+  "test_run_id": "demo_a80b463a2ffaa4a60208",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

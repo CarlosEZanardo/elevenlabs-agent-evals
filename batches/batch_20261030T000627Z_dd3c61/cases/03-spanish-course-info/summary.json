@@ -1,0 +1,27 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "signature": "044b3ee01b2f4f897434ee41d31d89aac1e2bbbd603dacdb7ae4d4f00e56dd73",
+  "platform_evaluation": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "case_id": "03-spanish-course-info",
+  "category": "catalog_data",
+  "credits_used": 245,
+  "evidence": "CONFIRMED",
+  "tool_called": true,
+  "purpose": "development",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "rationale_text": "Evaluation succeeded | Criterion 1 passed: The agent correctly stated: monthly fee of R$ 240 (two hundred and forty reais), online format, classes on Mondays and Wednesdays, schedule from 18:00 to 19:00, and duration of six months. | Criterion 2 passed: The agent did not invent in-person format, a different price or different days. It also did not treat schedules as confirmation of a place. It simply relayed system information without distortion. | The agent ended the conversation. | Tool call and mock response confirmed.",
+  "mock_confirmed": true,
+  "name": "Ponte Idiomas | 03 | Spanish price, format, and days",
+  "nodes_seen": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_49b94dcf8cad7e0d138b",
+    "demo_527e2d91ef415d6a602f"
+  ],
+  "ran_against_draft": false,
+  "outcome": "PASSED",
+  "platform_status": "passed",
+  "test_id": "demo_a909e5a405659466a42d",
+  "test_run_id": "demo_3a2b8bd8f60b361a4158",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

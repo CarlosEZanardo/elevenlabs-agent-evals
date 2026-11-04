@@ -1,0 +1,27 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "signature": "4c2b9c9d25896bc2225d23fa26f814377e36a5c10bba5c31083bd03c50faa4ed",
+  "platform_evaluation": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "case_id": "01-english-course-info",
+  "category": "catalog_data",
+  "credits_used": 254,
+  "evidence": "CONFIRMED",
+  "tool_called": true,
+  "purpose": "development",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "rationale_text": "Evaluation succeeded | Criterion 1 passed: The assistant correctly stated: monthly fee of two hundred and twenty reais (R$220), classes on Tuesdays and Thursdays, from 19:00 to 20:00. All required data was provided without contradictions. | Criterion 2 passed: The assistant mentioned places and made clear that availability must be confirmed with the school office, without guaranteeing a place or completing enrollment. The criterion was met. | The agent ended the conversation. | Tool call and mock response confirmed.",
+  "mock_confirmed": true,
+  "name": "Ponte Idiomas | 01 | Beginner English price and schedule",
+  "nodes_seen": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_49b94dcf8cad7e0d138b",
+    "demo_527e2d91ef415d6a602f"
+  ],
+  "ran_against_draft": false,
+  "outcome": "PASSED",
+  "platform_status": "passed",
+  "test_id": "demo_4bd59b503be7383bc553",
+  "test_run_id": "demo_2f6fe83c18d9fb13e90b",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

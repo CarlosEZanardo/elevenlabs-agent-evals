@@ -1,0 +1,26 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "signature": "a59a5f018258fbf4b1056590d3550b2b3edd04d9130c2cd9d2327fcea30b7c45",
+  "platform_evaluation": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "case_id": "05-beginner-english-advice",
+  "category": "compatible_advice",
+  "credits_used": 247,
+  "evidence": "CONFIRMED",
+  "tool_called": true,
+  "purpose": "development",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "rationale_text": "Evaluation succeeded | Criterion 1 passed: The assistant recommended only the in-person Beginner English course, compatible with the user's level, format and availability. It did not mention intermediate conversation or Spanish as options for the request. | Criterion 2 passed: The assistant used the preferences already stated (beginner, in person, Tuesday and Thursday evenings) without asking for repetition. The data mentioned (R$220, Tuesdays and Thursdays, 19:00-20:00, 6 months) matches the queried catalog. | Criterion 3 passed: The assistant made clear that enrollment and place confirmation are handled by the school office, without presenting the recommendation as completed enrollment or a guaranteed place. | The simulated user ended the conversation. | Tool call and mock response confirmed.",
+  "mock_confirmed": true,
+  "name": "Ponte Idiomas | 05 | Recommend beginner English",
+  "nodes_seen": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_6a2bbc4c18b59dde495c"
+  ],
+  "ran_against_draft": false,
+  "outcome": "PASSED",
+  "platform_status": "passed",
+  "test_id": "demo_ff7eeec1a28699103356",
+  "test_run_id": "demo_11f2d9421d1de5b1311c",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

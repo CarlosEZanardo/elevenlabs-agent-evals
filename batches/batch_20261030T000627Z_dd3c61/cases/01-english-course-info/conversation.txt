@@ -1,0 +1,21 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 01-english-course-info
+
+Run: demo_2f6fe83c18d9fb13e90b
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: How much does beginner English cost, and what is the schedule?
+  [call: notify_condition_1_met]
+  [response: notify_condition_1_met]
+agent: I will check our current catalog for you.
+
+  [call: list_courses]
+  [response: list_courses]
+agent: We have Beginner English, in person, on Tuesdays and Thursdays from 7 to 8 p.m., with a monthly fee of two hundred and twenty reais and a duration of six months. Please remember that seat availability needs to be confirmed with the office, which is open Monday through Friday, from 9 a.m. to 6 p.m. Can I help with anything else?
+user: Okay, so it's Tuesdays and Thursdays, from 19:00 to 20:00, for R$220 per month. That was all, thank you!
+  [call: notify_condition_2_met]
+  [response: notify_condition_2_met]
+agent: Thank you for contacting Ponte Idiomas. See you next time!
+  [call: progress_workflow]
+  [response: progress_workflow]

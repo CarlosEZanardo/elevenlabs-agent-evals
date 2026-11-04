@@ -1,0 +1,26 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "signature": "de684abdb036848d7512c1173bff3d660abe50db805223c44f6cbdc63e114611",
+  "platform_evaluation": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "case_id": "18-tool-technical-error",
+  "category": "lookup_failure",
+  "credits_used": 211,
+  "evidence": "CONFIRMED",
+  "tool_called": true,
+  "purpose": "validation",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "rationale_text": "Evaluation succeeded | Criterion 1 passed: The tool returned is_error true with code CATALOG_UNAVAILABLE. The agent responded correctly: 'I could not confirm the catalog data right now', without presenting invented data as though the query had succeeded. | Criterion 2 passed: The agent did not invent schedules, claim there were no courses or guarantee a place. It directed the user to contact the school office, including its opening hours, without promising external actions. The behavior was correct. | The simulated user ended the conversation. | Tool call and mock response confirmed.",
+  "mock_confirmed": true,
+  "name": "Ponte Idiomas | 18 | Technical error in the tool call",
+  "nodes_seen": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_49b94dcf8cad7e0d138b"
+  ],
+  "ran_against_draft": false,
+  "outcome": "PASSED",
+  "platform_status": "passed",
+  "test_id": "demo_a799f8140095c46c4c04",
+  "test_run_id": "demo_376f83a20ab31a920257",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

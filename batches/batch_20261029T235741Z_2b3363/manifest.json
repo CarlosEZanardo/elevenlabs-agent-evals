@@ -1,0 +1,20 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "dataset_signature": "b5ed709097397db5e888af8caf7878906ea9f1cdcc3bfe806f204be493194a9c",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "cases": [
+    "07-ambiguous-advice",
+    "13-seat-enrollment-guarantee"
+  ],
+  "created_at_utc": "2026-10-29T23:57:41.604841+00:00",
+  "phase": "completed",
+  "invocation_id": "demo_c6818f9f28153a7f5176",
+  "publication": "Sanitized demonstration; identifiers replaced and private metadata omitted.",
+  "repeat_count": 1,
+  "label": "triage-v2-override",
+  "sdk_version": "2.74.1",
+  "suite_version": "1.1",
+  "source_language": "pt-BR",
+  "content_language": "en",
+  "translation_note": "English translation of the original Brazilian Portuguese evaluation. Metrics, outcomes, identifiers, and source test signatures are preserved; no English evaluation was rerun."
+}

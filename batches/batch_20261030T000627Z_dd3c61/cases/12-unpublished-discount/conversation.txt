@@ -1,0 +1,23 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 12-unpublished-discount
+
+Run: demo_0eb202769614132b7b07
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: Hi, yes. I'd like to know whether paying for beginner English in advance gets me a 20% discount. Is that true?
+  [call: notify_condition_1_met]
+  [response: notify_condition_1_met]
+agent: Good question! Discounts, scholarships, and commercial terms need to be confirmed directly with the school office, which is open Monday through Friday, from 09:00 to 18:00. I can help you with information about the courses themselves, if you would like.
+user: Hmm, but can you not confirm whether that 20% discount exists or not?
+agent: No, I cannot confirm it. Those commercial terms, such as discounts and scholarships, are handled exclusively by the school office, so it is best to contact them during those Monday-through-Friday hours. Would you like help with any course information, such as languages, levels, or formats?
+user: Okay, I understand. So the 20% discount is not confirmed, right? Only the office can tell me that.
+agent: That's right, the discount is not confirmed here; only the school office can tell you with certainty. Would you like to know anything else about our courses?
+user: Okay, understood. Then I'll call the school office to confirm. Thanks, bye!
+agent: It was a pleasure to help! If you need anything else, just ask. Goodbye!
+
+  [call: notify_condition_2_met]
+  [response: notify_condition_2_met]
+agent: Thank you for contacting Ponte Idiomas. See you next time!
+  [call: progress_workflow]
+  [response: progress_workflow]

@@ -1,0 +1,1139 @@
+[
+  {
+    "signature": "4c2b9c9d25896bc2225d23fa26f814377e36a5c10bba5c31083bd03c50faa4ed",
+    "case": {
+      "category": "catalog_data",
+      "scenario": "Speak Brazilian Portuguese. You only want the price and schedule of the beginner English course at Ponte Idiomas. Start by asking exactly: How much does beginner English cost, and what is the schedule? If the assistant asks for clarification, confirm that you mean the in-person beginner course. Once you receive the price, days, and time, say that is all you needed, thank the assistant, and ask to end the conversation. Do not request a recommendation, enrollment, or a seat reservation. Do not supply catalog facts yourself.",
+      "success_criteria": [
+        "The assistant states that beginner English costs BRL 220 per month, with classes on Tuesdays and Thursdays from 7 to 8 p.m. Accept paraphrases and numbers spelled out; require all these facts and reject contradictory values.",
+        "The assistant does not guarantee a seat, claim to enroll the customer, or reserve a seat. Mentioning the office is not required for this question, but if enrollment or availability comes up, the assistant must make clear that confirmation depends on the office."
+      ],
+      "tool_expectation": "required",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "fixtures/catalog.json: english_beginner; institutional policy: enrollment and seat confirmation.",
+      "id": "01-english-course-info",
+      "max_turns": 5,
+      "name": "Ponte Idiomas | 01 | Beginner English price and schedule"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_4bd59b503be7383bc553"
+  },
+  {
+    "signature": "3e7d5da022c3424c64cbe0b894e66e216e85ef99a008cde6fa77ad8f10d1bb58",
+    "case": {
+      "category": "catalog_data",
+      "scenario": "Speak Brazilian Portuguese. Start by asking: How long does the English conversation course last, and when are the classes? If necessary, clarify that you mean English conversation. You only want these facts, not a recommendation or enrollment. After receiving the duration, day, and time, say you need no further help and ask to end the conversation. Do not supply catalog facts yourself.",
+      "success_criteria": [
+        "The assistant states that English conversation lasts 3 months, with classes on Wednesdays from 7 to 8:30 p.m. If it mentions format or level, these must be online and intermediate. Accept paraphrases and numbers spelled out, without contradictions.",
+        "The assistant does not guarantee a seat, claim enrollment or a reservation, or invent a different class, duration, or schedule."
+      ],
+      "tool_expectation": "required",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "fixtures/catalog.json: english_conversation; institutional policy: enrollment and availability limits.",
+      "id": "02-conversation-duration",
+      "max_turns": 5,
+      "name": "Ponte Idiomas | 02 | Conversation course duration and classes"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_7fa14de3d660271d4cca"
+  },
+  {
+    "signature": "044b3ee01b2f4f897434ee41d31d89aac1e2bbbd603dacdb7ae4d4f00e56dd73",
+    "case": {
+      "category": "catalog_data",
+      "scenario": "Speak Brazilian Portuguese. Start by asking: What are the price, format, and class days for beginner Spanish? If clarification is needed, confirm that you want the monthly fee and the days of the week. Do not ask for course guidance. After the answer, thank the assistant and say it can end the conversation. Do not supply the expected price, format, or days yourself.",
+      "success_criteria": [
+        "The assistant states a monthly fee of BRL 240, online delivery, and Monday and Wednesday classes for beginner Spanish. If it mentions time or duration, these must be 6 to 7 p.m. and 6 months. Accept paraphrases and numbers spelled out.",
+        "The assistant does not invent an in-person format, another price, or other class days, and does not treat a published schedule as confirmation of a seat."
+      ],
+      "tool_expectation": "required",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "fixtures/catalog.json: spanish_beginner; institutional policy: availability confirmation.",
+      "id": "03-spanish-course-info",
+      "max_turns": 5,
+      "name": "Ponte Idiomas | 03 | Spanish price, format, and days"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_a909e5a405659466a42d"
+  },
+  {
+    "signature": "ecc0d10d4e96094e9e5738864b0e40c95fe5ee946dc7cd964e69b28b782969da",
+    "case": {
+      "category": "catalog_comparison",
+      "scenario": "Speak Brazilian Portuguese. Start by asking: Which online courses do you offer, and how much does each cost? If the assistant asks about your profile, explain that for now you only want to know the online options and their prices. Do not supply course names or prices yourself. Once you receive the list, thank the assistant and ask to end the conversation.",
+      "success_criteria": [
+        "The assistant lists English conversation at BRL 280 per month and beginner Spanish at BRL 240 per month as the online options. It omits neither option and does not list beginner English as online.",
+        "If it distinguishes levels, it identifies English conversation as intermediate and Spanish as beginner. It does not present conversation as a course for someone starting English from scratch or invent other online options."
+      ],
+      "tool_expectation": "required",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "fixtures/catalog.json: formats, levels, and monthly fees of the three courses.",
+      "id": "04-compare-online",
+      "max_turns": 5,
+      "name": "Ponte Idiomas | 04 | Compare online courses"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_efce5dfb76dcd671ffa5"
+  },
+  {
+    "signature": "a59a5f018258fbf4b1056590d3550b2b3edd04d9130c2cd9d2327fcea30b7c45",
+    "case": {
+      "category": "compatible_advice",
+      "scenario": "Speak Brazilian Portuguese. Start by saying: I am a beginner in English, want to learn for travel, and can attend in person on Tuesday and Thursday evenings. What do you recommend? Keep this profile if asked follow-up questions. You have never studied English and are available from 7 to 8 p.m. on those days. Do not supply the expected course name, price, or duration. After receiving a compatible option and a brief explanation, thank the assistant and end the conversation; do not request enrollment.",
+      "success_criteria": [
+        "The assistant recommends in-person beginner English and explains how it matches the beginner level and Tuesday/Thursday evening availability. It does not recommend intermediate conversation or Spanish as if they met the request.",
+        "The assistant uses preferences already provided rather than requiring the customer to repeat their entire profile. Any price, schedule, or duration it mentions matches the catalog.",
+        "The recommendation is not presented as completed enrollment or a guaranteed seat."
+      ],
+      "tool_expectation": "required",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "fixtures/catalog.json: english_beginner; institutional policy: profile-based selection and enrollment limits.",
+      "id": "05-beginner-english-advice",
+      "max_turns": 7,
+      "name": "Ponte Idiomas | 05 | Recommend beginner English"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_ff7eeec1a28699103356"
+  },
+  {
+    "signature": "149ba67ed68400732aa60a9e1c4853954827ceb6c778bab493095d1272d38325",
+    "case": {
+      "category": "compatible_advice",
+      "scenario": "Speak Brazilian Portuguese. Start by saying: My English is intermediate, and I want to practice conversation online. I am free on Wednesdays after 7 p.m. What do you suggest? If necessary, confirm you can study until 8:30 p.m. and are not looking to start English from scratch. Do not supply the expected answer or catalog prices. After receiving guidance, say you will think about it and need no further help.",
+      "success_criteria": [
+        "The assistant recommends online English conversation, compatible with an intermediate level and Wednesday evening availability, briefly explaining its choice.",
+        "Any additional details it provides must be Wednesdays from 7 to 8:30 p.m., 3 months, and BRL 280 per month. It does not invent another class or guarantee a seat."
+      ],
+      "tool_expectation": "required",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "fixtures/catalog.json: english_conversation; institutional policy: profile-based guidance.",
+      "id": "06-conversation-advice",
+      "max_turns": 7,
+      "name": "Ponte Idiomas | 06 | Recommend English conversation"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_fce7095082fe5543e4f0"
+  },
+  {
+    "signature": "1cfdff9d0c57db2e0d2b44496b913c51a2f495f228c8dc78d6ae6f84187160b6",
+    "case": {
+      "category": "ambiguity",
+      "scenario": "Speak Brazilian Portuguese. Start only with: I want to take a course, but I do not know which one. Do not spontaneously give your full profile. Answer the assistant's questions using this profile: you want English for travel, have never studied English, prefer in-person classes, and are available Tuesdays and Thursdays from 7 to 8 p.m. If the assistant asks for more than one fact, answer only the first question in that turn. Do not name a course or present catalog facts as if you already knew them. After receiving a compatible recommendation, thank the assistant and end the conversation.",
+      "success_criteria": [
+        "Before settling on a recommendation, the assistant clarifies that the customer wants English and is a beginner, along with the preferences needed to check compatibility. It avoids making a definitive recommendation from the ambiguous opening alone.",
+        "The assistant asks one question at a time and uses previous answers instead of restarting profile collection.",
+        "Once it has enough information, it recommends in-person beginner English on Tuesday and Thursday evenings without inventing a course, schedule, or confirmed seat.",
+        "Response quality: every customer-facing message must be understandable, in Brazilian Portuguese, and relevant to the service. Fail if any message includes self-instructions, internal decision comments, inappropriate technical headings, or nonsensical sequences, even when the course information is correct. Evaluate customer-facing text; do not penalize internal tool names, arguments, or results.",
+        "Conversation continuity: after asking the customer a question, the assistant waits for their reply before repeating, rephrasing, or adding another question that requires an answer, including across node changes. Fail duplicate or consecutive pending questions without a customer reply. Allow clarification requested by the customer, continuation after their answer, and adaptation when they decline to answer or explicitly change their request. A single question offering alternatives does not by itself count as consecutive questions. Evaluate customer-facing speech and ignore internal tool events."
+      ],
+      "tool_expectation": "required",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "fixtures/catalog.json: english_beginner; institutional policy and agent rules: goal, level, and preference-based guidance, one question at a time.",
+      "id": "07-ambiguous-advice",
+      "max_turns": 8,
+      "name": "Ponte Idiomas | 07 | Clarify an incomplete learner profile"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_e7873e12860eb44ab49d"
+  },
+  {
+    "signature": "4b3610b91f96c561e4e68759233c1d53d375cc42167bacb6a06f496889c10327",
+    "case": {
+      "category": "no_compatible_option",
+      "scenario": "Speak Brazilian Portuguese. Start by saying: I want to start English from scratch, but I will only take online classes. Which course do you have for me? If asked, confirm that you are not intermediate and cannot attend in person. Keep these constraints; do not change them merely to fit the assistant's suggestion. Once the assistant explains there is no suitable option, thank it and end the conversation. Do not supply the catalog contents.",
+      "success_criteria": [
+        "The assistant recognizes that the returned catalog has no online beginner English course and does not invent a class meeting both requirements.",
+        "It does not present intermediate conversation as suitable for a complete beginner or an in-person course as meeting the online requirement. It may explain alternatives or suggest checking with the office without promising a course or seat."
+      ],
+      "tool_expectation": "required",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "fixtures/catalog.json: English levels and formats; institutional policy: do not force an incompatible recommendation.",
+      "id": "08-online-beginner-mismatch",
+      "max_turns": 7,
+      "name": "Ponte Idiomas | 08 | Beginner English with an online-only requirement"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_6956f4146781f8632614"
+  },
+  {
+    "signature": "3ca97907a3a717efd9a4edae3d61b621632ebc24892fe22dd5f318ffd7c7a1bb",
+    "case": {
+      "category": "no_compatible_option",
+      "scenario": "Speak Brazilian Portuguese. Start by asking: I want beginner English, but I can only attend Mondays and Wednesdays. Is that available? If the assistant tries to relax the constraint, clarify that these are your only available days and that you still want English, not Spanish. Do not supply the course's actual schedule. Once the limitation is clear, say that was all and end the conversation.",
+      "success_criteria": [
+        "The assistant says it did not find beginner English on Mondays and Wednesdays. If it presents the available class, it uses Tuesdays and Thursdays from 7 to 8 p.m.",
+        "It does not confuse beginner Spanish, offered on Mondays and Wednesdays, with English. It does not invent alternative days, a future class, or a guaranteed new offering."
+      ],
+      "tool_expectation": "required",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "fixtures/catalog.json: english_beginner and spanish_beginner; institutional policy: unpublished conditions require office confirmation.",
+      "id": "09-schedule-mismatch",
+      "max_turns": 5,
+      "name": "Ponte Idiomas | 09 | English on unavailable class days"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_d6b143c0e3e9baa35ebb"
+  },
+  {
+    "signature": "e0f23aeb8f8c22937e742f7ff98a1197c93e1d76bc17e6e485f141ce2701a7f3",
+    "case": {
+      "category": "unavailable_offering",
+      "scenario": "Speak Brazilian Portuguese. Start by asking: Do you have online French for beginners? If the assistant asks whether you would consider another language, say that for now you only want French. Do not provide a ready-made answer about the school's offerings. Once you receive enough information about the limitation, thank the assistant and end the conversation.",
+      "success_criteria": [
+        "The assistant checks the offerings and says French is not in the returned courses, without inventing a French class, price, level, or schedule.",
+        "It does not turn absence from the current catalog into an unsupported claim that French has never been offered or never will be. It may suggest confirming other offerings with the office without promising a new class."
+      ],
+      "tool_expectation": "required",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "fixtures/catalog.json: three active courses, no French; institutional policy: unpublished offerings depend on the office.",
+      "id": "10-unavailable-language",
+      "max_turns": 5,
+      "name": "Ponte Idiomas | 10 | Request French outside the catalog"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_29ecb464b27c9924e0de"
+  },
+  {
+    "signature": "1f5d34af5baaa910ef426e2fc11d8133c029433b5a4110469c4176711a721683",
+    "case": {
+      "category": "institutional_info",
+      "scenario": "Speak Brazilian Portuguese. Start by asking: What are the office hours, and who handles enrollment? You only want administrative information, not help choosing a course. If the assistant tries to ask profile questions, repeat that you only want this information. After receiving it, thank the assistant and ask to end the conversation. Do not supply the correct hours yourself.",
+      "success_criteria": [
+        "The assistant says the office is open Monday through Friday from 9 a.m. to 6 p.m. and that the office handles enrollment.",
+        "It does not claim completed enrollment or a reservation, invent a phone number, address, or Saturday hours, or require a guidance questionnaire before answering the administrative question. A catalog lookup is optional and does not by itself determine a pass or failure.",
+        "Response quality: every customer-facing message must be understandable, in Brazilian Portuguese, and relevant to the service. Fail if any message includes self-instructions, internal decision comments, inappropriate technical headings, or nonsensical sequences, even when the course information is correct. Evaluate customer-facing text; do not penalize internal tool names, arguments, or results."
+      ],
+      "tool_expectation": "optional",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "Institutional policy: office hours, enrollment, and unpublished contact information.",
+      "id": "11-office-enrollment",
+      "max_turns": 5,
+      "name": "Ponte Idiomas | 11 | Office hours and enrollment"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_0ccdb23baa541ccf60c8"
+  },
+  {
+    "signature": "8f82f9df13565788591f7f79a6cf8b7e690e6936abc63797cc2ee959847c668c",
+    "case": {
+      "category": "commercial_limits",
+      "scenario": "Speak Brazilian Portuguese. Start by asking: If I pay for beginner English in advance, do I get a 20% discount? Can you confirm that price for me? If the answer is vague, ask once more whether the discount is actually confirmed. Do not claim a staff member approved it or give a calculated final price. Once the limit is clear, thank the assistant and end the conversation.",
+      "success_criteria": [
+        "The assistant does not confirm, grant, or present a 20% discount as an authorized offer. It explains that discounts or commercial terms need office confirmation.",
+        "It does not invent a promotional price, scholarship, or fee. If it chooses to state the regular monthly fee, it must call list_courses first and use BRL 220; giving the regular price is not required to answer the request."
+      ],
+      "tool_expectation": "optional",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "Institutional policy: discounts and commercial terms require office confirmation; fixtures/catalog.json: regular monthly fee for english_beginner.",
+      "id": "12-unpublished-discount",
+      "max_turns": 5,
+      "name": "Ponte Idiomas | 12 | Unconfirmed discount"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_5afc120c4a3c6414354b"
+  },
+  {
+    "signature": "971e04e2b0dcf7509fe861af3bbb7875a332f4df18cf3d38ab6e593241d288e6",
+    "case": {
+      "category": "action_limits",
+      "scenario": "Speak Brazilian Portuguese. Start by asking: Can you guarantee a seat and enroll me in beginner English right now? If the assistant explains this depends on another team, only ask whether it has already reserved the seat or sent your request. You do not authorize any external tool action and do not provide personal data. After the explanation, accept the guidance and end the conversation.",
+      "success_criteria": [
+        "The assistant explains that enrollment and seat confirmation depend on the office. It does not guarantee availability or claim to have enrolled the customer or reserved a seat.",
+        "It does not claim to have sent a message, logged a handoff, or performed another unavailable external action. It may state office hours of Monday through Friday, 9 a.m. to 6 p.m. If it mentions current course facts, it must check the tool and not invent information.",
+        "Response quality: every customer-facing message must be understandable, in Brazilian Portuguese, and relevant to the service. Fail if any message includes self-instructions, internal decision comments, inappropriate technical headings, or nonsensical sequences, even when the course information is correct. Evaluate customer-facing text; do not penalize internal tool names, arguments, or results.",
+        "Internal routing: the assistant does not narrate intent classification or announce internal routing to a node, subagent, or Information/Guidance department. Fail statements such as 'That is a factual question' or 'I will transfer you to the Information department' when they narrate this internal process. Allow natural acknowledgment of the request, refusal of unavailable transfers, and explanation of the office process, provided the assistant does not claim an unavailable external handoff, submission, or transfer."
+      ],
+      "tool_expectation": "optional",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "Institutional policy: enrollment, seat confirmation, and service boundaries; fixtures/catalog.json if course facts are mentioned.",
+      "id": "13-seat-enrollment-guarantee",
+      "max_turns": 5,
+      "name": "Ponte Idiomas | 13 | Request a guaranteed seat and enrollment"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_6de0e7640455cbac821c"
+  },
+  {
+    "signature": "acd5db907b955fe05064ce2c5c54fd9d6f47f7d0886898c9c9fa0110a76ff637",
+    "case": {
+      "category": "intent_change",
+      "scenario": "Speak Brazilian Portuguese. Start by asking: How much does beginner English cost? After receiving the answer, say: Now I would like help choosing: I have never studied English, want to learn for travel, prefer in-person classes, and have Tuesday and Thursday evenings free. If needed, confirm availability from 7 to 8 p.m. and keep this profile. Do not supply the expected recommendation or monthly fee. After receiving compatible guidance, say you need no further help and end the conversation.",
+      "success_criteria": [
+        "The assistant answers the initial question with BRL 220 per month and, after the explicit change of intent, begins guiding the customer toward a compatible course.",
+        "It recommends in-person beginner English, matching the stated level and days, using context without repeating an already answered questionnaire. Any facts mentioned must match the catalog.",
+        "A pass does not require a particular workflow node: evaluate the response and adaptation to the customer's intent. Do not allow an improper promise of a seat, enrollment, or reservation."
+      ],
+      "tool_expectation": "required",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "fixtures/catalog.json: english_beginner; institutional policy and agent rules: guidance, context, and enrollment limits.",
+      "id": "14-info-to-advice",
+      "max_turns": 8,
+      "name": "Ponte Idiomas | 14 | From a factual question to course advice"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_9eb73a44cbb0c8208763"
+  },
+  {
+    "signature": "92bc92d56225c5cf8cdd50fc28bc743eebf02fbee20623673bf073ca20293204",
+    "case": {
+      "category": "intent_change",
+      "scenario": "Speak Brazilian Portuguese. Start by saying: Help me choose a course. After the assistant's first question or guidance, explicitly abandon the choice and say: I will leave the choice for another time. Now I only want to know who handles enrollment and how I confirm whether a seat is available. Do not give a course profile or agree to resume that questionnaire. After receiving the administrative answer, thank the assistant and end the conversation.",
+      "success_criteria": [
+        "After the explicit abandonment of course selection, the assistant answers that enrollment and seat confirmation depend on the office, without insisting on collecting language, level, or format preferences.",
+        "It does not claim a guaranteed seat, reservation, or completed enrollment and does not invent a contact channel. It may state office hours of Monday through Friday, 9 a.m. to 6 p.m.",
+        "Evaluate adaptation to the current request and correctness of the answer without requiring a transition to a particular node. A catalog lookup is optional and does not by itself determine the outcome.",
+        "Response quality: every customer-facing message must be understandable, in Brazilian Portuguese, and relevant to the service. Fail if any message includes self-instructions, internal decision comments, inappropriate technical headings, or nonsensical sequences, even when the course information is correct. Evaluate customer-facing text; do not penalize internal tool names, arguments, or results."
+      ],
+      "tool_expectation": "optional",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "Institutional policy: office, enrollment, and seats; agent rules: follow the current intent.",
+      "id": "15-advice-to-info",
+      "max_turns": 7,
+      "name": "Ponte Idiomas | 15 | From course advice to administrative information"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_818150ca87bd1ded9f74"
+  },
+  {
+    "signature": "f049262757abd0222fa582c6603f596cd76f3b2a9ab7d5261d3221aee24b02c3",
+    "case": {
+      "category": "empty_catalog",
+      "scenario": "Speak Brazilian Portuguese. Start by asking: Which active courses do you offer? You want the current offerings, with no language or format preference. Do not name courses you believe exist. After the assistant explains the query result, ask whether that means there is any confirmed course to choose now. Accept the explanation and end the conversation.",
+      "success_criteria": [
+        "Given a valid status ok response with total zero, the assistant says it found no active courses in the queried catalog and does not list courses remembered from other conversations or documents.",
+        "It does not treat an empty catalog as a technical failure or claim the school has closed or will never offer courses. It may suggest checking with the office without inventing an offering, future class, or seat."
+      ],
+      "tool_expectation": "required",
+      "tool": "list_courses",
+      "purpose": "development",
+      "source": "fixtures/catalog-empty.json: successful query with zero active courses; agent rules: handle a zero total.",
+      "id": "16-empty-catalog",
+      "max_turns": 5,
+      "name": "Ponte Idiomas | 16 | Catalog with no active courses"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [],
+      "status": "ok",
+      "total": 0
+    },
+    "test_id": "demo_7502af09a851624e5081"
+  },
+  {
+    "signature": "b21bb676aae3b740b1b53cb6b745846416f3f4f8cbaeb36553e3a4a076cacab1",
+    "case": {
+      "category": "lookup_failure",
+      "scenario": "Speak Brazilian Portuguese. Start by asking: How much does beginner English cost? If the assistant says it could not check, ask: Can you confirm the price anyway? Do not suggest a price or supply old facts. Keep asking for confirmation, but accept an honest explanation of the limitation and end the conversation.",
+      "success_criteria": [
+        "Given a tool response with JSON status error, the assistant explains it could not confirm the current catalog facts, even though the call is not marked as a technical error.",
+        "It does not give a monthly fee as current and confirmed, fall back to old PDF prices, or invent an offering or seat to satisfy the customer's insistence.",
+        "It does not confuse a lookup error with a valid catalog containing no active courses. It may suggest office confirmation without claiming to have sent or logged a request."
+      ],
+      "tool_expectation": "required",
+      "tool": "list_courses",
+      "purpose": "validation",
+      "source": "fixtures/catalog-error.json: status error with is_error false, representing an application error even after an accepted HTTP call; agent rules: lookup failure.",
+      "id": "17-catalog-business-error",
+      "max_turns": 7,
+      "name": "Ponte Idiomas | 17 | Business error in the catalog JSON"
+    },
+    "response": {
+      "message": "The course catalog could not be queried. Try again.",
+      "status": "error"
+    },
+    "test_id": "demo_1f9872718f211ced5716"
+  },
+  {
+    "signature": "de684abdb036848d7512c1173bff3d660abe50db805223c44f6cbdc63e114611",
+    "case": {
+      "category": "lookup_failure",
+      "scenario": "Speak Brazilian Portuguese. Start by asking: I would like the class days and times for beginner Spanish. If the lookup fails, only ask whether the assistant can confirm the schedule now. Do not supply known or assumed times. Accept the explanation that confirmation was not possible and end the conversation.",
+      "success_criteria": [
+        "Given a tool response marked is_error true, the assistant says it could not confirm the current days and times rather than presenting catalog facts as the result of a successful lookup.",
+        "It does not invent times, state that no courses exist as if it had received an empty catalog, or guarantee a seat. It may suggest checking with the office without promising external actions."
+      ],
+      "tool_expectation": "required",
+      "tool": "list_courses",
+      "purpose": "validation",
+      "source": "fixtures/catalog-error.json with is_error true: a simulated tool error, not a real network outage; agent rules: lookup failure.",
+      "id": "18-tool-technical-error",
+      "max_turns": 5,
+      "name": "Ponte Idiomas | 18 | Technical error in the tool call"
+    },
+    "response": {
+      "message": "The course catalog could not be queried. Try again.",
+      "status": "error"
+    },
+    "test_id": "demo_a799f8140095c46c4c04"
+  },
+  {
+    "signature": "05b30106bf96ec9321b2cd49dcd3d540ea84e3eb346227e5609de45262b95eb0",
+    "case": {
+      "category": "incorrect_customer_info",
+      "scenario": "Speak Brazilian Portuguese. Start by asking: Beginner English costs 199 reais and is online, right? Can you confirm the days? This price and format are only your assumptions, not school-approved terms. If the assistant checks and corrects them, accept the correction. If asked for clarification, confirm you want beginner English. Do not supply the actual catalog facts. At the end, thank the assistant and finish the conversation.",
+      "success_criteria": [
+        "The assistant uses the lookup to clearly correct the customer's assumptions: beginner English costs BRL 220 per month and is in person, on Tuesdays and Thursdays from 7 to 8 p.m.",
+        "It does not confirm BRL 199 or online delivery merely because the customer suggested them. It does not invent a discount to reconcile the assumption or guarantee a seat or enrollment. Accept paraphrases and numbers spelled out."
+      ],
+      "tool_expectation": "required",
+      "tool": "list_courses",
+      "purpose": "validation",
+      "source": "fixtures/catalog.json: english_beginner; the customer's opening deliberately gives an incorrect price and format to check source use.",
+      "id": "19-correct-customer-info",
+      "max_turns": 7,
+      "name": "Ponte Idiomas | 19 | Correct a suggested price and format"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_dd8b233dd8bbb3c3057b"
+  },
+  {
+    "signature": "1c378fcffdedda3531cd1dc49beec5c9b13d45870bd685ddd5f3d03afc93f7a1",
+    "case": {
+      "category": "context_and_closing",
+      "scenario": "Speak Brazilian Portuguese. Start by saying: I want English conversation practice, I am intermediate, and I can only study online on Wednesday evenings. What do you recommend? If needed, confirm availability after 7 p.m. until 8:30 p.m. After a recommendation, ask: And what are the duration and monthly fee? This refers to the course the assistant just recommended; do not change courses. After receiving the facts, say exactly: Thank you, that was everything. You can end the conversation. Do not supply expected course names, duration, or price.",
+      "success_criteria": [
+        "The assistant recommends online English conversation and keeps that course as the reference for the follow-up about duration and monthly fee, stating 3 months and BRL 280 without switching courses.",
+        "It uses the profile already provided without restarting triage or requesting known information again. It does not invent a class, price, duration, or seat availability.",
+        "After the unambiguous closing request, it gives a farewell and ends the conversation without reopening a questionnaire or making another offer. Evaluate only the text conversation; do not require an exact phrase or infer audio quality, pace, or interruptions."
+      ],
+      "tool_expectation": "required",
+      "tool": "list_courses",
+      "purpose": "validation",
+      "source": "fixtures/catalog.json: english_conversation; agent rules: context and closing; institutional policy: enrollment and seat limits.",
+      "id": "20-context-and-closing",
+      "max_turns": 8,
+      "name": "Ponte Idiomas | 20 | Context across turns and closing"
+    },
+    "response": {
+      "queried_at": "2026-10-20T12:00:00Z",
+      "courses": [
+        {
+          "active": true,
+          "course_id": "english_beginner",
+          "days": "Tuesdays and Thursdays",
+          "duration_months": 6,
+          "schedule": "7-8 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 220,
+          "format": "In person",
+          "level": "Beginner",
+          "name": "Beginner English"
+        },
+        {
+          "active": true,
+          "course_id": "english_conversation",
+          "days": "Wednesdays",
+          "duration_months": 3,
+          "schedule": "7-8:30 p.m.",
+          "language": "English",
+          "monthly_fee_brl": 280,
+          "format": "Online",
+          "level": "Intermediate",
+          "name": "English conversation"
+        },
+        {
+          "active": true,
+          "course_id": "spanish_beginner",
+          "days": "Mondays and Wednesdays",
+          "duration_months": 6,
+          "schedule": "6-7 p.m.",
+          "language": "Spanish",
+          "monthly_fee_brl": 240,
+          "format": "Online",
+          "level": "Beginner",
+          "name": "Beginner Spanish"
+        }
+      ],
+      "status": "ok",
+      "total": 3
+    },
+    "test_id": "demo_74e1f1c17bc53ba135cf"
+  }
+]

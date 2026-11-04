@@ -1,0 +1,23 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 16-empty-catalog
+
+Run: demo_4d6f89f37f0f0a43b65d
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: Which active courses do you offer right now?
+  [call: notify_condition_1_met]
+  [response: notify_condition_1_met]
+agent: I will check the current catalog for you.
+
+  [call: list_courses]
+  [response: list_courses]
+agent: I did not find any active courses in the catalog at the moment. Can I help you with anything else?
+user: Hmm, so there aren't any courses available for me to choose from right now, is that right?
+agent: That's right, the catalog lookup did not return any active courses right now. Since places and dates for new classes are confirmed by the school office, it is worth contacting them, Monday through Friday, from 09:00 to 18:00. Can I help with anything else?
+user: Okay, I understand. So there's nothing confirmed to choose from right now, but I can call the school office to ask about new classes. Thanks, bye.
+  [call: notify_condition_2_met]
+  [response: notify_condition_2_met]
+agent: Thank you for contacting Ponte Idiomas. See you next time!
+  [call: progress_workflow]
+  [response: progress_workflow]

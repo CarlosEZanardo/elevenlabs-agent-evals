@@ -1,0 +1,21 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 08-online-beginner-mismatch
+
+Run: demo_a428aa21e39ad63f4647
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: I want to start English from scratch, but I will only take online classes. Which course do you have for me?
+  [call: notify_condition_2_met]
+  [response: notify_condition_2_met]
+agent: Great! Let me check our current catalog for online beginner English options.
+
+  [call: list_courses]
+  [response: list_courses]
+agent: Unfortunately, we do not currently have beginner English online. Our only online English course is Conversation, but it is intermediate, so it does not suit someone starting from scratch.
+
+Would you have any flexibility to take beginner English in person, or would you prefer me to check another option?
+user: No, in-person classes don't work for me. So there's nothing suitable, is that right?
+agent: That is right; with beginner English and online-only classes, I did not find any compatible option at the moment. If you like, I can check whether there is something in another language or whether you would accept a slightly more advanced level.
+user: No, only English from scratch and online. Okay, thanks anyway.
+agent: I see. Just a reminder that the school office is open Monday through Friday, from 09:00 to 18:00, and can confirm updates about classes. I'm here if you need anything else!

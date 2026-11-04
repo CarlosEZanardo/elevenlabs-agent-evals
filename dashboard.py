@@ -1,7 +1,7 @@
-"""Painel local, somente de leitura, dos lotes já executados.
+"""Read-only dashboard for completed evaluation batches.
 
-Não importa o SDK nem carrega credenciais. A avaliação automática é preservada;
-uma conversa exibida no painel não recebe uma nota humana por inferência.
+Does not import the SDK or load credentials. Automated outcomes are preserved;
+displaying a conversation does not create an inferred human-review grade.
 """
 
 from collections import Counter
@@ -15,68 +15,68 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 
-from dashboard_dados import descobrir_lotes, ler_detalhe
+from dashboard_data import discover_batches, read_detail
 
 
 BASE = Path(__file__).resolve().parent
 STATUS = {
-    "APROVADO": "Aprovado", "REPROVADO": "Reprovado",
-    "REVISAR_EVIDENCIA": "Revisar evidência", "INCONCLUSIVO": "Inconclusivo",
-    "CANCELADO": "Cancelado",
+    "PASSED": "Passed", "FAILED": "Failed",
+    "REVIEW_EVIDENCE": "Review evidence", "INCONCLUSIVE": "Inconclusive",
+    "CANCELLED": "Cancelled",
 }
-CORES = {
-    "Aprovado": "#148579", "Reprovado": "#D05D5D", "Revisar evidência": "#D59A33",
-    "Inconclusivo": "#78889B", "Cancelado": "#B5BFCA", "Não informado": "#78889B",
+COLORS = {
+    "Passed": "#148579", "Failed": "#D05D5D", "Review evidence": "#D59A33",
+    "Inconclusive": "#78889B", "Cancelled": "#B5BFCA", "Not reported": "#78889B",
 }
 
 
-def numero(valor, casas=0):
-    """Não transforma informação ausente em zero."""
-    if not isinstance(valor, (int, float)) or isinstance(valor, bool) or not math.isfinite(valor):
+def number(value, decimals=0):
+    """Keep missing measurements distinct from zero."""
+    if not isinstance(value, (int, float)) or isinstance(value, bool) or not math.isfinite(value):
         return "—"
-    return f"{valor:,.{casas}f}".replace(",", "_").replace(".", ",").replace("_", ".")
+    return f"{value:,.{decimals}f}"
 
 
-def data_local(valor):
+def local_date(value):
     try:
-        data = datetime.fromisoformat(str(valor).replace("Z", "+00:00"))
-        if data.tzinfo is None:
-            return data.strftime("%d/%m/%Y · %H:%M") + " (fuso não informado)"
-        return data.astimezone(ZoneInfo("America/Sao_Paulo")).strftime("%d/%m/%Y · %H:%M")
+        timestamp = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+        if timestamp.tzinfo is None:
+            return timestamp.strftime("%b %d, %Y · %H:%M") + " (time zone not specified)"
+        return timestamp.astimezone(ZoneInfo("America/Sao_Paulo")).strftime("%b %d, %Y · %H:%M")
     except (ValueError, TypeError):
-        return "Data não informada"
+        return "Date not provided"
 
 
-def nome_caso(caso):
-    nome = str(caso.get("nome") or caso.get("caso_id") or "Cenário")
-    partes = nome.split(" | ", 2)
-    return partes[-1]
+def case_name(case):
+    name = str(case.get("name") or case.get("case_id") or "Scenario")
+    parts = name.split(" | ", 2)
+    return parts[-1]
 
 
-def identificador(lote):
-    return lote["id_lote"]
+def identifier(batch):
+    return batch["batch_id"]
 
 
-def rotulo_lote(lote):
-    return f"{lote.get('rotulo') or 'Sem rótulo'} · {data_local(lote.get('criado_em_utc'))}"
+def batch_label(batch):
+    return f"{batch.get('label') or 'Unlabeled'} · {local_date(batch.get('created_at_utc'))}"
 
 
-def resultado(caso):
-    return STATUS.get(caso.get("resultado"), "Não informado")
+def outcome(case):
+    return STATUS.get(case.get("outcome"), "Not reported")
 
 
-def tabela_casos(casos):
+def case_table(cases):
     return pd.DataFrame([{
-        "Caso": c.get("caso_id", "—")[:2],
-        "Cenário": nome_caso(c),
-        "Resultado automático": resultado(c),
-        "Créditos": c.get("credits_used"),
-        "Evidência da ferramenta": {"CONFIRMADA": "Confirmada", "NA": "Não exigida"}.get(c.get("evidencia"), c.get("evidencia") or "Não informada"),
-        "Categoria": str(c.get("categoria") or "Não informada").replace("_", " "),
-    } for c in casos])
+        "Case": c.get("case_id", "—")[:2],
+        "Scenario": case_name(c),
+        "Automated outcome": outcome(c),
+        "Credits": c.get("credits_used"),
+        "Tool evidence": {"CONFIRMED": "Confirmed", "NA": "Not required"}.get(c.get("evidence"), c.get("evidence") or "Not reported"),
+        "Category": str(c.get("category") or "Not reported").replace("_", " "),
+    } for c in cases])
 
 
-def estilo():
+def style():
     st.markdown("""<style>
     .stApp { background:#F6F8FA; }
     [data-testid="stSidebar"] { background:#EAF0F3; border-right:1px solid #DCE4EA; }
@@ -101,233 +101,237 @@ def estilo():
     </style>""", unsafe_allow_html=True)
 
 
-def exibir_metricas(lote):
-    casos = lote.get("casos", [])
-    geral = lote.get("visao_geral") or {}
-    aprovados = sum(c.get("resultado") == "APROVADO" for c in casos)
-    decisivos = sum(c.get("resultado") in {"APROVADO", "REPROVADO"} for c in casos)
-    planejados = geral.get("planejados")
-    taxa = f"{aprovados / decisivos:.0%}" if decisivos else "—"
-    cobertura = f"{decisivos / planejados:.0%}" if isinstance(planejados, int) and planejados > 0 else "—"
+def show_metrics(batch):
+    cases = batch.get("cases", [])
+    overview = batch.get("overview") or {}
+    passed = sum(c.get("outcome") == "PASSED" for c in cases)
+    decisive = sum(c.get("outcome") in {"PASSED", "FAILED"} for c in cases)
+    planned = overview.get("planned")
+    pass_rate = f"{passed / decisive:.0%}" if decisive else "—"
+    coverage = f"{decisive / planned:.0%}" if isinstance(planned, int) and planned > 0 else "—"
     cols = st.columns(4)
-    cols[0].metric("Cenários planejados", numero(planejados))
-    cols[1].metric("Aprovação automática", taxa, help=f"{aprovados} aprovados entre {decisivos} resultados decisivos. Inconclusivos, cancelados e evidências pendentes ficam fora desse denominador.")
-    cols[2].metric("Cobertura decisiva", cobertura, help="Resultados aprovados ou reprovados / cenários planejados. Uma taxa de aprovação alta com baixa cobertura merece atenção.")
-    cols[3].metric("Créditos informados", numero(geral.get("creditos_informados")), help="Consumo retornado nos relatórios. Não representa saldo da conta nem custo em reais.")
-    if geral.get("total_sem_creditos"):
-        st.caption(f"Consumo parcial: {geral['total_sem_creditos']} execução(ões) sem créditos informados.")
+    cols[0].metric("Planned scenarios", number(planned))
+    cols[1].metric("Automated pass rate", pass_rate, help=f"{passed} passed out of {decisive} decisive outcomes. Inconclusive, cancelled and evidence-review outcomes are excluded from this denominator.")
+    cols[2].metric("Decisive coverage", coverage, help="Passed or failed outcomes / planned scenarios. A high pass rate with low coverage needs review.")
+    cols[3].metric("Credits reported", number(overview.get("reported_credits")), help="Usage reported in the results. This is not the account balance or a cost in BRL.")
+    if overview.get("total_without_credits"):
+        st.caption(f"Partial usage: {overview['total_without_credits']} run(s) have no reported credit usage.")
 
 
-def graficos(casos):
+def charts(cases):
     left, right = st.columns([.8, 1.4], gap="large")
     with left, st.container(border=True):
-        st.subheader("Resultados automáticos")
-        contagem = Counter(resultado(c) for c in casos)
-        dados = pd.DataFrame([{"Resultado": nome, "Cenários": n} for nome, n in contagem.items()])
-        chart = alt.Chart(dados).mark_arc(innerRadius=70, outerRadius=105).encode(
-            theta=alt.Theta("Cenários:Q"),
-            color=alt.Color("Resultado:N", scale=alt.Scale(domain=list(CORES), range=list(CORES.values())), legend=alt.Legend(orient="bottom", title=None)),
-            tooltip=["Resultado:N", "Cenários:Q"],
+        st.subheader("Automated outcomes")
+        counts = Counter(outcome(c) for c in cases)
+        data = pd.DataFrame([{"Outcome": name, "Scenarios": n} for name, n in counts.items()])
+        chart = alt.Chart(data).mark_arc(innerRadius=70, outerRadius=105).encode(
+            theta=alt.Theta("Scenarios:Q"),
+            color=alt.Color("Outcome:N", scale=alt.Scale(domain=list(COLORS), range=list(COLORS.values())), legend=alt.Legend(orient="bottom", title=None)),
+            tooltip=["Outcome:N", "Scenarios:Q"],
         )
-        centro = alt.Chart(pd.DataFrame([{"total": str(len(casos))}])).mark_text(fontSize=33, fontWeight=700, color="#182535").encode(text="total:N")
-        st.altair_chart((chart + centro).properties(height=260), width="stretch")
-        st.caption("A aprovação automática deve ser interpretada junto com a conversa e os critérios.")
+        center = alt.Chart(pd.DataFrame([{"total": str(len(cases))}])).mark_text(fontSize=33, fontWeight=700, color="#182535").encode(text="total:N")
+        st.altair_chart((chart + center).properties(height=260), width="stretch")
+        st.caption("Review automated outcomes alongside the conversation and criteria.")
     with right, st.container(border=True):
-        st.subheader("Onde os créditos foram usados")
-        custo = tabela_casos(casos).dropna(subset=["Créditos"])
-        if custo.empty:
-            st.info("Não há consumo informado para esta seleção.")
+        st.subheader("Where credits were used")
+        costs = case_table(cases).dropna(subset=["Credits"])
+        if costs.empty:
+            st.info("No credit usage is reported for this selection.")
             return
-        custo = custo.sort_values("Créditos", ascending=False).head(8).copy()
-        custo["Identificação"] = custo["Caso"] + " · " + custo["Cenário"].str.slice(0, 35)
-        barras = alt.Chart(custo).mark_bar(cornerRadiusEnd=4, color="#217F8E").encode(
-            x=alt.X("Créditos:Q", title="Créditos informados"),
-            y=alt.Y("Identificação:N", title=None, sort="-x", axis=alt.Axis(labelLimit=260)),
-            tooltip=["Caso:N", "Cenário:N", "Créditos:Q", "Resultado automático:N"],
+        costs = costs.sort_values("Credits", ascending=False).head(8).copy()
+        costs["Scenario label"] = costs["Case"] + " · " + costs["Scenario"].str.slice(0, 35)
+        bars = alt.Chart(costs).mark_bar(cornerRadiusEnd=4, color="#217F8E").encode(
+            x=alt.X("Credits:Q", title="Credits reported"),
+            y=alt.Y("Scenario label:N", title=None, sort="-x", axis=alt.Axis(labelLimit=260)),
+            tooltip=["Case:N", "Scenario:N", "Credits:Q", "Automated outcome:N"],
         ).properties(height=260)
-        st.altair_chart(barras, width="stretch")
-        st.caption("Até oito maiores consumos da seleção. Uma aprovação também pode ter custo elevado.")
+        st.altair_chart(bars, width="stretch")
+        st.caption("Up to eight highest-usage scenarios in the selection. A passing outcome can still be expensive.")
 
 
-def exibir_conversa(detalhe, chave):
-    """Separa ferramentas das falas e usa a mesma contagem comprovada dos cartões."""
-    mensagens = detalhe.get("mensagens") or []
-    mostrar = st.toggle("Mostrar resumo das ferramentas", value=False, key=f"tools_{chave}")
-    if mostrar:
-        contagem = detalhe.get("contagem_ferramentas") or {}
-        if contagem:
-            st.dataframe(pd.DataFrame([{"Ferramenta": nome, "Chamadas executadas": n} for nome, n in contagem.items()]), hide_index=True, width="stretch")
+def show_conversation(detail, key):
+    """Separate tool events from dialogue, using the same verified counts as the metrics."""
+    messages = detail.get("messages") or []
+    show = st.toggle("Show tool summary", value=False, key=f"tools_{key}")
+    if show:
+        counts = detail.get("tool_counts") or {}
+        if counts:
+            st.dataframe(pd.DataFrame([{"Tool": name, "Executed calls": n} for name, n in counts.items()]), hide_index=True, width="stretch")
         else:
-            st.caption("Nenhuma chamada executada comprovada nos eventos disponíveis.")
-    if not mensagens:
-        st.text(detalhe.get("conversa") or "Conversa não disponível neste relatório.")
+            st.caption("No executed calls are confirmed by the available events.")
+    if not messages:
+        st.text(detail.get("conversation") or "Conversation unavailable in this report.")
         return
-    for m in mensagens:
+    for m in messages:
         if not isinstance(m, dict):
             continue
-        texto = m.get("message")
-        if texto:
+        text = m.get("message")
+        if text:
             role = "user" if m.get("role") == "user" else "assistant"
             with st.chat_message(role):
-                st.text(str(texto))
+                st.text(str(text))
 
 
-def detalhe_caso(lote, casos):
-    if not casos:
+def case_detail(batch, cases):
+    if not cases:
         return
-    st.subheader("Abrir um cenário")
-    mapa = {c["caso_id"]: c for c in casos}
-    caso_id = st.selectbox("Cenário", list(mapa), format_func=lambda k: f"{k[:2]} · {nome_caso(mapa[k])}", key=f"detalhe_{identificador(lote)}")
-    detalhe = ler_detalhe(BASE, identificador(lote), caso_id)
-    caso = detalhe.get("caso") or mapa[caso_id]
-    for aviso in detalhe.get("avisos", []):
-        st.warning(aviso)
+    st.subheader("Open a scenario")
+    lookup = {c["case_id"]: c for c in cases}
+    case_id = st.selectbox("Scenario", list(lookup), format_func=lambda k: f"{k[:2]} · {case_name(lookup[k])}", key=f"detail_{identifier(batch)}")
+    detail = read_detail(BASE, identifier(batch), case_id)
+    case = detail.get("case") or lookup[case_id]
+    for warning in detail.get("warnings", []):
+        st.warning(warning)
     c1, c2, c3 = st.columns(3)
-    c1.metric("Resultado automático", resultado(caso))
-    c2.metric("Créditos deste cenário", numero(caso.get("credits_used")))
-    chamadas = detalhe.get("contagem_ferramentas") or {}
-    transicoes = (sum(n for nome, n in chamadas.items() if nome.startswith("notify_condition_"))
-                  if detalhe.get("mensagens") else None)
-    c3.metric("Chamadas de transição", numero(transicoes), help="Chamadas de ferramentas de transição registradas nos eventos. Não é a contagem de nós únicos.")
-    st.caption("Revisão humana: sem registro nos arquivos deste projeto.")
-    if transicoes is not None and transicoes > 10:
-        st.info(f"Este cenário registra {transicoes} chamadas de transição. Confira se a conversa avançou, mesmo com aprovação automática.")
-    conversa, avaliacao, origem = st.tabs(["Conversa", "Critérios e avaliação", "Dados da execução"])
-    with conversa:
-        exibir_conversa(detalhe, f"{identificador(lote)}_{caso_id}")
-        st.download_button("Baixar conversa", detalhe.get("conversa") or "", file_name=f"{caso_id}.txt", mime="text/plain", key=f"txt_{identificador(lote)}_{caso_id}")
-    with avaliacao:
-        st.markdown("**Critérios enviados nesta execução**")
-        if detalhe.get("criterios"):
-            for i, criterio in enumerate(detalhe["criterios"], 1):
-                st.write(f"{i}. {criterio}")
+    c1.metric("Automated outcome", outcome(case))
+    c2.metric("Credits for this scenario", number(case.get("credits_used")))
+    calls = detail.get("tool_counts") or {}
+    transitions = (sum(n for name, n in calls.items() if name.startswith("notify_condition_"))
+                  if detail.get("messages") else None)
+    c3.metric("Transition calls", number(transitions), help="Transition tool calls recorded in the events. This is not a count of unique nodes.")
+    st.caption("Human review: no structured review record is stored in this project.")
+    if transitions is not None and transitions > 10:
+        st.info(f"This scenario records {transitions} transition calls. Check whether the conversation progressed despite the automated pass.")
+    conversation, evaluation, source = st.tabs(["Conversation", "Criteria and evaluation", "Run data"])
+    with conversation:
+        show_conversation(detail, f"{identifier(batch)}_{case_id}")
+        st.download_button("Download conversation", detail.get("conversation") or "", file_name=f"{case_id}.txt", mime="text/plain", key=f"txt_{identifier(batch)}_{case_id}")
+    with evaluation:
+        st.markdown("**Criteria submitted for this run**")
+        if detail.get("criteria"):
+            for i, criterion in enumerate(detail["criteria"], 1):
+                st.write(f"{i}. {criterion}")
         else:
-            st.info("O snapshot dos critérios não está disponível.")
-        st.markdown("**Justificativa automática**")
-        st.text(caso.get("justificativa") or "Não informada.")
-        with st.expander("Instruções do cliente simulado"):
-            st.text(detalhe.get("roteiro") or "Não disponíveis.")
-    with origem:
-        st.write("**Modelo(s) registrado(s):** " + (", ".join(detalhe.get("modelos") or []) or "Não informados"))
-        st.write("**Versão do agente:** " + str(caso.get("version_id") or "Não informada"))
-        st.write("**Execução sobre rascunho:** " + ("Sim" if caso.get("ran_against_draft") is True else "Não" if caso.get("ran_against_draft") is False else "Não informado"))
-        st.write("**Definição do teste:** " + str(caso.get("assinatura") or "Não informada"))
-        st.json({"lote": identificador(lote), "rotulo": lote.get("rotulo"), "invocation_id": caso.get("invocation_id"), "test_id": caso.get("test_id"), "test_run_id": caso.get("test_run_id"), "evidencia": caso.get("evidencia"), "chamadas_ferramentas": chamadas}, expanded=False)
-        st.download_button("Baixar execução sanitizada JSON", json.dumps(detalhe.get("resultado_completo") or {}, ensure_ascii=False, indent=2), file_name=f"{caso_id}-resultado.json", mime="application/json", key=f"json_{identificador(lote)}_{caso_id}")
+            st.info("The criteria snapshot is unavailable.")
+        st.markdown("**Automated rationale**")
+        st.text(case.get("rationale_text") or "Not reported.")
+        with st.expander("Simulated customer instructions"):
+            st.text(detail.get("script") or "Not available.")
+    with source:
+        st.write("**Recorded model(s):** " + (", ".join(detail.get("models") or []) or "Not reported"))
+        st.write("**Agent version:** " + str(case.get("version_id") or "Not reported"))
+        st.write("**Run against draft:** " + ("Yes" if case.get("ran_against_draft") is True else "No" if case.get("ran_against_draft") is False else "Not reported"))
+        st.write("**Test definition:** " + str(case.get("signature") or "Not reported"))
+        st.json({"batch": identifier(batch), "label": batch.get("label"), "invocation_id": case.get("invocation_id"), "test_id": case.get("test_id"), "test_run_id": case.get("test_run_id"), "evidence": case.get("evidence"), "tool_calls_detail": calls}, expanded=False)
+        st.download_button("Download sanitized run JSON", json.dumps(detail.get("full_result") or {}, ensure_ascii=False, indent=2), file_name=f"{case_id}-outcome.json", mime="application/json", key=f"json_{identifier(batch)}_{case_id}")
 
 
-def visao_lote(lote):
-    st.subheader(lote.get("rotulo") or "Lote sem rótulo")
-    st.caption(f"{data_local(lote.get('criado_em_utc'))} · Horário de Brasília · Conjunto de cenários {lote.get('suite_versao') or 'não informado'}")
-    exibir_metricas(lote)
-    for alerta in (lote.get("visao_geral") or {}).get("alertas", []):
-        st.warning(alerta)
-    todos = lote.get("casos") or []
-    if not todos:
-        st.info("Este lote ainda não tem resultados disponíveis.")
+def batch_overview(batch):
+    st.subheader(batch.get("label") or "Unlabeled batch")
+    st.caption(f"{local_date(batch.get('created_at_utc'))} · São Paulo time · Scenario suite {batch.get('suite_version') or 'not reported'}")
+    if batch.get("translation_note"):
+        st.info(batch["translation_note"])
+    show_metrics(batch)
+    for alert in (batch.get("overview") or {}).get("alerts", []):
+        st.warning(alert)
+    all_cases = batch.get("cases") or []
+    if not all_cases:
+        st.info("No results are available for this batch yet.")
         return
     st.write("")
-    graficos(todos)
-    st.subheader("Cenários do lote")
-    filtro1, filtro2 = st.columns(2)
-    opcoes = list(dict.fromkeys(resultado(c) for c in todos))
-    filtro = filtro1.multiselect("Resultado automático", opcoes, placeholder="Todos os resultados", key=f"status_{identificador(lote)}")
-    busca = filtro2.text_input("Buscar cenário", placeholder="Nome, número ou categoria", key=f"busca_{identificador(lote)}").casefold().strip()
-    casos = [c for c in todos if (not filtro or resultado(c) in filtro) and (not busca or busca in f"{c.get('caso_id','')} {nome_caso(c)} {c.get('categoria','')}".casefold())]
-    if not casos:
-        st.info("Nenhum cenário corresponde aos filtros. Limpe a busca ou o resultado selecionado.")
+    charts(all_cases)
+    st.subheader("Batch scenarios")
+    outcome_filter, search_filter = st.columns(2)
+    options = list(dict.fromkeys(outcome(c) for c in all_cases))
+    selected_outcomes = outcome_filter.multiselect("Automated outcome", options, placeholder="All outcomes", key=f"status_{identifier(batch)}")
+    search = search_filter.text_input("Search scenarios", placeholder="Name, number or category", key=f"search_{identifier(batch)}").casefold().strip()
+    cases = [c for c in all_cases if (not selected_outcomes or outcome(c) in selected_outcomes) and (not search or search in f"{c.get('case_id','')} {case_name(c)} {c.get('category','')}".casefold())]
+    if not cases:
+        st.info("No scenarios match the filters. Clear the search or selected outcome.")
         return
-    tabela = tabela_casos(casos)
-    st.dataframe(tabela, hide_index=True, width="stretch", column_config={"Créditos": st.column_config.NumberColumn(format="localized"), "Cenário": st.column_config.TextColumn(width="large")})
-    st.caption(f"Exibindo {len(casos)} de {len(todos)} cenários. Os cartões e gráficos acima representam o lote inteiro.")
-    st.download_button("Baixar tabela filtrada CSV", tabela.to_csv(index=False, sep=";").encode("utf-8-sig"), file_name=f"{identificador(lote)}-cenarios.csv", mime="text/csv", key=f"csv_{identificador(lote)}")
+    table = case_table(cases)
+    st.dataframe(table, hide_index=True, width="stretch", column_config={"Credits": st.column_config.NumberColumn(format="%.0f"), "Scenario": st.column_config.TextColumn(width="large")})
+    st.caption(f"Showing {len(cases)} of {len(all_cases)} scenarios. The metrics and charts above represent the entire batch.")
+    st.download_button("Download filtered table CSV", table.to_csv(index=False).encode("utf-8-sig"), file_name=f"{identifier(batch)}-scenarios.csv", mime="text/csv", key=f"csv_{identifier(batch)}")
     st.divider()
-    detalhe_caso(lote, casos)
+    case_detail(batch, cases)
 
 
-def comparar_lotes(lotes):
-    st.subheader("Compare rodadas, preservando o contexto")
-    st.caption("Um mesmo cenário pode ter critérios diferentes ao longo do tempo. A comparação indica quando a definição mudou.")
-    mapa = {identificador(l): l for l in lotes}
-    ids = list(mapa)
+def compare_batches(batches):
+    st.subheader("Compare batches in context")
+    st.caption("A scenario can have different criteria over time. This comparison identifies changes to the test definition.")
+    lookup = {identifier(l): l for l in batches}
+    ids = list(lookup)
     a, b = st.columns(2)
-    id_a = a.selectbox("Lote A", ids, format_func=lambda k: rotulo_lote(mapa[k]), key="comparar_a")
-    id_b = b.selectbox("Lote B", ids, index=min(1, len(ids)-1), format_func=lambda k: rotulo_lote(mapa[k]), key="comparar_b")
+    id_a = a.selectbox("Batch A", ids, format_func=lambda k: batch_label(lookup[k]), key="compare_a")
+    id_b = b.selectbox("Batch B", ids, index=min(1, len(ids)-1), format_func=lambda k: batch_label(lookup[k]), key="compare_b")
     if id_a == id_b:
-        st.info("Selecione dois lotes diferentes para comparar.")
+        st.info("Select two different batches to compare.")
         return
-    lote_a, lote_b = mapa[id_a], mapa[id_b]
-    ca = {c["caso_id"]: c for c in lote_a.get("casos", [])}
-    cb = {c["caso_id"]: c for c in lote_b.get("casos", [])}
-    comuns = sorted(set(ca) & set(cb))
-    mesmos = [i for i in comuns if ca[i].get("assinatura") and ca[i].get("assinatura") == cb[i].get("assinatura")]
-    st.write(f"**{len(comuns)} cenários em comum · {len(mesmos)} com definição idêntica.**")
-    if len(mesmos) < len(comuns):
-        st.info("Algumas definições dos testes são diferentes ou não foram informadas. Compare esses resultados considerando os critérios de cada execução.")
+    batch_a, batch_b = lookup[id_a], lookup[id_b]
+    ca = {c["case_id"]: c for c in batch_a.get("cases", [])}
+    cb = {c["case_id"]: c for c in batch_b.get("cases", [])}
+    shared = sorted(set(ca) & set(cb))
+    identical = [i for i in shared if ca[i].get("signature") and ca[i].get("signature") == cb[i].get("signature")]
+    st.write(f"**{len(shared)} shared scenarios · {len(identical)} with identical definitions.**")
+    if len(identical) < len(shared):
+        st.info("Some test definitions differ or are unavailable. Interpret these results using the criteria from each run.")
     if len(ca) != len(cb) or set(ca) != set(cb):
-        st.caption(f"Cobertura diferente: A contém {len(ca)} cenários; B contém {len(cb)}. Taxas dos lotes inteiros usam bases diferentes.")
-    linhas = []
+        st.caption(f"Coverage differs: A contains {len(ca)} scenarios; B contains {len(cb)}. Whole-batch rates use different denominators.")
+    rows = []
     for i in sorted(set(ca) | set(cb)):
-        aa, bb = ca.get(i), cb.get(i)
-        mesma = bool(aa and bb and aa.get("assinatura") and aa.get("assinatura") == bb.get("assinatura"))
-        definicao = ("Presente em um lote" if not aa or not bb else "Não informada"
-                     if not aa.get("assinatura") or not bb.get("assinatura")
-                     else "Idêntica" if mesma else "Alterada")
-        linhas.append({"Caso": i[:2], "Cenário": nome_caso(aa or bb), "Resultado A": resultado(aa) if aa else "Ausente", "Resultado B": resultado(bb) if bb else "Ausente", "Créditos A": aa.get("credits_used") if aa else None, "Créditos B": bb.get("credits_used") if bb else None, "Definição": definicao})
-    tabela = pd.DataFrame(linhas)
-    somente_comuns = st.checkbox("Mostrar somente cenários em comum", value=True, key="somente_comuns")
-    if somente_comuns:
-        tabela = tabela[tabela["Caso"].isin([i[:2] for i in comuns])]
-    st.dataframe(tabela, hide_index=True, width="stretch")
-    st.download_button("Baixar comparação CSV", tabela.to_csv(index=False, sep=";").encode("utf-8-sig"), file_name="comparacao-lotes.csv", mime="text/csv", key="csv_comparacao")
-    if not comuns:
+        case_a, case_b = ca.get(i), cb.get(i)
+        same_definition = bool(case_a and case_b and case_a.get("signature") and case_a.get("signature") == case_b.get("signature"))
+        definition = ("Present in one batch" if not case_a or not case_b else "Not reported"
+                     if not case_a.get("signature") or not case_b.get("signature")
+                     else "Identical" if same_definition else "Changed")
+        rows.append({"Case": i[:2], "Scenario": case_name(case_a or case_b), "Outcome A": outcome(case_a) if case_a else "Missing", "Outcome B": outcome(case_b) if case_b else "Missing", "Credits A": case_a.get("credits_used") if case_a else None, "Credits B": case_b.get("credits_used") if case_b else None, "Definition": definition})
+    table = pd.DataFrame(rows)
+    shared_only = st.checkbox("Show shared scenarios only", value=True, key="shared_only")
+    if shared_only:
+        table = table[table["Case"].isin([i[:2] for i in shared])]
+    st.dataframe(table, hide_index=True, width="stretch")
+    st.download_button("Download comparison CSV", table.to_csv(index=False).encode("utf-8-sig"), file_name="batch-comparison.csv", mime="text/csv", key="csv_comparison")
+    if not shared:
         return
-    st.markdown("**Conversa lado a lado**")
-    escolhido = st.selectbox("Cenário para comparar", comuns, format_func=lambda k: f"{k[:2]} · {nome_caso(ca[k])}", key=f"comparar_caso_{id_a}_{id_b}")
-    for coluna, lote, caso in zip(st.columns(2, gap="large"), [lote_a, lote_b], [ca[escolhido], cb[escolhido]]):
-        with coluna, st.container(border=True):
-            st.write("**" + rotulo_lote(lote) + "**")
-            st.caption(f"{resultado(caso)} · {numero(caso.get('credits_used'))} créditos · Versão {caso.get('version_id') or 'não informada'}")
-            detalhe = ler_detalhe(BASE, identificador(lote), escolhido)
-            st.text(detalhe.get("conversa") or "Conversa não disponível.")
-            with st.expander("Critérios desta execução"):
-                for i, criterio in enumerate(detalhe.get("criterios") or [], 1):
-                    st.write(f"{i}. {criterio}")
+    st.markdown("**Side-by-side conversation**")
+    selected_case = st.selectbox("Scenario to compare", shared, format_func=lambda k: f"{k[:2]} · {case_name(ca[k])}", key=f"compare_case_{id_a}_{id_b}")
+    for column, batch, case in zip(st.columns(2, gap="large"), [batch_a, batch_b], [ca[selected_case], cb[selected_case]]):
+        with column, st.container(border=True):
+            st.write("**" + batch_label(batch) + "**")
+            if batch.get("translation_note"):
+                st.caption(batch["translation_note"])
+            st.caption(f"{outcome(case)} · {number(case.get('credits_used'))} credits · Version {case.get('version_id') or 'not reported'}")
+            detail = read_detail(BASE, identifier(batch), selected_case)
+            st.text(detail.get("conversation") or "Conversation unavailable.")
+            with st.expander("Criteria for this run"):
+                for i, criterion in enumerate(detail.get("criteria") or [], 1):
+                    st.write(f"{i}. {criterion}")
 
 
 def main():
-    st.set_page_config(page_title="Ponte Idiomas · Avaliações", page_icon="📊", layout="wide")
-    estilo()
+    st.set_page_config(page_title="Ponte Idiomas · Evals", page_icon="📊", layout="wide")
+    style()
     with st.sidebar:
         st.markdown("### PONTE / EVALS")
-        st.caption("Demonstração de um workflow de avaliação")
-        st.button("Atualizar relatórios", width="stretch", help="Relê os arquivos locais. Não executa testes.")
-    lotes, avisos = descobrir_lotes(BASE)
+        st.caption("Evaluation workflow demonstration")
+        st.button("Refresh reports", width="stretch", help="Reloads local files without running tests.")
+    batches, warnings = discover_batches(BASE)
     with st.sidebar:
-        st.caption(f"{len(lotes)} lotes encontrados")
-        if not lotes:
-            st.info("Os lotes aparecerão aqui depois de uma execução.")
+        st.caption(f"{len(batches)} batches found")
+        if not batches:
+            st.info("Batches will appear here after a run.")
         else:
-            mapa = {identificador(l): l for l in lotes}
-            selecionado = st.selectbox("Lote em foco", list(mapa), format_func=lambda k: rotulo_lote(mapa[k]), key="lote_foco")
+            lookup = {identifier(l): l for l in batches}
+            selected_batch = st.selectbox("Selected batch", list(lookup), format_func=lambda k: batch_label(lookup[k]), key="selected_batch")
             st.divider()
-            st.caption("A atualização relê os lotes desta demonstração. Novas rodadas locais só aparecem aqui após revisão e publicação dos arquivos.")
-    st.markdown('<div class="eyebrow">PONTE IDIOMAS · AVALIAÇÕES</div>', unsafe_allow_html=True)
-    st.title("Do resultado à conversa")
-    st.write("Explore as rodadas, compare os cenários e investigue as evidências do agente.")
-    st.info("Case de estudo · resultados históricos sanitizados. Identificadores foram substituídos; avaliações, créditos e falas foram preservados, com remoção de dados pessoais. Este painel não inicia testes.")
-    for aviso in avisos:
-        st.warning(aviso)
-    if not lotes:
-        st.info("Ainda não há relatórios de lote para exibir. Execute os cenários pelo seu fluxo de avaliação e depois atualize esta página.")
+            st.caption("Refresh reloads this demonstration’s batches. New local runs appear here after their files are reviewed and published.")
+    st.markdown('<div class="eyebrow">PONTE IDIOMAS · EVALS</div>', unsafe_allow_html=True)
+    st.title("From outcome to conversation")
+    st.write("Explore batches, compare scenarios and investigate the agent’s evidence.")
+    st.info("Read-only evaluation reports. Opening this dashboard does not start tests. Review automated outcomes alongside their evidence.")
+    for warning in warnings:
+        st.warning(warning)
+    if not batches:
+        st.info("No batch reports are available yet. Run scenarios through your evaluation workflow, then refresh this page.")
         return
-    visao, comparacao = st.tabs(["Visão do lote", "Comparar lotes"])
-    with visao:
-        visao_lote(mapa[selecionado])
-    with comparacao:
-        comparar_lotes(lotes)
+    overview_tab, comparison_tab = st.tabs(["Batch overview", "Compare batches"])
+    with overview_tab:
+        batch_overview(lookup[selected_batch])
+    with comparison_tab:
+        compare_batches(batches)
     st.divider()
-    st.caption("Fonte: relatórios locais dos testes por texto. Este painel não inicia simulações nem consulta a API da ElevenLabs.")
+    st.caption("Source: local text-test reports. This dashboard does not start simulations or query the ElevenLabs API.")
 
 
 if __name__ == "__main__":

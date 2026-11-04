@@ -1,0 +1,27 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "signature": "ecc0d10d4e96094e9e5738864b0e40c95fe5ee946dc7cd964e69b28b782969da",
+  "platform_evaluation": "success",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "case_id": "04-compare-online",
+  "category": "catalog_comparison",
+  "credits_used": 296,
+  "evidence": "CONFIRMED",
+  "tool_called": true,
+  "purpose": "development",
+  "invocation_id": "demo_192f953b2f324b3ad926",
+  "rationale_text": "Evaluation succeeded | Criterion 1 passed: The agent correctly listed English conversation for R$ 280 and beginner Spanish for R$ 240 as online options. It omitted neither and did not present beginner English (in person) as online. | Criterion 2 passed: The agent identified English conversation as intermediate level and Spanish as beginner level. It did not present conversation as a course for beginner English learners or invent other online options. | The agent ended the conversation. | Tool call and mock response confirmed.",
+  "mock_confirmed": true,
+  "name": "Ponte Idiomas | 04 | Compare online courses",
+  "nodes_seen": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_49b94dcf8cad7e0d138b",
+    "demo_527e2d91ef415d6a602f"
+  ],
+  "ran_against_draft": false,
+  "outcome": "PASSED",
+  "platform_status": "passed",
+  "test_id": "demo_efce5dfb76dcd671ffa5",
+  "test_run_id": "demo_3621057bb4ed6984e10f",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

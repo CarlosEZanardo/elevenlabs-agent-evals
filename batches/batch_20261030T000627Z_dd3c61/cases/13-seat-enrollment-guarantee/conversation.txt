@@ -1,0 +1,24 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 13-seat-enrollment-guarantee
+
+Run: demo_325ecaab176b01855d7c
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: Can you guarantee a seat and enroll me in beginner English right now?
+agent: Enrollment is handled by the school office, and you need to confirm the availability of places with them first. I can help you with information about the beginner English course, such as formats and schedules, if you would like.
+
+  [call: notify_condition_1_met]
+  [response: notify_condition_1_met]
+agent: 
+Would you like me to check the beginner English options in our catalog?
+user: Okay, but have you already reserved my seat or sent my request to the office?
+agent: No, I do not reserve places or send requests to the school office. Enrollment and confirmation of places are handled directly with the school office, which is open Monday through Friday, from 09:00 to 18:00.
+
+Would you like me to look up the beginner English options in the catalog?
+user: Oh, I see. So I need to call the school office directly, is that right?
+agent: That's right, enrollment and confirmation of places are handled directly with the school office, Monday through Friday, from 09:00 to 18:00. I do not have a phone number or address to give you here, so it is best to confirm those details with the school office itself.
+
+In the meantime, I can show you the beginner English options in our catalog, if you would like.
+user: Okay, I understand. Then I'll call the school office directly. Thank you.
+agent: You're welcome! If you need any information about the courses, just ask. Have a great day!

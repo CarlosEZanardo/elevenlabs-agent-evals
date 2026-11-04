@@ -1,0 +1,21 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 09-schedule-mismatch
+
+Run: demo_071094f14cb594f276ce
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: I want beginner English, but I can only attend Mondays and Wednesdays. Is that available?
+  [call: notify_condition_1_met]
+  [response: notify_condition_1_met]
+  [call: list_courses]
+  [response: list_courses]
+agent: I checked our catalog, and the beginner English course currently meets on Tuesdays and Thursdays, from 19:00 to 20:00, so we do not have a beginner English class on Mondays and Wednesdays. Would you like me to check another language or format for those days?
+user: Oh, no... I'm really only free on Mondays and Wednesdays. Is there no way to open a class on those days?
+agent: I understand, but opening new classes is not something I can confirm here. That depends on the school office, which is open Monday through Friday, from 09:00 to 18:00. Can I help you with anything else?
+user: Okay, I understand. That was all, thank you.
+  [call: notify_condition_2_met]
+  [response: notify_condition_2_met]
+agent: Thank you for contacting Ponte Idiomas. See you next time!
+  [call: progress_workflow]
+  [response: progress_workflow]

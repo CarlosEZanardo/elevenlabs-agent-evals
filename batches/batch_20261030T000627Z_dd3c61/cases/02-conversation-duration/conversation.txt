@@ -1,0 +1,21 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 02-conversation-duration
+
+Run: demo_50b4419f0820f5e67289
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: Hi, I'd like to know how long the English conversation course lasts and when the classes are.
+  [call: notify_condition_1_met]
+  [response: notify_condition_1_met]
+agent: I will check this information in our current catalog.
+
+  [call: list_courses]
+  [response: list_courses]
+agent: The English Conversation course lasts three months, with online classes on Wednesdays from 19:00 to 20:30. The monthly fee is two hundred and eighty reais, and the level is intermediate. Would you like to know anything else about this course?
+user: Okay, so three months, classes on Wednesdays from 19:00 to 20:30. That was all I needed to know, you can end the conversation, thank you.
+  [call: notify_condition_2_met]
+  [response: notify_condition_2_met]
+agent: Thank you for contacting Ponte Idiomas. See you next time!
+  [call: progress_workflow]
+  [response: progress_workflow]

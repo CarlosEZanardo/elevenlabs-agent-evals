@@ -1,0 +1,19 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 17-catalog-business-error
+
+Run: demo_a46f756aa6995547cfcd
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: How much does beginner English cost?
+  [call: notify_condition_1_met]
+  [response: notify_condition_1_met]
+agent: Let me check the current catalog for you.
+
+  [call: list_courses]
+  [response: list_courses]
+agent: Unfortunately, I could not confirm the catalog prices just now. To find out the beginner English monthly fee, it is best to speak to the office, which is open Monday through Friday, from 9 a.m. to 6 p.m. Can I help with anything else?
+user: Can you confirm the price anyway? Like, is there an approximate amount?
+agent: Unfortunately, I cannot confirm or estimate prices because the catalog lookup failed and I cannot invent information. The right place to ask is the school office, which is open Monday through Friday, from 09:00 to 18:00, and can give you the exact fee. Would you like help with another question?
+user: Okay, I understand. So there is no way to confirm it now, right?
+agent: That's right, I cannot confirm the prices at the moment because the catalog did not respond. The school office, Monday through Friday, from 09:00 to 18:00, can give you that information with certainty. Do you need help with anything else?

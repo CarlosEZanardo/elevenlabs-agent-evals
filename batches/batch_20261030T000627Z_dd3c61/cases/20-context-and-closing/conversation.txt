@@ -1,0 +1,23 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 20-context-and-closing
+
+Run: demo_a55fdd2b85abf6874ff8
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: I want English conversation practice, I am intermediate, and I can only study online on Wednesday evenings. What do you recommend?
+  [call: notify_condition_2_met]
+  [response: notify_condition_2_met]
+agent: I will check the available options for you.
+
+  [call: list_courses]
+  [response: list_courses]
+agent: I found an option that matches everything you asked for: English Conversation, intermediate level, online, on Wednesdays from 19:00 to 20:30. The monthly fee is two hundred and eighty reais, and it lasts three months. Would you like to know anything else about it?
+user: Hmm, okay. And what are the duration and monthly fee?
+agent: The duration is three months, and the monthly fee is two hundred and eighty reais. Just a reminder that places are confirmed and enrollment is handled by the school office, Monday through Friday, from 09:00 to 18:00. Can I help you with anything else?
+user: Thanks, that was everything. You can end the conversation.
+  [call: notify_condition_2_met]
+  [response: notify_condition_2_met]
+agent: Thank you for contacting Ponte Idiomas. See you next time!
+  [call: progress_workflow]
+  [response: progress_workflow]

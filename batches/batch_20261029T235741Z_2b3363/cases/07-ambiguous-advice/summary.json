@@ -1,0 +1,26 @@
+{
+  "agent_id": "demo_33ff793ae010233765c2",
+  "signature": "1cfdff9d0c57db2e0d2b44496b913c51a2f495f228c8dc78d6ae6f84187160b6",
+  "platform_evaluation": "failure",
+  "branch_id": "demo_e2597d5031bd05955e70",
+  "case_id": "07-ambiguous-advice",
+  "category": "ambiguity",
+  "credits_used": 501,
+  "evidence": "CONFIRMED",
+  "tool_called": true,
+  "purpose": "development",
+  "invocation_id": "demo_c6818f9f28153a7f5176",
+  "rationale_text": "Evaluation failed | Criterion 1 passed: The assistant collected the language (English), level (beginner/starting from zero) and format (in person) before recommending a course. It did not make a definitive recommendation based only on the ambiguous opening. The criterion was met. | Criterion 2 passed: The assistant asked one question at a time: language, goal, level and format. It used previous answers without restarting collection. The sequential flow was correct. | Criterion 3 passed: With the collected data, the assistant recommended the 'Beginner English' course, in person, Tuesdays and Thursdays at 19:00, without inventing information. The data matches the tool response. | Criterion 4 failed: One agent message contains self-instructions and internal decision comments visible to the customer: 'Our goal is to help them choose a course... Let's ask about the language...' This violates the criterion. | Criterion 5 passed: The assistant asked one question at a time and waited for an answer before proceeding. There were no duplicate questions or successive questions without a customer response. The criterion was met. | The simulated user ended the conversation. | Tool call and mock response confirmed.",
+  "mock_confirmed": true,
+  "name": "Ponte Idiomas | 07 | Clarify an incomplete learner profile",
+  "nodes_seen": [
+    "demo_fc916208e44ea4b97b80",
+    "demo_6a2bbc4c18b59dde495c"
+  ],
+  "ran_against_draft": false,
+  "outcome": "FAILED",
+  "platform_status": "failed",
+  "test_id": "demo_e7873e12860eb44ab49d",
+  "test_run_id": "demo_4814361a456066fbca30",
+  "version_id": "demo_511658740c7b4a1c79f7"
+}

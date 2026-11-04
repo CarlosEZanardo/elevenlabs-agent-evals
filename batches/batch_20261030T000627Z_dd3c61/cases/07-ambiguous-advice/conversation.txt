@@ -1,0 +1,23 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 07-ambiguous-advice
+
+Run: demo_42d2a8efb28466ca6a88
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: I want to take a course, but I do not know which one.
+agent: I see! I can help you choose. Do you already have a language in mind, or would you like a recommendation based on your goal and current level?
+
+  [call: notify_condition_2_met]
+  [response: notify_condition_2_met]
+  [call: list_courses]
+  [response: list_courses]
+agent: We have English and Spanish options, at beginner and intermediate levels, in person and online. To recommend the best option, tell me: which language are you most interested in learning?
+user: English. I want to learn English.
+agent: Great! And what is your current English level: are you starting from scratch, or do you already have some foundation?
+user: Zero. I have never studied English.
+agent: Perfect. Do you prefer in-person or online classes?
+user: In person.
+agent: We have Beginner English, in person, on Tuesdays and Thursdays from 7 to 8 p.m., lasting six months with a monthly fee of two hundred and twenty reais. It is ideal for someone starting from scratch, like you. Would you like to know anything else about this course?
+user: Perfect, that is exactly what I needed. Thank you!
+agent: Glad I could help! Enrollment and seat confirmation are handled by the office, which is open Monday through Friday, from 9 a.m. to 6 p.m. Do you need any further help?

@@ -1,0 +1,327 @@
+{
+  "invocation_id": "demo_c6818f9f28153a7f5176",
+  "sanitized": true,
+  "test_id": "demo_e7873e12860eb44ab49d",
+  "test_runs": [
+    {
+      "agent_id": "demo_33ff793ae010233765c2",
+      "agent_responses": [
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 11,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "I want to take a course, but I do not know which one.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 11,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "I see! You would like help choosing a course, so I will guide you through that decision.\n",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 11,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 11,
+          "tool_calls": [
+            {
+              "request_id": "demo_43ce18d8b3e6e8f3d310",
+              "tool_has_been_called": true,
+              "tool_id": null,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 11,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_43ce18d8b3e6e8f3d310",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.005241679027676582,
+              "tool_name": "notify_condition_2_met",
+              "type": "workflow"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Our goal is to help them choose a course. We need to ask one question at a time. First, ask which language they want. But before recommending, we need to consult list_courses. However, we don't have preferences yet. We should ask one question at a time. Let's ask about the language they want to learn.\n\nWe should not call list_courses yet? The instruction says \"Before recommending or providing course details, consult list_courses, without parameters.\" We can consult it now to have data ready, but we don't need to inform yet. It might be fine to call it now. But the condition tools: notify_condition_1_met is about person indicating they don't want to continue orientation and just want to clarify an objective doubt. Not met. notify_condition_2_met: not met. So no tool calls needed.\n\nWe should ask one question: which language. Let's respond in Portuguese, short.Great! To start, which language are you interested in learning?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 11,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "English. I want to learn English.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 11,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Great, English is a very popular choice! Now tell me, what is your main goal with the language, such as travel, work, or study?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 11,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Mainly for travel.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 11,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Perfect, English for travel is a very common goal. And what is your current English level: beginner, basic, intermediate, or advanced?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 11,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "I've never studied it, I'm really starting from zero.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 11,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "I see, you are starting from zero. Do you prefer in-person or online classes?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 11,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "In person, definitely.",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 11,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Let me check the available options for you.\n",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 11,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": null,
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 11,
+          "tool_calls": [
+            {
+              "request_id": "demo_5b8d64d14f5b221c778c",
+              "tool_has_been_called": true,
+              "tool_id": "demo_5d8aeb45360fcc28ee74",
+              "tool_name": "list_courses",
+              "type": "webhook"
+            }
+          ],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": null,
+          "producing_llm": null,
+          "role": "agent",
+          "time_in_call_secs": 11,
+          "tool_calls": [],
+          "tool_results": [
+            {
+              "error_type": "",
+              "is_blocked": false,
+              "is_error": false,
+              "request_id": "demo_5b8d64d14f5b221c778c",
+              "tool_has_been_called": true,
+              "tool_latency_secs": 0.0,
+              "tool_name": "list_courses",
+              "type": "webhook"
+            }
+          ]
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "I found an option that fits what you are looking for well: the beginner English course, in person, on Tuesdays and Thursdays from 19:00 to 20:00, with a monthly fee of two hundred and twenty reais and a duration of six months. It is ideal because it is for people starting from zero and is in person, as you prefer. Would you like any more details about this course?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 11,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {}
+          },
+          "message": "Tuesdays and Thursdays from 7 to 8 p.m. are perfect for me. Thank you, that was exactly what I needed!",
+          "producing_llm": null,
+          "role": "user",
+          "time_in_call_secs": 11,
+          "tool_calls": [],
+          "tool_results": []
+        },
+        {
+          "interrupted": false,
+          "llm_usage": {
+            "model_usage": {
+              "deepseek-v41-flash": {}
+            }
+          },
+          "message": "Glad that worked out! Just a reminder that enrollment and seat confirmation are handled by the office, which is open Monday through Friday, from 9 a.m. to 6 p.m. Do you need any further help?",
+          "producing_llm": "deepseek-v41-flash",
+          "role": "agent",
+          "time_in_call_secs": 11,
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "branch_id": "demo_e2597d5031bd05955e70",
+      "charging": {
+        "call_charge": 128,
+        "llm_charge": 373,
+        "platform_charge": 128,
+        "subagent_charge": 0,
+        "voice_surcharge_charge": null
+      },
+      "condition_result": {
+        "rationale": {
+          "messages": [
+            "Criterion 1 passed: The assistant collected the language (English), level (beginner/starting from zero) and format (in person) before recommending a course. It did not make a definitive recommendation based only on the ambiguous opening. The criterion was met.",
+            "Criterion 2 passed: The assistant asked one question at a time: language, goal, level and format. It used previous answers without restarting collection. The sequential flow was correct.",
+            "Criterion 3 passed: With the collected data, the assistant recommended the 'Beginner English' course, in person, Tuesdays and Thursdays at 19:00, without inventing information. The data matches the tool response.",
+            "Criterion 4 failed: One agent message contains self-instructions and internal decision comments visible to the customer: 'Our goal is to help them choose a course... Let's ask about the language...' This violates the criterion.",
+            "Criterion 5 passed: The assistant asked one question at a time and waited for an answer before proceeding. There were no duplicate questions or successive questions without a customer response. The criterion was met.",
+            "The simulated user ended the conversation."
+          ],
+          "summary": "Evaluation failed"
+        },
+        "result": "failure"
+      },
+      "credits_used": 501,
+      "ran_against_draft": false,
+      "status": "failed",
+      "test_id": "demo_e7873e12860eb44ab49d",
+      "test_invocation_id": "demo_c6818f9f28153a7f5176",
+      "test_name": "Ponte Idiomas | 07 | Clarify an incomplete learner profile",
+      "test_run_id": "demo_4814361a456066fbca30",
+      "version_id": "demo_511658740c7b4a1c79f7"
+    }
+  ],
+  "source_language": "pt-BR",
+  "content_language": "en",
+  "translation_note": "English translation of the original Brazilian Portuguese evaluation. Metrics, outcomes, identifiers, and source test signatures are preserved; no English evaluation was rerun."
+}

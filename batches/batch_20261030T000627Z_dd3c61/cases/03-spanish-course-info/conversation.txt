@@ -1,0 +1,21 @@
+English translation of an original Brazilian Portuguese evaluation; not a new English run.
+
+Ponte Idiomas — text evaluation
+Case: 03-spanish-course-info
+
+Run: demo_3a2b8bd8f60b361a4158
+agent: Hello! I'm Ponte Idiomas' virtual assistant. Would you like to explore our courses, or do you already have one in mind?
+user: Hi, I'd like to know about beginner Spanish—what are the price, format, and days?
+  [call: notify_condition_1_met]
+  [response: notify_condition_1_met]
+agent: I will check that for you right now.
+
+  [call: list_courses]
+  [response: list_courses]
+agent: I found beginner Spanish: it is online, with classes on Mondays and Wednesdays from 18:00 to 19:00. The monthly fee is two hundred and forty reais, and it lasts six months. Would you like to know anything else about this course?
+user: Okay, I understand—online, Mondays and Wednesdays, two hundred and forty per month. Thank you, you can end the conversation!
+  [call: notify_condition_2_met]
+  [response: notify_condition_2_met]
+agent: Thank you for contacting Ponte Idiomas. See you next time!
+  [call: progress_workflow]
+  [response: progress_workflow]
